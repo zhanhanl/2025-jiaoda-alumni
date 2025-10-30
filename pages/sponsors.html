@@ -14,6 +14,65 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+
+    <style>
+        /* Sponsor Grid Styles */
+        .sponsor-tier {
+            margin-bottom: 3rem;
+        }
+
+        .sponsor-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor-logo-container:hover {
+            transform: scale(1.05);
+        }
+
+        .sponsor-logo {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Tier 1 - Largest */
+        .tier-1 .sponsor-logo {
+            max-height: 200px;
+        }
+
+        /* Tier 2 - Large */
+        .tier-2 .sponsor-logo {
+            max-height: 120px;
+        }
+
+        /* Tier 3 - Medium (with text names) */
+        .tier-3 .sponsor-logo {
+            max-height: 100px;
+        }
+
+        .tier-3 .sponsor-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Tier 4 - Standard */
+        .tier-4 .sponsor-logo {
+            max-height: 80px;
+        }
+
+        /* Tier 5 - Smallest */
+        .tier-5 .sponsor-logo {
+            max-height: 60px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
@@ -38,149 +97,116 @@
                 <p class="is-size-5">衷心感谢以下单位和个人对交大校友会2025年活动的大力支持！</p>
             </div>
 
-            <!-- Diamond Sponsors -->
-            <div class="mb-6">
-                <h2 class="title is-3 has-text-centered mb-5 has-text-royal-blue">
-                    <span class="icon-text">
-                        <span class="icon">
-                            <i class="fas fa-gem"></i>
-                        </span>
-                        <span>钻石级赞助商</span>
-                    </span>
-                </h2>
+            <!-- Tier 1: 1 Sponsor (Largest, Full Width) -->
+            <div class="sponsor-tier tier-1">
                 <div class="columns is-centered">
                     <div class="column is-8">
-                        <div class="box has-text-centered">
-                            <figure class="image is-128x128 mx-auto mb-3">
-                                <img src="https://via.placeholder.com/128/4169E1/ffffff?text=钻石" alt="XX科技集团">
-                            </figure>
-                            <p class="title is-4">XX科技集团</p>
-                            <div class="content">
-                                <p>XX科技集团是全球领先的科技公司，致力于通过创新技术改善人们的生活。公司业务涵盖人工智能、云计算、物联网等多个领域。</p>
-                                <p class="has-text-royal-blue has-text-weight-bold">赞助金额：$10,000</p>
-                                <p class="is-italic">"很荣幸能支持交大校友会的活动。我们相信教育和人才是推动社会进步的关键力量。"</p>
-                            </div>
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/aqx.png" alt="Sponsor" class="sponsor-logo">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <hr>
+            <hr class="my-5">
 
-            <!-- Platinum Sponsors -->
-            <div class="mb-6">
-                <h2 class="title is-3 has-text-centered mb-5 has-text-grey">
-                    <span class="icon-text">
-                        <span class="icon">
-                            <i class="fas fa-crown"></i>
-                        </span>
-                        <span>白金级赞助商</span>
-                    </span>
-                </h2>
-                <div class="columns is-centered">
-                    <div class="column is-5">
-                        <div class="box has-text-centered">
-                            <figure class="image is-96x96 mx-auto mb-3">
-                                <img src="https://via.placeholder.com/96/E5E4E2/333333?text=白金" alt="XX金融投资公司">
-                            </figure>
-                            <p class="title is-5">XX金融投资公司</p>
-                            <p class="subtitle is-6 has-text-grey">专业的金融投资服务机构</p>
-                            <p class="has-text-royal-blue has-text-weight-bold">赞助：$5,000</p>
-                        </div>
-                    </div>
-                    <div class="column is-5">
-                        <div class="box has-text-centered">
-                            <figure class="image is-96x96 mx-auto mb-3">
-                                <img src="https://via.placeholder.com/96/E5E4E2/333333?text=白金" alt="XX律师事务所">
-                            </figure>
-                            <p class="title is-5">XX律师事务所</p>
-                            <p class="subtitle is-6 has-text-grey">为您提供全方位法律服务</p>
-                            <p class="has-text-royal-blue has-text-weight-bold">赞助：$5,000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr>
-
-            <!-- Gold Sponsors -->
-            <div class="mb-6">
-                <h2 class="title is-3 has-text-centered mb-5 has-text-warning">
-                    <span class="icon-text">
-                        <span class="icon">
-                            <i class="fas fa-medal"></i>
-                        </span>
-                        <span>黄金级赞助商</span>
-                    </span>
-                </h2>
+            <!-- Tier 2: 5 Sponsors (Large) -->
+            <div class="sponsor-tier tier-2">
                 <div class="columns is-multiline is-centered">
                     <div class="column is-4">
-                        <div class="box has-text-centered">
-                            <figure class="image is-96x96 mx-auto mb-3">
-                                <img src="https://via.placeholder.com/96/FFD700/333333?text=黄金" alt="XX餐饮集团">
-                            </figure>
-                            <p class="title is-6">XX餐饮集团</p>
-                            <p class="has-text-grey">赞助：$2,000</p>
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/atclean.png" alt="Sponsor" class="sponsor-logo">
                         </div>
                     </div>
                     <div class="column is-4">
-                        <div class="box has-text-centered">
-                            <figure class="image is-96x96 mx-auto mb-3">
-                                <img src="https://via.placeholder.com/96/FFD700/333333?text=黄金" alt="XX房地产">
-                            </figure>
-                            <p class="title is-6">XX房地产</p>
-                            <p class="has-text-grey">赞助：$2,000</p>
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/blossom.png" alt="Sponsor" class="sponsor-logo">
                         </div>
                     </div>
                     <div class="column is-4">
-                        <div class="box has-text-centered">
-                            <figure class="image is-96x96 mx-auto mb-3">
-                                <img src="https://via.placeholder.com/96/FFD700/333333?text=黄金" alt="XX医疗集团">
-                            </figure>
-                            <p class="title is-6">XX医疗集团</p>
-                            <p class="has-text-grey">赞助：$2,000</p>
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/bm.jpg" alt="Sponsor" class="sponsor-logo">
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/burtran.avif" alt="Sponsor" class="sponsor-logo">
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/ctuaaa.jpeg" alt="Sponsor" class="sponsor-logo">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <hr>
+            <hr class="my-5">
 
-            <!-- Special Thanks -->
-            <div class="mb-6">
-                <h2 class="title is-4 has-text-centered mb-5 has-text-grey-dark">特别鸣谢</h2>
-                <div class="box has-background-light">
-                    <div class="content has-text-centered">
-                        <div class="columns is-multiline">
-                            <div class="column is-4"><p>XX书店</p></div>
-                            <div class="column is-4"><p>XX咖啡</p></div>
-                            <div class="column is-4"><p>XX摄影工作室</p></div>
-                            <div class="column is-4"><p>XX文具店</p></div>
-                            <div class="column is-4"><p>XX花店</p></div>
-                            <div class="column is-4"><p>XX印刷公司</p></div>
-                            <div class="column is-4"><p>XX婚庆公司</p></div>
-                            <div class="column is-4"><p>XX旅行社</p></div>
-                            <div class="column is-4"><p>XX教育培训</p></div>
+            <!-- Tier 3: 3 Sponsors (1 logo + 2 text names) -->
+            <div class="sponsor-tier tier-3">
+                <div class="columns is-multiline is-centered">
+                    <div class="column is-4">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/dmb.png" alt="Sponsor" class="sponsor-logo">
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="sponsor-name">赞助商名称一</div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="sponsor-name">赞助商名称二</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <!-- Tier 4: 3 Sponsors (Medium) -->
+            <div class="sponsor-tier tier-4">
+                <div class="columns is-multiline is-centered">
+                    <div class="column is-4">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/gsm.png" alt="Sponsor" class="sponsor-logo">
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/longfri.png" alt="Sponsor" class="sponsor-logo">
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/qjkitchen.avif" alt="Sponsor" class="sponsor-logo">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Individual Sponsors -->
-            <div class="mb-6">
-                <h2 class="title is-4 has-text-centered mb-5 has-text-grey-dark">个人赞助</h2>
-                <div class="box has-background-light">
-                    <div class="content has-text-centered">
-                        <p class="is-italic mb-4">感谢以下校友的慷慨捐赠：</p>
-                        <div class="columns is-multiline">
-                            <div class="column is-4"><p>张三（2005届）</p></div>
-                            <div class="column is-4"><p>李四（2008届）</p></div>
-                            <div class="column is-4"><p>王五（2010届）</p></div>
-                            <div class="column is-4"><p>赵六（2012届）</p></div>
-                            <div class="column is-4"><p>孙七（2015届）</p></div>
-                            <div class="column is-4"><p>周八（2018届）</p></div>
+            <hr class="my-5">
+
+            <!-- Tier 5: 4 Sponsors (Smallest) -->
+            <div class="sponsor-tier tier-5">
+                <div class="columns is-multiline is-centered">
+                    <div class="column is-3">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/scepter.png" alt="Sponsor" class="sponsor-logo">
                         </div>
-                        <p class="mt-4 is-italic">以及所有匿名捐赠者</p>
+                    </div>
+                    <div class="column is-3">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/trifortune.png" alt="Sponsor" class="sponsor-logo">
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/zhiguan.png" alt="Sponsor" class="sponsor-logo">
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="sponsor-logo-container">
+                            <img src="../assets/images/sponsors/zoooom.jpg" alt="Sponsor" class="sponsor-logo">
+                        </div>
                     </div>
                 </div>
             </div>

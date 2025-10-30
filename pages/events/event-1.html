@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="年度晚宴活动 - 2025 交大校友会">
+    <title>年度晚宴活动 - 2025 交大校友会</title>
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .event-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .event-gallery-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .event-gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .event-back-button {
+            position: sticky;
+            top: 52px;
+            z-index: 50;
+            margin-bottom: 1rem;
+            background-color: white;
+            padding: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (injected by components.js) -->
+    <div id="navbar-container"></div>
+
+    <!-- Page Header -->
+    <section class="hero is-royal-blue is-small">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-2 has-text-white">
+                    年度晚宴活动
+                </h1>
+                <p class="subtitle is-5 has-text-white">
+                    <span class="icon-text">
+                        <span class="icon"><i class="far fa-calendar"></i></span>
+                        <span>2024年12月</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Content -->
+    <section class="section">
+        <div class="container">
+            <div class="event-back-button">
+                <a href="index.html" class="button is-primary is-light">
+                    <span class="icon"><i class="fas fa-arrow-left"></i></span>
+                    <span>返回活动列表</span>
+                </a>
+            </div>
+
+            <div class="columns is-centered">
+                <div class="column is-10">
+
+                    <!-- Video Section -->
+                    <div class="box">
+                        <h3 class="title is-4 has-text-primary mb-4">活动视频</h3>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Description Section -->
+                    <div class="box">
+                        <h3 class="title is-4 has-text-primary mb-4">活动介绍</h3>
+                        <div class="content">
+                            <p class="is-size-5">
+                                在这里添加活动的详细描述。介绍活动的背景、亮点、参与人员等信息...
+                            </p>
+                            <p>
+                                更多文字内容可以在这里添加。可以包括活动流程、精彩瞬间、感言分享等。
+                            </p>
+                            <ul>
+                                <li>活动亮点 1</li>
+                                <li>活动亮点 2</li>
+                                <li>活动亮点 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Photo Gallery Section -->
+                    <div class="box">
+                        <h3 class="title is-4 has-text-primary mb-4">活动照片</h3>
+                        <div class="event-gallery-grid">
+                            <img src="https://via.placeholder.com/400x300/113F67/ffffff?text=Photo+1" alt="Photo 1">
+                            <img src="https://via.placeholder.com/400x300/34699A/ffffff?text=Photo+2" alt="Photo 2">
+                            <img src="https://via.placeholder.com/400x300/58A0C8/ffffff?text=Photo+3" alt="Photo 3">
+                            <img src="https://via.placeholder.com/400x300/113F67/ffffff?text=Photo+4" alt="Photo 4">
+                            <img src="https://via.placeholder.com/400x300/34699A/ffffff?text=Photo+5" alt="Photo 5">
+                            <img src="https://via.placeholder.com/400x300/58A0C8/ffffff?text=Photo+6" alt="Photo 6">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (injected by components.js) -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

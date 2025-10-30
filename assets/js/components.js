@@ -87,13 +87,13 @@
       <nav class="navbar is-fixed-top is-royal-blue" role="navigation" aria-label="main navigation">
         <div class="container">
           <div class="navbar-brand">
-            <a class="navbar-item" href="${logoHref}">
-              <strong class="has-text-white is-size-5">${siteConfig.siteName}</strong>
-            </a>
             <a role="button" class="navbar-burger has-text-white" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
+            </a>
+            <a class="navbar-item" href="${logoHref}">
+              <strong class="has-text-white is-size-5">${siteConfig.siteName}</strong>
             </a>
           </div>
 
@@ -112,39 +112,50 @@
     const footer = document.getElementById('footer-container');
     if (!footer) return;
 
-    const socialLinks = siteConfig.footer.socialLinks.map(link => `
-      <a href="${link.url}" class="has-text-white mx-2" aria-label="${link.name}">
-        <span class="icon is-large">
-          <i class="${link.icon} fa-2x"></i>
-        </span>
-      </a>
-    `).join('');
+    // Build sponsors section
+    const sponsorsHTML = buildSponsorsSection();
 
     footer.innerHTML = `
-      <footer class="footer has-background-royal-blue">
-        <div class="content has-text-centered has-text-white">
-          <p class="is-size-5">
-            <strong class="has-text-white">${siteConfig.siteName}</strong>
-          </p>
-          <p>
+      <footer class="footer has-background-white" style="border-top: 2px solid var(--primary);">
+
+        <div class="content has-text-centered">
+          <!-- Sponsors Section -->
+          ${sponsorsHTML}
+
+ 
+          <p class="has-text-primary">
             ${siteConfig.footer.tagline}<br>
             © ${siteConfig.footer.copyrightYear} ${siteConfig.footer.organizationName}. All Rights Reserved.
           </p>
-          <div class="mt-4">
-            ${socialLinks}
-          </div>
-          ${siteConfig.footer.contactInfo ? `
-            <div class="mt-4">
-              <p class="is-size-7">
-                ${siteConfig.footer.contactInfo.email ? `Email: ${siteConfig.footer.contactInfo.email}` : ''}
-                ${siteConfig.footer.contactInfo.email && siteConfig.footer.contactInfo.phone ? ' | ' : ''}
-                ${siteConfig.footer.contactInfo.phone ? `Phone: ${siteConfig.footer.contactInfo.phone}` : ''}
-              </p>
-            </div>
-          ` : ''}
         </div>
       </footer>
     `;
+  }
+
+  // Build Sponsors Section for Footer
+  // This function injects a single sponsor image
+  // All styling is controlled by footer.css
+  function buildSponsorsSection() {
+    if (!siteConfig.sponsors || !siteConfig.sponsors.image) return '';
+
+    const isInPagesFolder = window.location.pathname.includes('/pages/');
+    const pathPrefix = isInPagesFolder ? '../' : '';
+
+    let html = '<div class="footer-sponsors">';
+
+    // Add main thank you message if it exists
+    if (siteConfig.sponsors.thankYouMessage) {
+      html += `<div class="sponsor-thank-you">${siteConfig.sponsors.thankYouMessage}</div>`;
+    }
+
+    // Add single sponsor image from assets/images/
+    const imgPath = `${pathPrefix}assets/images/${siteConfig.sponsors.image}`;
+    html += `<div class="sponsor-image-container">`;
+    html += `<img src="${imgPath}" alt="Sponsors" class="sponsor-image">`;
+    html += `</div>`;
+
+    html += '</div>';
+    return html;
   }
 
   // Initialize Mobile Menu

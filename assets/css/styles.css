@@ -212,10 +212,20 @@ body {
 
 .navbar-burger {
     color: white;
+    margin-left: 0 !important;
 }
 
 .navbar-burger:hover {
     background-color: var(--royal-blue-dark) !important;
+}
+
+/* Left align hamburger and site title */
+.navbar-brand .navbar-burger {
+    padding-left: 0.5rem;
+}
+
+.navbar-brand .navbar-item {
+    padding-left: 0.5rem;
 }
 
 /* Mobile navbar menu background */
@@ -362,8 +372,8 @@ body {
 
 .timeline-item {
     position: relative;
-    padding-left: 60px;
-    padding-bottom: 2rem;
+    padding-left: 0px;
+    padding-bottom: 1rem;
 }
 
 .timeline-item:last-child {
@@ -374,11 +384,11 @@ body {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 0rem;
+    top: 0rem;
     bottom: -2rem;
     width: 3px;
-    background: linear-gradient(to bottom, var(--primary), var(--tertiary));
+    background: var(--primary);
 }
 
 .timeline-item:last-child::before {
@@ -404,8 +414,8 @@ body {
 .timeline-section {
     position: relative;
     padding-left: 60px;
-    margin: 2rem 0;
-    padding-bottom: 2rem;
+    margin: 1.5rem 0;
+    padding-bottom: 0rem;
 }
 
 /* Continue the line through section headers */
@@ -416,7 +426,7 @@ body {
     top: -2rem;
     bottom: -2rem;
     width: 3px;
-    background: linear-gradient(to bottom, var(--primary), var(--tertiary));
+    background: var(--primary);
     z-index: 0;
 }
 
@@ -439,15 +449,21 @@ body {
 /* Timeline content */
 .timeline-content {
     background: white;
-    padding: 1.5rem;
+    padding-top: 0.8rem; /* Top padding */
+    padding-right: 0.0rem;
+    padding-bottom: 0.0rem;
+    padding-left: 0.0rem;
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-    margin-top: -16px; /* Align title text with time/dot */
+    box-shadow: none; /* Remove shadow */
+    border: none; /* Remove border */
+    transition: all 0.1s ease;
+    margin-top: 0.0rem; /* Add top margin */
+    margin-left: 1rem; /* Add left margin */
+    margin-bottom: 0.0rem; /* Add bottom margin */
 }
 
 .timeline-content:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: none; /* Remove shadow on hover */
     transform: translateX(5px);
 }
 
@@ -490,11 +506,11 @@ body {
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
     .timeline-container {
-        margin-left: 100px;
+        margin-left: 75px;
     }
 
     .timeline-item {
-        padding-left: 30px;
+        padding-left: 0px;
     }
 
     .timeline-section {
@@ -502,11 +518,11 @@ body {
     }
 
     .timeline-item::before {
-        left: 0;
+        left: -2px;
     }
 
     .timeline-section::before {
-        left: 0;
+        left: -2px;
     }
 
     .timeline-item::after {
@@ -545,6 +561,55 @@ body {
 .box:hover {
     box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15);
 }
+
+/* Article Card Styling */
+.article-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.article-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(65, 105, 225, 0.2);
+}
+
+.article-card .card-content {
+    flex-grow: 1;
+}
+
+.article-card .title {
+    margin-bottom: 0.75rem;
+}
+
+/* Article Content Styling */
+.article-content p {
+    text-indent: 2em;
+}
+
+.article-content p.has-text-right {
+    text-indent: 0;
+}
+
+/* Sticky Back Button */
+.article-back-button {
+    position: sticky;
+    top: 52px;
+    z-index: 50;
+    margin-bottom: 1rem;
+    background-color: white;
+    padding: 0.5rem 0;
+}
+
+/* Footer Sponsors Styling - Moved to footer.css for granular control */
 
 /* Media queries for responsive design */
 @media screen and (max-width: 768px) {

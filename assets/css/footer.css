@@ -1,0 +1,123 @@
+/* ============================================
+   FOOTER STYLING - FLUSH EMBEDDED IMAGE
+   ============================================
+
+   Sponsor image embedded directly in footer
+   No borders, no rounded corners, no padding
+   Full width on all devices
+
+   config.js: Defines thank you message and image filename
+   THIS FILE: Controls styling
+
+   ============================================ */
+
+/* Override Bulma footer padding to control top spacing */
+.footer {
+    padding-top: 0.2rem !important;  /* ← Change this value to adjust space from top of footer */
+}
+
+/* ============================================
+   SECTION 1: SPONSOR SECTION CONTAINER
+   ============================================ */
+
+.footer-sponsors {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* ============================================
+   SECTION 2: THANK YOU MESSAGE
+   ============================================ */
+
+.sponsor-thank-you {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0.0rem;   
+    margin-bottom: 0.5rem;
+    padding: 0rem;
+}
+
+/* Mobile styling for thank you message */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding-top: 0.5rem !important;  /* ← Adjust mobile spacing from top of footer */
+    }
+
+    .sponsor-thank-you {
+        font-size: 1.5rem;
+        margin-bottom: 0.1rem;
+        padding: 0.1rem;
+    }
+}
+
+/* ============================================
+   SECTION 3: SPONSOR IMAGE - FLUSH EMBED
+   No boundaries, no styling - just the image
+   ============================================ */
+
+.sponsor-image-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.sponsor-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* ============================================
+   HOW TO USE THIS FILE
+   ============================================
+
+   1. CHANGE THANK YOU MESSAGE TEXT:
+      - Edit in config.js: thankYouMessage: "Your text"
+
+   2. HIDE THANK YOU MESSAGE:
+      - In config.js: thankYouMessage: ""
+      or
+      - Comment out: // thankYouMessage: "感谢赞助商",
+
+   3. CHANGE IMAGE FILE:
+      - Edit in config.js: image: "your-image.png"
+      - Make sure file is at: assets/images/your-image.png
+
+   4. ADD SPACING ABOVE/BELOW IMAGE:
+      .sponsor-image {
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+      }
+
+   5. LIMIT IMAGE WIDTH (Desktop only):
+      @media screen and (min-width: 769px) {
+          .sponsor-image {
+              width: 90%;
+              margin: 0 auto;
+          }
+      }
+
+   6. ADD BORDER:
+      .sponsor-image {
+          border-top: 2px solid var(--primary);
+      }
+
+   7. STYLE THANK YOU MESSAGE:
+      .sponsor-thank-you {
+          font-size: 2rem;
+          color: var(--secondary);
+          background-color: var(--accent);
+      }
+
+   ============================================ */

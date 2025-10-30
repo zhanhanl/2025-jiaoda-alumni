@@ -3,8 +3,8 @@
 
 const siteConfig = {
   // Site Information
-  siteName: "2025 交大校友会",
-  siteTitle: "Alumni Association Annual Event",
+  siteName: "2025 交通大学南加州校友会年会",
+  siteTitle: "2025 八十二周年年会",
 
   // Banner Configuration (set enabled to true to show banner on all pages)
   banner: {
@@ -23,86 +23,77 @@ const siteConfig = {
     {
       name: "Home",
       href: "../home.html",
-      icon: "fa-home"
     },
     {
-      name: "President Message",
-      href: "president.html",
-      icon: "fa-user-tie"
-    },
-    {
-      name: "Program",
-      href: "program.html",
-      icon: "fa-calendar-alt"
-    },
-    {
-      name: "Performers",
-      href: "performers.html",
-      icon: "fa-music"
-    },
-    {
-      name: "Gallery",
-      href: "gallery.html",
-      icon: "fa-images"
-    },
-    {
-      name: "Articles",
-      href: "articles.html",
-      icon: "fa-newspaper"
-    },
-    {
-      name: "Sponsors",
-      href: "sponsors.html",
-      icon: "fa-handshake"
-    },
-    {
-      name: "Congratulations",
+      name: "贺函",
       href: "letters.html",
-      icon: "fa-envelope"
     },
     {
-      name: "Team",
+      name: "致辞",
+      href: "president.html",
+    },
+    {
+      name: "团队",
       href: "team.html",
-      icon: "fa-users"
     },
     {
-      name: "Awards",
+      name: "2025年度奖项",
       href: "awards.html",
-      icon: "fa-trophy"
+    },
+    {
+      name: "年会安排",
+      href: "program.html",
+    },
+    {
+      name: "演出节目单",
+      href: "performers.html",
+    },
+    {
+      name: "校友会活动",
+      href: "events/index.html",
+    },
+    {
+      name: "俱乐部活动",
+      href: "club-activity.html",
+    },
+    {
+      name: "校友来稿",
+      href: "articles/index.html",
+    },
+    {
+      name: "校友会历史",
+      href: "association-history.html",
+    },
+    {
+      name: "致谢",
+      href: "sponsors.html",
     }
+
   ],
 
   // Footer Configuration
   footer: {
     copyrightYear: 2025,
-    organizationName: "交大校友会",
-    tagline: "Alumni Association Annual Event",
-    socialLinks: [
-      {
-        name: "Facebook",
-        icon: "fab fa-facebook",
-        url: "#"
-      },
-      {
-        name: "Twitter",
-        icon: "fab fa-twitter",
-        url: "#"
-      },
-      {
-        name: "Instagram",
-        icon: "fab fa-instagram",
-        url: "#"
-      },
-      {
-        name: "LinkedIn",
-        icon: "fab fa-linkedin",
-        url: "#"
-      }
-    ],
+    organizationName: "交通大学南加州校友会",
+    tagline: "2025 八十二周年年会",
     contactInfo: {
       email: "alumni@example.com",
       phone: "+1 (555) 123-4567"
     }
+  },
+
+  // Sponsors Configuration - SIMPLIFIED
+  // =====================================
+  // Single sponsor image containing all sponsors
+  // Located at: assets/images/sponsor.png
+  // All styling is in footer.css
+  // =====================================
+  sponsors: {
+    // Main thank you message (optional - set to null or empty to hide)
+    thankYouMessage: "感谢赞助",
+
+    // Single sponsor image file (in assets/images/)
+    image: "sponsor.png"
   },
 
   // Color Theme
