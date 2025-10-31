@@ -15,6 +15,109 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        .letter-section {
+            margin-bottom: 2rem;
+        }
+
+        .emblem-tabs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .emblem-tab {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0.75rem;
+            border-radius: 12px;
+            background: white;
+            border: 3px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .emblem-tab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(17, 63, 103, 0.2);
+        }
+
+        .emblem-tab.is-active {
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(17, 63, 103, 0.3);
+            transform: scale(1.05);
+        }
+
+        .emblem-image {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            display: block;
+        }
+
+        @media screen and (max-width: 768px) {
+            .emblem-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .emblem-tabs {
+                gap: 1rem;
+            }
+
+            .emblem-tab {
+                padding: 0.5rem;
+            }
+        }
+
+        .letter-content {
+            border: 2px solid #dbdbdb;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            min-height: 400px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.is-active {
+            display: block;
+            animation: fadeIn 0.4s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter-image {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .letter-title {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
@@ -36,93 +139,89 @@
     <section class="section">
         <div class="container">
             <div class="notification is-light has-text-centered mb-6">
-                <p class="is-size-5">贺函资料来源于PDF和图片文件</p>
-                <p class="is-size-6 has-text-grey">2024年交通大学南加州校友会81周年年会贺信、阳明交大、鸿海科技集团等</p>
+                <p class="is-size-5">来自各交通大学的贺函</p>
+                <p class="is-size-6 has-text-grey">北京交通大学、台湾阳明交通大学、西安交通大学、西南交通大学</p>
             </div>
 
             <div class="columns is-centered">
                 <div class="column is-10">
-                    <!-- Letter 1: 2024年交通大学南加州校友会81周年年会贺信 -->
-                    <div class="box mb-5">
-                        <div class="content">
-                            <h3 class="title is-4 has-text-royal-blue">
-                                <span class="icon-text">
-                                    <span class="icon">
-                                        <i class="fas fa-envelope"></i>
+                    <!-- Letter Selection Section -->
+                    <div class="letter-section">
+                        <!-- Emblem Tabs (Inline) -->
+                        <div class="emblem-tabs">
+                            <div class="emblem-tab is-active" data-tab="xian" title="西安交通大学">
+                                <img src="emblem/xian.jpeg" alt="西安交通大学" class="emblem-image">
+                            </div>
+
+                            <div class="emblem-tab" data-tab="xinan" title="西南交通大学">
+                                <img src="emblem/xinan.png" alt="西南交通大学" class="emblem-image">
+                            </div>
+
+                            <div class="emblem-tab" data-tab="beijing" title="北京交通大学">
+                                <img src="emblem/beijing.svg.png" alt="北京交通大学" class="emblem-image">
+                            </div>
+
+                            <div class="emblem-tab" data-tab="taiwan" title="台湾阳明交通大学">
+                                <img src="emblem/taiwan.svg.png" alt="台湾阳明交通大学" class="emblem-image">
+                            </div>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div class="letter-content">
+                            <!-- Xi'an Tab -->
+                            <div id="xian" class="tab-pane is-active">
+                                <h3 class="title is-4 has-text-royal-blue letter-title">
+                                    <span class="icon-text">
+                                        
+                                        <span>西安交通大学贺函</span>
                                     </span>
-                                    <span>2024年交通大学南加州校友会81周年年会贺信</span>
-                                </span>
-                            </h3>
-                            <figure class="image">
-                                <img src="https://via.placeholder.com/800x1000/4169E1/ffffff?text=贺信PDF+Page+1" alt="2024年交通大学南加州校友会81周年年会贺信">
-                                <figcaption class="has-text-centered has-text-grey is-size-7 mt-2">文件：material/letters/2024年交通大学南加州校友会81周年年会贺信.pdf</figcaption>
-                            </figure>
+                                </h3>
+                                <div class="has-text-centered">
+                                    <img src="xian.png" alt="西安交通大学贺函" class="letter-image">
+                                </div>
+                            </div>
+
+                            <!-- Southwest Tab -->
+                            <div id="xinan" class="tab-pane">
+                                <h3 class="title is-4 has-text-royal-blue letter-title">
+                                    <span class="icon-text">
+                                        
+                                        <span>西南交通大学贺函</span>
+                                    </span>
+                                </h3>
+                                <div class="has-text-centered">
+                                    <img src="xinan.jpg" alt="西南交通大学贺函" class="letter-image">
+                                </div>
+                            </div>
+
+                            <!-- Beijing Tab -->
+                            <div id="beijing" class="tab-pane">
+                                <h3 class="title is-4 has-text-royal-blue letter-title">
+                                    <span class="icon-text">
+                                        
+                                        <span>北京交通大学贺函</span>
+                                    </span>
+                                </h3>
+                                <div class="has-text-centered">
+                                    <img src="beijing.jpg" alt="北京交通大学贺函" class="letter-image">
+                                </div>
+                            </div>
+
+                            <!-- Taiwan Tab -->
+                            <div id="taiwan" class="tab-pane">
+                                <h3 class="title is-4 has-text-royal-blue letter-title">
+                                    <span class="icon-text">
+                                        
+                                        <span>台湾阳明交通大学贺函</span>
+                                    </span>
+                                </h3>
+                                <div class="has-text-centered">
+                                    <img src="taiwan.jpg" alt="台湾阳明交通大学贺函" class="letter-image">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Letter 2: 张鸣_交大81年会 -->
-                    <div class="box mb-5">
-                        <div class="content">
-                            <h3 class="title is-4 has-text-royal-blue">
-                                <span class="icon-text">
-                                    <span class="icon">
-                                        <i class="fas fa-envelope"></i>
-                                    </span>
-                                    <span>张鸣贺信</span>
-                                </span>
-                            </h3>
-                            <figure class="image">
-                                <img src="https://via.placeholder.com/800x1000/4169E1/ffffff?text=张鸣贺信PDF" alt="张鸣_交大81年会">
-                                <figcaption class="has-text-centered has-text-grey is-size-7 mt-2">文件：material/letters/张鸣_交大81年会.pdf</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- Letter 3: 阳明 -->
-                    <div class="box mb-5">
-                        <div class="content">
-                            <h3 class="title is-4 has-text-royal-blue">
-                                <span class="icon-text">
-                                    <span class="icon">
-                                        <i class="fas fa-image"></i>
-                                    </span>
-                                    <span>阳明交通大学贺函</span>
-                                </span>
-                            </h3>
-                            <figure class="image">
-                                <img src="https://via.placeholder.com/800x1000/4169E1/ffffff?text=阳明贺函" alt="阳明交通大学贺函">
-                                <figcaption class="has-text-centered has-text-grey is-size-7 mt-2">文件：material/letters/阳明.jpg</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- Letter 4: 鸿海 -->
-                    <div class="box mb-5">
-                        <div class="content">
-                            <h3 class="title is-4 has-text-royal-blue">
-                                <span class="icon-text">
-                                    <span class="icon">
-                                        <i class="fas fa-image"></i>
-                                    </span>
-                                    <span>鸿海科技集团贺函</span>
-                                </span>
-                            </h3>
-                            <figure class="image">
-                                <img src="https://via.placeholder.com/800x1000/4169E1/ffffff?text=鸿海贺函" alt="鸿海科技集团贺函">
-                                <figcaption class="has-text-centered has-text-grey is-size-7 mt-2">文件：material/letters/鸿海.jpg</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- Note about files -->
-                    <div class="notification is-info is-light">
-                        <p class="has-text-centered">
-                            <span class="icon">
-                                <i class="fas fa-info-circle"></i>
-                            </span>
-                            <strong>注：</strong>贺函原件为PDF和图片文件，此处使用占位图显示。实际部署时请将真实文件放置在相应路径。
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -135,5 +234,43 @@
     <script src="../../assets/js/config.js"></script>
     <script src="../../assets/js/components.js"></script>
     <script src="../../assets/js/main.js"></script>
+
+    <!-- Tab Switching Script -->
+    <script>
+        (function() {
+            'use strict';
+
+            // Wait for DOM to be ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initTabs);
+            } else {
+                initTabs();
+            }
+
+            function initTabs() {
+                const emblemTabs = document.querySelectorAll('.emblem-tab');
+                const tabPanes = document.querySelectorAll('.tab-pane');
+
+                emblemTabs.forEach(tab => {
+                    tab.addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        const targetTab = this.getAttribute('data-tab');
+
+                        // Remove active class from all tabs and panes
+                        emblemTabs.forEach(t => t.classList.remove('is-active'));
+                        tabPanes.forEach(pane => pane.classList.remove('is-active'));
+
+                        // Add active class to clicked tab and corresponding pane
+                        this.classList.add('is-active');
+                        const targetPane = document.getElementById(targetTab);
+                        if (targetPane) {
+                            targetPane.classList.add('is-active');
+                        }
+                    });
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

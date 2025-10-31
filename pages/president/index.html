@@ -15,6 +15,68 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            border-bottom: 2px solid #dbdbdb;
+        }
+
+        .tab-button {
+            padding: 1rem 2rem;
+            background: white;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4a4a4a;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            color: var(--primary);
+        }
+
+        .tab-button.is-active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.is-active {
+            display: block;
+            animation: fadeIn 0.4s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .tab-button {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
@@ -35,85 +97,92 @@
     <!-- President Message Content -->
     <section class="section">
         <div class="container">
-            <!-- 会长致辞 -->
-            <div class="columns is-centered mb-6">
-                <div class="column is-10">
-                    <div class="box">
-                        <div class="media">
-                            <div class="media-left">
-                                <figure class="image is-128x128">
-                                    <img class="is-rounded" src="https://via.placeholder.com/128/4169E1/ffffff?text=President" alt="会长">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <p class="title is-3">会长 李学</p>
-                                <p class="subtitle is-5">北京交大法律系 2002 届</p>
-                            </div>
-                        </div>
-                        <div class="content mt-5">
-                            <h4 class="title is-4 has-text-royal-blue">从参与到建造，将交大南加州校友会打造成每个人的精神家园</h4>
-
-                            <p>今年是交通大学南加州校友会创会八十周年，我作为即将离任的会长，心中有些许感慨，今日想一吐为快。大约五六年前，有一次在家门口散步，偶遇交大前辈陈治宏学长，那时我刚搬到洛杉矶的南湾半岛，谁也不认识，听到乡音，自然亲切。一聊才知道我们是南加大的校友，他读博士，我读 MBA。再聊发现我们还是交大校友，他来自台湾新竹交大，我来自北京交大。之后他介绍我加入秉持"饮水思源，五校一家"的交大校友会，还送了我由他主编的交大校友会年刊。</p>
-
-                            <p>2018 年，我第一次参加松竹梅野餐会，认识了不少交大校友，其后被发展为交大理事。2020 年起，我为时任会长张鸣做了两年宣传部长，后又经时任理事长邵莹说服，接任 2022 交大会长。是否要担任会长一职，我犹豫很久。交大校友会会长一职于我，是莫大的荣誉，更是沉甸甸的责任。首先，不能辜负各位校友和理事之托。其次，一年那么多场大大小小的活动，需要调动很多人力和物力配合。最后，面对校友会那么多前辈，我作为一个新人，说话做事都有点儿发怵，更别提带领团队了。</p>
-
-                            <p>真正让我下决心接任交大会长，有几个原因。2021 年，恰逢交大 125 周年校庆，我作为宣传部长，受命采访交大杰出校友——圣盖博市丁言愉议员。得知丁学长是在 90 年代经陈宏正学长介绍加入交大校友会，2004年成为从大陆四所交大选出来的第一任会长，他还提出"五校一家"的理念。做完交大校友会会长之后，他又持续做了很多社区服务，最后去参选市议员，去年又成为市长。我被他的服务理念打动，在他身上，我看到了交大饮水思源的精神。</p>
-
-                            <p>第二位让我深受感动的人是陈宏正学长的太太陈慕莲。她不是校友，胜似校友。每次年会，她都是负责桌面设计的人，从选购花瓶、订花、到手工设计花瓶外套，事无巨细，力求完美。为了节省预算，她不辞辛劳，开车去很多家店面比价，对待校友会的每一分钱比自己的钱还要精细。我常常被她做事的热情和追求极致的精神所感染。在她身上，我看到一个人做事靠谱的品质，一声承诺，不负所托。</p>
-
-                            <p>第三个让我感动的是八十年前创会的三位先辈。当初的一个想法成就了今天一个庞大的组织。在漫长的岁月里，校友会承载了无数交大人的心血和热情，包容并蓄，勇往无前。个中辛劳，只有亲历者方可体会。我想，如果秉持一颗服务的心，也许我可以胜任会长的职务。要说还有一点儿私心，那就是期望多认识一些人，产生一些奇妙的连接。我很感恩过去几年，我所遇到的每一位交大校友。他们为校友会奉献时间、精力或金钱，同时也为校友传承着知识、友谊、健康和欢乐。</p>
-
-                            <p>我们每个人生命中都有自己的轻与重。生活中有很多重要的关系需要经营，校友之情是我们若干社交关系中的一种。对于我们这些从中国远渡重洋来到美国的校友，为了追求更好的事业，更幸福的生活，或者更为奢侈的自由，从生存到生活，从落地生根到枝繁叶茂，这个过程充满艰辛，如果能有众多志同道合的校友相伴，这是无比难得的情分，也是弥足珍贵的记忆。</p>
-
-                            <p>饮水思源，同行致远，这是交大人的品质，也是我们每个人对待生活应有的态度。一个社区的建设和发展，需要每一个人去添砖加瓦，没有谁能坐享其成。一个社区能否长久，需要每一位参与者的奉献。从参与到建设，去创造自己的社区，创造属于我们每一个交大人的精神家园。</p>
-
-                            <p class="has-text-weight-semibold mt-5 has-text-right">
-                                李学<br>
-                                2025年12月
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 理事长致辞 -->
             <div class="columns is-centered">
                 <div class="column is-10">
-                    <div class="box">
-                        <div class="media">
-                            <div class="media-left">
-                                <figure class="image is-128x128">
-                                    <img class="is-rounded" src="https://via.placeholder.com/128/4169E1/ffffff?text=Chairman" alt="理事长">
-                                </figure>
+                    <!-- Tabs -->
+                    <div class="tabs-container">
+                        <div class="tabs">
+                            <button class="tab-button is-active" data-tab="president">会长致辞</button>
+                            <button class="tab-button" data-tab="chairman">理事长致辞</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="president" class="tab-content is-active">
+                        <div class="box">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-128x128">
+                                        <img class="is-rounded" src="https://via.placeholder.com/128/4169E1/ffffff?text=President" alt="会长">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-3">会长 李学</p>
+                                    <p class="subtitle is-5">北京交大法律系 2002 届</p>
+                                </div>
                             </div>
-                            <div class="media-content">
-                                <p class="title is-3">理事长 张鸣</p>
-                                <p class="subtitle is-5">西安交大计算机科学系 1984 届</p>
+                            <div class="content mt-5">
+                                <h4 class="title is-4 has-text-royal-blue">从参与到建造，将交大南加州校友会打造成每个人的精神家园</h4>
+
+                                <p>今年是交通大学南加州校友会创会八十周年，我作为即将离任的会长，心中有些许感慨，今日想一吐为快。大约五六年前，有一次在家门口散步，偶遇交大前辈陈治宏学长，那时我刚搬到洛杉矶的南湾半岛，谁也不认识，听到乡音，自然亲切。一聊才知道我们是南加大的校友，他读博士，我读 MBA。再聊发现我们还是交大校友，他来自台湾新竹交大，我来自北京交大。之后他介绍我加入秉持"饮水思源，五校一家"的交大校友会，还送了我由他主编的交大校友会年刊。</p>
+
+                                <p>2018 年，我第一次参加松竹梅野餐会，认识了不少交大校友，其后被发展为交大理事。2020 年起，我为时任会长张鸣做了两年宣传部长，后又经时任理事长邵莹说服，接任 2022 交大会长。是否要担任会长一职，我犹豫很久。交大校友会会长一职于我，是莫大的荣誉，更是沉甸甸的责任。首先，不能辜负各位校友和理事之托。其次，一年那么多场大大小小的活动，需要调动很多人力和物力配合。最后，面对校友会那么多前辈，我作为一个新人，说话做事都有点儿发怵，更别提带领团队了。</p>
+
+                                <p>真正让我下决心接任交大会长，有几个原因。2021 年，恰逢交大 125 周年校庆，我作为宣传部长，受命采访交大杰出校友——圣盖博市丁言愉议员。得知丁学长是在 90 年代经陈宏正学长介绍加入交大校友会，2004年成为从大陆四所交大选出来的第一任会长，他还提出"五校一家"的理念。做完交大校友会会长之后，他又持续做了很多社区服务，最后去参选市议员，去年又成为市长。我被他的服务理念打动，在他身上，我看到了交大饮水思源的精神。</p>
+
+                                <p>第二位让我深受感动的人是陈宏正学长的太太陈慕莲。她不是校友，胜似校友。每次年会，她都是负责桌面设计的人，从选购花瓶、订花、到手工设计花瓶外套，事无巨细，力求完美。为了节省预算，她不辞辛劳，开车去很多家店面比价，对待校友会的每一分钱比自己的钱还要精细。我常常被她做事的热情和追求极致的精神所感染。在她身上，我看到一个人做事靠谱的品质，一声承诺，不负所托。</p>
+
+                                <p>第三个让我感动的是八十年前创会的三位先辈。当初的一个想法成就了今天一个庞大的组织。在漫长的岁月里，校友会承载了无数交大人的心血和热情，包容并蓄，勇往无前。个中辛劳，只有亲历者方可体会。我想，如果秉持一颗服务的心，也许我可以胜任会长的职务。要说还有一点儿私心，那就是期望多认识一些人，产生一些奇妙的连接。我很感恩过去几年，我所遇到的每一位交大校友。他们为校友会奉献时间、精力或金钱，同时也为校友传承着知识、友谊、健康和欢乐。</p>
+
+                                <p>我们每个人生命中都有自己的轻与重。生活中有很多重要的关系需要经营，校友之情是我们若干社交关系中的一种。对于我们这些从中国远渡重洋来到美国的校友，为了追求更好的事业，更幸福的生活，或者更为奢侈的自由，从生存到生活，从落地生根到枝繁叶茂，这个过程充满艰辛，如果能有众多志同道合的校友相伴，这是无比难得的情分，也是弥足珍贵的记忆。</p>
+
+                                <p>饮水思源，同行致远，这是交大人的品质，也是我们每个人对待生活应有的态度。一个社区的建设和发展，需要每一个人去添砖加瓦，没有谁能坐享其成。一个社区能否长久，需要每一位参与者的奉献。从参与到建设，去创造自己的社区，创造属于我们每一个交大人的精神家园。</p>
+
+                                <p class="has-text-weight-semibold mt-5 has-text-right">
+                                    李学<br>
+                                    2025年12月
+                                </p>
                             </div>
                         </div>
-                        <div class="content mt-5">
-                            <h4 class="title is-4 has-text-royal-blue">同行致远，祝交大校友会更上一层楼</h4>
+                    </div>
 
-                            <p>恰逢感恩节来临之际，首先祝福大家感恩节快乐！</p>
+                    <div id="chairman" class="tab-content">
+                        <div class="box">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-128x128">
+                                        <img class="is-rounded" src="https://via.placeholder.com/128/4169E1/ffffff?text=Chairman" alt="理事长">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-3">理事长 张鸣</p>
+                                    <p class="subtitle is-5">西安交大计算机科学系 1984 届</p>
+                                </div>
+                            </div>
+                            <div class="content mt-5">
+                                <h4 class="title is-4 has-text-royal-blue">同行致远，祝交大校友会更上一层楼</h4>
 
-                            <p>同宗同源的五所交通大学的校训是"饮水思源"，教育交大学子感恩。作为现任理事长，在此我感恩钱学森、熊大纪、吴声求三位学长前辈在天使之城- 洛杉矶创建了交大校友会; 感恩历届校友会领导持之以恒地遵循"饮水思源、同行致远" 的宗旨所做出的不惜努力和无私奉献；感谢本届理事和执委同仁们所取得的成绩并圆满地完成了本届的使命！衷心地感谢各位的奉献。</p>
+                                <p>恰逢感恩节来临之际，首先祝福大家感恩节快乐！</p>
 
-                            <p>80 周岁的老人给人以暮气之感，但 80 周岁的交大南加州校友会却呈兴旺发达, 后继有人。经过近几届团队传承和革新的不惜努力，校友会呈现出人才辈出、青壮年干部占比大，以及文体等诸项活动上既丰富多彩又成果丰硕的强劲活力！</p>
+                                <p>同宗同源的五所交通大学的校训是"饮水思源"，教育交大学子感恩。作为现任理事长，在此我感恩钱学森、熊大纪、吴声求三位学长前辈在天使之城- 洛杉矶创建了交大校友会; 感恩历届校友会领导持之以恒地遵循"饮水思源、同行致远" 的宗旨所做出的不惜努力和无私奉献；感谢本届理事和执委同仁们所取得的成绩并圆满地完成了本届的使命！衷心地感谢各位的奉献。</p>
 
-                            <p>校友会 80 年来人才济济，光彩夺目。创会会长钱学森前辈成为世界著名科学家、张懋中前会长荣任台湾新竹交通大学校长、丁言愉前会长当选圣盖博市议员和市长；多名前会长卸任后荣任交大美洲校友总会、高校联盟、大专联合会、科工学会等各类著名侨团的会长或副会长; 许多年青校友活跃在南加各类团体和爱好俱乐部并任职，长年公益地服务奉献社区。</p>
+                                <p>80 周岁的老人给人以暮气之感，但 80 周岁的交大南加州校友会却呈兴旺发达, 后继有人。经过近几届团队传承和革新的不惜努力，校友会呈现出人才辈出、青壮年干部占比大，以及文体等诸项活动上既丰富多彩又成果丰硕的强劲活力！</p>
 
-                            <p>校友会成果丰硕，驰名远近。交大南加州校友会联合创办并领衍承办的著名品牌活动如松竹梅千人野餐会至今已举办 21 届、松竹梅奖学金至今己举办 10 届和思源杯沙滩排球赛至今已举办 6 届。这些品牌活动的持续性传承革新，𣎴仅给活动带来了活力，而且加强了社区的联谊交流，产生了深远的社会影响力。</p>
+                                <p>校友会 80 年来人才济济，光彩夺目。创会会长钱学森前辈成为世界著名科学家、张懋中前会长荣任台湾新竹交通大学校长、丁言愉前会长当选圣盖博市议员和市长；多名前会长卸任后荣任交大美洲校友总会、高校联盟、大专联合会、科工学会等各类著名侨团的会长或副会长; 许多年青校友活跃在南加各类团体和爱好俱乐部并任职，长年公益地服务奉献社区。</p>
 
-                            <p>今天，我们在此庆祝校友会 80 周年诞辰。同时，换届迎接新一届校友会工作团队杨帆启程。我相信，具有悠久历史且己注入新鲜血液的校友会新一届工作团队一定会继续秉承"饮水思源，五校一家"之精神，凝聚校友的力量，提倡包容与协作的原则，80 周岁的校友会一定能薪火相传，同行致远。</p>
+                                <p>校友会成果丰硕，驰名远近。交大南加州校友会联合创办并领衍承办的著名品牌活动如松竹梅千人野餐会至今已举办 21 届、松竹梅奖学金至今己举办 10 届和思源杯沙滩排球赛至今已举办 6 届。这些品牌活动的持续性传承革新，𣎴仅给活动带来了活力，而且加强了社区的联谊交流，产生了深远的社会影响力。</p>
 
-                            <p>在此，我再次衷心感谢年会工作团队的辛勤工作及赞助商和校友的义捐。祝贺交大南加州校友会诞辰 80 周年，祝愿交大南加州校友会更上一层楼。</p>
+                                <p>今天，我们在此庆祝校友会 80 周年诞辰。同时，换届迎接新一届校友会工作团队杨帆启程。我相信，具有悠久历史且己注入新鲜血液的校友会新一届工作团队一定会继续秉承"饮水思源，五校一家"之精神，凝聚校友的力量，提倡包容与协作的原则，80 周岁的校友会一定能薪火相传，同行致远。</p>
 
-                            <p>谢谢！</p>
+                                <p>在此，我再次衷心感谢年会工作团队的辛勤工作及赞助商和校友的义捐。祝贺交大南加州校友会诞辰 80 周年，祝愿交大南加州校友会更上一层楼。</p>
 
-                            <p class="has-text-weight-semibold mt-5 has-text-right">
-                                张鸣<br>
-                                2025年12月
-                            </p>
+                                <p>谢谢！</p>
+
+                                <p class="has-text-weight-semibold mt-5 has-text-right">
+                                    张鸣<br>
+                                    2025年12月
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,5 +197,43 @@
     <script src="../../assets/js/config.js"></script>
     <script src="../../assets/js/components.js"></script>
     <script src="../../assets/js/main.js"></script>
+
+    <!-- Tab Switching Script -->
+    <script>
+        (function() {
+            'use strict';
+
+            // Wait for DOM to be ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initTabs);
+            } else {
+                initTabs();
+            }
+
+            function initTabs() {
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        const targetTab = this.getAttribute('data-tab');
+
+                        // Remove active class from all buttons and contents
+                        tabButtons.forEach(btn => btn.classList.remove('is-active'));
+                        tabContents.forEach(content => content.classList.remove('is-active'));
+
+                        // Add active class to clicked button and corresponding content
+                        this.classList.add('is-active');
+                        const targetContent = document.getElementById(targetTab);
+                        if (targetContent) {
+                            targetContent.classList.add('is-active');
+                        }
+                    });
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

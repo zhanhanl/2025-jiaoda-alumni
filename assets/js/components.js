@@ -57,8 +57,7 @@
 
     // Build navigation items
     const navItems = siteConfig.navigation.map(item => {
-      // Use href as-is from config since all pages are now at the same level
-      // Config has paths like "../letters/index.html" which work from any subdirectory
+      // Use href directly from config (absolute paths work from anywhere)
       const href = item.href;
 
       const isActive = item.href.includes(currentPage) ||
@@ -73,7 +72,8 @@
       `;
     }).join('');
 
-    const logoHref = isInPagesFolder ? '../home.html' : 'home.html';
+    // Logo always links to home (absolute path)
+    const logoHref = '/home.html';
 
     nav.innerHTML = `
       <nav class="navbar is-fixed-top is-royal-blue" role="navigation" aria-label="main navigation">
@@ -92,6 +92,9 @@
           <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
               ${navItems}
+              <div class="navbar-item sponsor-navbar-item">
+                <span class="sponsor-text">Scepter 冠名交通大学南加州校友会年会</span>
+              </div>
             </div>
           </div>
         </div>
@@ -130,11 +133,6 @@
   function buildSponsorsSection() {
     if (!siteConfig.sponsors || !siteConfig.sponsors.image) return '';
 
-    const isInPagesFolder = window.location.pathname.includes('/pages/');
-    // Since all pages are now in subdirectories (e.g., /pages/letters/index.html),
-    // we need to go up two levels to reach assets
-    const pathPrefix = isInPagesFolder ? '../../' : '';
-
     let html = '<div class="footer-sponsors">';
 
     // Add main thank you message if it exists
@@ -142,8 +140,8 @@
       html += `<div class="sponsor-thank-you">${siteConfig.sponsors.thankYouMessage}</div>`;
     }
 
-    // Add single sponsor image from assets/images/
-    const imgPath = `${pathPrefix}assets/images/${siteConfig.sponsors.image}`;
+    // Add single sponsor image using absolute path from root
+    const imgPath = `/assets/images/${siteConfig.sponsors.image}`;
     html += `<div class="sponsor-image-container">`;
     html += `<img src="${imgPath}" alt="Sponsors" class="sponsor-image">`;
     html += `</div>`;

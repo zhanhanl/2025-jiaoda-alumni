@@ -239,6 +239,63 @@ body {
     }
 }
 
+/* Sponsor in Navbar */
+.sponsor-navbar-item {
+    padding: 0.5rem 0.75rem;
+}
+
+.sponsor-navbar-item:hover {
+    background-color: var(--royal-blue) !important;
+}
+
+.sponsor-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sponsor-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.sponsor-text {
+    color: white;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1023px) {
+    .sponsor-navbar-item {
+        justify-content: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 0.5rem;
+        padding-top: 1rem;
+    }
+
+    .sponsor-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .sponsor-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sponsor-logo {
+        height: 35px;
+    }
+
+    .sponsor-text {
+        font-size: 0.75rem;
+    }
+}
+
 /* Section styling */
 .section {
     padding: 3rem 1.5rem;

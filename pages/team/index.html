@@ -15,6 +15,121 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        .alumni-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem 2rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+        }
+
+        .alumni-name {
+            text-align: center;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        @media screen and (max-width: 768px) {
+            .alumni-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .alumni-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem 0.3rem;
+            }
+        }
+
+        /* Leadership Table */
+        .leadership-table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0.5rem auto;
+        }
+
+        .leadership-table td {
+            padding: 0.75rem 1rem;
+            border: none;
+            text-align: left;
+        }
+
+        .leadership-table .role {
+            font-weight: 600;
+            color: var(--primary);
+            width: 70px;
+            white-space: nowrap;
+        }
+
+        .leadership-table .name {
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .leadership-table {
+                max-width: 100%;
+            }
+
+            .leadership-table .role {
+                padding-right: 1rem;
+            }
+
+            .leadership-table td {
+                padding: 0.6rem 0.75rem;
+            }
+        }
+
+        /* Club Table Layout */
+        .club-table {
+            width: 100%;
+        }
+
+        .club-table td {
+            padding: 0.5rem;
+            border: none;
+        }
+
+        .club-table .club-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            white-space: nowrap;
+            width: 130px;
+        }
+
+        .club-table .club-members {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Advisors Grid */
+        .advisors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem 2rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .advisors-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .advisors-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem 0.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
@@ -35,217 +150,229 @@
     <!-- Team Content -->
     <section class="section">
         <div class="container">
-            <!-- Outstanding Alumni 2024 -->
-            <div class="box mb-6 has-background-light">
-                <h2 class="title is-3 has-text-centered has-text-royal-blue mb-4">2024年优秀校友</h2>
+            <!-- Outstanding Alumni 2025 -->
+            <div class="box mb-3 has-background-light">
+                <h2 class="title is-3 has-text-centered has-text-royal-blue mb-4">2025年优秀校友</h2>
                 <p class="has-text-centered is-italic mb-4">（按姓氏笔画排序）</p>
-                <div class="content">
-                    <div class="columns is-multiline">
-                        <div class="column is-3 has-text-centered"><p>万荣根</p></div>
-                        <div class="column is-3 has-text-centered"><p>王薇</p></div>
-                        <div class="column is-3 has-text-centered"><p>韦丛笑</p></div>
-                        <div class="column is-3 has-text-centered"><p>关宇</p></div>
-                        <div class="column is-3 has-text-centered"><p>张娥</p></div>
-                        <div class="column is-3 has-text-centered"><p>张骥</p></div>
-                        <div class="column is-3 has-text-centered"><p>陈宏正</p></div>
-                        <div class="column is-3 has-text-centered"><p>陈明</p></div>
-                        <div class="column is-3 has-text-centered"><p>李玲</p></div>
-                        <div class="column is-3 has-text-centered"><p>李艳丽</p></div>
-                        <div class="column is-3 has-text-centered"><p>罗涛</p></div>
-                        <div class="column is-3 has-text-centered"><p>侯毓科</p></div>
-                        <div class="column is-3 has-text-centered"><p>胡景宇</p></div>
-                        <div class="column is-3 has-text-centered"><p>高姚</p></div>
-                        <div class="column is-3 has-text-centered"><p>郭辰㬢</p></div>
-                        <div class="column is-3 has-text-centered"><p>浦江川</p></div>
-                        <div class="column is-3 has-text-centered"><p>孙科涵</p></div>
-                        <div class="column is-3 has-text-centered"><p>徐静华</p></div>
-                        <div class="column is-3 has-text-centered"><p>邵莹</p></div>
-                        <div class="column is-3 has-text-centered"><p>梁展航</p></div>
-                        <div class="column is-3 has-text-centered"><p>黄晨川</p></div>
-                        <div class="column is-3 has-text-centered"><p>彭薏蓉</p></div>
-                        <div class="column is-3 has-text-centered"><p>贾旺存</p></div>
-                        <div class="column is-3 has-text-centered"><p>艾妮·萧</p></div>
-                        <div class="column is-3 has-text-centered"><p>萧强</p></div>
-                        <div class="column is-3 has-text-centered"><p>翟冬青</p></div>
-                        <div class="column is-3 has-text-centered"><p>穆青</p></div>
-                    </div>
-                    <div class="has-text-centered mt-4">
-                        <p><strong>荣誉校友：</strong>吴晓山 · Maureen Chen · Sophie Yuwen</p>
-                    </div>
+                <div class="alumni-grid">
+                    <p class="alumni-name">卢培刚</p>
+                    <p class="alumni-name">关宇</p>
+                    <p class="alumni-name">刘春艳</p>
+                    <p class="alumni-name">孙科涵</p>
+                    <p class="alumni-name">陈宏正</p>
+                    <p class="alumni-name">陈明</p>
+                    <p class="alumni-name">李玲</p>
+                    <p class="alumni-name">李力坚</p>
+                    <p class="alumni-name">张骥</p>
+                    <p class="alumni-name">张鸣</p>
+                    <p class="alumni-name">罗涛</p>
+                    <p class="alumni-name">邵莹</p>
+                    <p class="alumni-name">侯毓科</p>
+                    <p class="alumni-name">姜素荣</p>
+                    <p class="alumni-name">贺辞</p>
+                    <p class="alumni-name">胡景宇</p>
+                    <p class="alumni-name">郭晨曦</p>
+                    <p class="alumni-name">梁展航</p>
+                    <p class="alumni-name">黄晨川</p>
+                    <p class="alumni-name">箫强</p>
+                    <p class="alumni-name">翟冬靑</p>
+                    <p class="alumni-name">颜利平</p>
+                    <p class="alumni-name">谢小庆</p>
                 </div>
             </div>
 
-            <!-- Board Members -->
-            <div class="box mb-6">
-                <h2 class="title is-3 has-text-centered has-text-royal-blue mb-4">理事名单</h2>
-                <div class="content has-text-centered mb-4">
-                    <p class="title is-5">理事长：张鸣</p>
-                    <p class="is-italic">（按姓氏拼音首字母为序）</p>
-                </div>
-                <div class="columns is-multiline">
-                    <div class="column is-3 has-text-centered"><p>鲍君健</p></div>
-                    <div class="column is-3 has-text-centered"><p>蔡荣宏</p></div>
-                    <div class="column is-3 has-text-centered"><p>陈海刚</p></div>
-                    <div class="column is-3 has-text-centered"><p>陳宏正</p></div>
-                    <div class="column is-3 has-text-centered"><p>代路</p></div>
-                    <div class="column is-3 has-text-centered"><p>关宇</p></div>
-                    <div class="column is-3 has-text-centered"><p>郭辰曦</p></div>
-                    <div class="column is-3 has-text-centered"><p>胡景宇</p></div>
-                    <div class="column is-3 has-text-centered"><p>黄晨川</p></div>
-                    <div class="column is-3 has-text-centered"><p>侯毓科</p></div>
-                    <div class="column is-3 has-text-centered"><p>贾旭东</p></div>
-                    <div class="column is-3 has-text-centered"><p>贾存旺</p></div>
-                    <div class="column is-3 has-text-centered"><p>江山</p></div>
-                    <div class="column is-3 has-text-centered"><p>李艳丽</p></div>
-                    <div class="column is-3 has-text-centered"><p>李玲</p></div>
-                    <div class="column is-3 has-text-centered"><p>浦江川</p></div>
-                    <div class="column is-3 has-text-centered"><p>彭薏蓉</p></div>
-                    <div class="column is-3 has-text-centered"><p>孙科涵</p></div>
-                    <div class="column is-3 has-text-centered"><p>梁展航</p></div>
-                    <div class="column is-3 has-text-centered"><p>万荣根</p></div>
-                    <div class="column is-3 has-text-centered"><p>汪闻奂</p></div>
-                    <div class="column is-3 has-text-centered"><p>王月</p></div>
-                    <div class="column is-3 has-text-centered"><p>肖强</p></div>
-                    <div class="column is-3 has-text-centered"><p>徐健平</p></div>
-                    <div class="column is-3 has-text-centered"><p>张骥</p></div>
-                    <div class="column is-3 has-text-centered"><p>张鸣</p></div>
-                </div>
-            </div>
 
             <!-- Leadership -->
-            <div class="box mb-6">
+            <div class="box mb-3">
                 <h2 class="title is-3 has-text-centered has-text-royal-blue mb-4">工作团队</h2>
-                <div class="columns is-centered mb-4">
-                    <div class="column is-8">
-                        <table class="table is-fullwidth is-bordered">
-                            <tbody>
-                                <tr>
-                                    <td class="has-text-weight-bold has-text-centered">会长</td>
-                                    <td class="has-text-centered">贾旭东</td>
-                                    <td class="has-text-weight-bold has-text-centered">理事长</td>
-                                    <td class="has-text-centered">张鸣</td>
-                                </tr>
-                                <tr>
-                                    <td class="has-text-weight-bold has-text-centered">财务长</td>
-                                    <td class="has-text-centered">李艳丽</td>
-                                    <td class="has-text-weight-bold has-text-centered">秘书长</td>
-                                    <td class="has-text-centered">郭辰曦</td>
-                                </tr>
-                            </tbody>
+
+                <table class="leadership-table">
+                    <tbody>
+                        <tr>
+                            <td class="role">会长：</td>
+                            <td class="name">何桂萍</td>
+                        </tr>
+                        <tr>
+                            <td class="role">理事长：</td>
+                            <td class="name">万荣根</td>
+                        </tr>
+                        <tr>
+                            <td class="role">财务长：</td>
+                            <td class="name">谢小庆</td>
+                        </tr>
+                        <tr>
+                            <td class="role">秘书长：</td>
+                            <td class="name">郭辰曦</td>
+                        </tr>
+                        <tr>
+                            <td class="role">新闻宣传部长：</td>
+                            <td class="name">贺辞</td>
+                        </tr>
+                        <tr>
+                            <td class="role">活动企划部长：</td>
+                            <td class="name">侯毓科</td>
+                        </tr>
+                        <tr>
+                            <td class="role">副会长：</td>
+                            <td class="name">
+                                孙科涵（上海）<br>
+                                刘春燕（西安）<br>
+                                穆勃江（西南）<br>
+                                李力坚（北京）<br>
+                                陈宏正（新竹）<br>
+                                江山（圣地亚哥）
+                            </td>
+                        </tr>
+                     </tbody>
+                </table>
+            </div>
+
+            <!-- Clubs and Departments -->
+            <div class="columns is-multiline">
+                <!-- Dance Club -->
+                <div class="column is-6">
+                    <div class="box">
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">舞蹈俱乐部:</td>
+                                <td class="club-members">李玲，罗涛</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
-                <div class="content">
-                    <p><strong>副会长：</strong>孙科涵（上海），贾旺存（西安），梁展航（北京），李玲（西南），陈宏正（新竹），江山（圣地亚哥）</p>
-                </div>
-            </div>
 
-            <!-- Departments -->
-            <div class="columns is-multiline">
-                <!-- Sports Department -->
+                <!-- Choir Club -->
                 <div class="column is-6">
                     <div class="box">
-                        <h3 class="title is-4 has-text-royal-blue">体育部</h3>
-                        <div class="content">
-                            <p><strong>部长：</strong>黄晨川</p>
-                            <p><strong>副部长：</strong>许仁荣（排球/圣地亚哥），伍旭强（乒乓球），翟冬青（羽毛球），贾旺存（网球）</p>
-                            <p><strong>成员：</strong>李力坚（登山/跑步），毛航涛（羽毛球），陶颖镭（排球），彭华（乒乓球），李艳丽（高尔夫）</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Arts Department -->
-                <div class="column is-6">
-                    <div class="box">
-                        <h3 class="title is-4 has-text-royal-blue">文艺部</h3>
-                        <div class="content">
-                            <p><strong>部长：</strong>陈明</p>
-                            <p><strong>副部长：</strong>胡祺瑜</p>
-                            <p><strong>成员：</strong>李玲，肖强，黄晨川，Ada，浦江川，殷娇，翟冬青，邵莹，孙科涵，谢小庆，焦祎军</p>
-                        </div>
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">合唱团俱乐部:</td>
+                                <td class="club-members">邵莹</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
                 <!-- Entrepreneur Club -->
                 <div class="column is-6">
                     <div class="box">
-                        <h3 class="title is-4 has-text-royal-blue">企业家俱乐部</h3>
-                        <div class="content">
-                            <p><strong>部长：</strong>陈宏正</p>
-                            <p><strong>秘书长：</strong>肖强</p>
-                            <p><strong>副部长：</strong>万荣根</p>
-                            <p><strong>成员：</strong>黃晨川，張驥，李玲，春艳，关宇，李艳丽，朱鑫，黄炜，李圣用，李珊，石勇</p>
-                        </div>
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">企业家俱乐部:</td>
+                                <td class="club-members">陈宏正，肖强</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
-                <!-- Event Planning Department -->
+                <!-- Volleyball Club -->
                 <div class="column is-6">
                     <div class="box">
-                        <h3 class="title is-4 has-text-royal-blue">活动企划部</h3>
-                        <div class="content">
-                            <p><strong>部长：</strong>侯毓科</p>
-                            <p><strong>副部长：</strong>陈慕莲</p>
-                            <p><strong>成员：</strong>李学，万荣根，张骥，罗南，关宇，孙鹏远，代路，车欣，彭薏蓉</p>
-                        </div>
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">排球俱乐部:</td>
+                                <td class="club-members">黄晨川</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
-                <!-- Communications Department -->
+                <!-- Badminton Club -->
                 <div class="column is-6">
                     <div class="box">
-                        <h3 class="title is-4 has-text-royal-blue">宣传联络部</h3>
-                        <div class="content">
-                            <p><strong>部长：</strong>胡祺瑜</p>
-                            <p><strong>成员：</strong>孙科涵，王月，胡景宇，周力军，王薇</p>
-                        </div>
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">羽毛球俱乐部:</td>
+                                <td class="club-members">翟冬青</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Hiking Club -->
+                <div class="column is-6">
+                    <div class="box">
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">登山俱乐部:</td>
+                                <td class="club-members">李力坚</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Golf Club -->
+                <div class="column is-6">
+                    <div class="box">
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">高尔夫俱乐部:</td>
+                                <td class="club-members">李艳丽</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Table Tennis Club -->
+                <div class="column is-6">
+                    <div class="box">
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">乒乓球俱乐部:</td>
+                                <td class="club-members">伍旭强</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tennis Club -->
+                <div class="column is-6">
+                    <div class="box">
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">网球俱乐部:</td>
+                                <td class="club-members">贾旺存</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
                 <!-- Website -->
                 <div class="column is-6">
                     <div class="box">
-                        <h3 class="title is-4 has-text-royal-blue">校友会网站</h3>
-                        <div class="content">
-                            <p><strong>技术开发：</strong>邵莹</p>
-                            <p><strong>内容维护：</strong>孙科涵</p>
-                        </div>
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">校友会网站:</td>
+                                <td class="club-members">邵莹，孙科涵</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
                 <!-- San Diego Branch -->
                 <div class="column is-6">
                     <div class="box">
-                        <h3 class="title is-4 has-text-royal-blue">圣地亚哥分部</h3>
-                        <div class="content">
-                            <p><strong>成员：</strong>江山，戴铭，胡景宇，窦同璐，张贠聪，刘永政，蔡荣宾</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Foundation Preparation -->
-                <div class="column is-6">
-                    <div class="box">
-                        <h3 class="title is-4 has-text-royal-blue">基金会筹备组</h3>
-                        <div class="content">
-                            <p><strong>部长：</strong>黄晨川</p>
-                            <p><strong>成员：</strong>陈宏正，邵莹，肖强，周力军，张鸣，李学</p>
-                        </div>
+                        <table class="club-table">
+                            <tr>
+                                <td class="club-name">圣地亚哥分部:</td>
+                                <td class="club-members">江山，刘春燕</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
 
             <!-- Advisors -->
-            <div class="box mt-6 has-background-light">
+            <div class="box has-background-light">
                 <h2 class="title is-4 has-text-centered has-text-royal-blue mb-4">顾问团</h2>
-                <div class="columns is-multiline">
-                    <div class="column is-3 has-text-centered"><p>李珊（阳明）</p></div>
-                    <div class="column is-3 has-text-centered"><p>丁言愉（上交）</p></div>
-                    <div class="column is-3 has-text-centered"><p>何能（上交）</p></div>
-                    <div class="column is-3 has-text-centered"><p>颜利平（西南）</p></div>
-                    <div class="column is-3 has-text-centered"><p>周平（上交）</p></div>
-                    <div class="column is-3 has-text-centered"><p>邵莹（上交）</p></div>
-                    <div class="column is-3 has-text-centered"><p>李学（北交）</p></div>
+                <div class="advisors-grid">
+                    <p class="alumni-name">李珊（阳明）</p>
+                    <p class="alumni-name">丁言愉（上交）</p>
+                    <p class="alumni-name">何能（上交）</p>
+                    <p class="alumni-name">颜利平（西南）</p>
+                    <p class="alumni-name">周平（上交）</p>
+                    <p class="alumni-name">邵莹（上交）</p>
+                    <p class="alumni-name">李学（北交）</p>
                 </div>
             </div>
         </div>

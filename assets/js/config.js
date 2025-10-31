@@ -19,54 +19,55 @@ const siteConfig = {
   // To add a page: Add a new object to this array
   // To reorder: Rearrange the objects
   // To remove: Delete or comment out the object
+  // NOTE: All paths are absolute from the web root (starting with /)
   navigation: [
     {
-      name: "Home",
-      href: "../home.html",
+      name: "首页",
+      href: "/home.html",
     },
     {
       name: "贺函",
-      href: "../letters/index.html",
+      href: "/pages/letters/index.html",
     },
     {
       name: "致辞",
-      href: "../president/index.html",
+      href: "/pages/president/index.html",
     },
     {
       name: "团队",
-      href: "../team/index.html",
+      href: "/pages/team/index.html",
     },
     {
       name: "2025年度奖项",
-      href: "../awards/index.html",
+      href: "/pages/awards/index.html",
     },
     {
       name: "年会安排",
-      href: "../program/index.html",
+      href: "/pages/program/index.html",
     },
     {
       name: "演出节目单",
-      href: "../performers/index.html",
+      href: "/pages/performers/index.html",
     },
     {
       name: "校友会活动",
-      href: "../events/index.html",
+      href: "/pages/events/index.html",
     },
     {
       name: "俱乐部活动",
-      href: "../club-activity/index.html",
+      href: "/pages/club-activity/index.html",
     },
     {
       name: "校友来稿",
-      href: "../articles/index.html",
+      href: "/pages/articles/index.html",
     },
     {
       name: "校友会历史",
-      href: "../history/index.html",
+      href: "/pages/history/index.html",
     },
     {
       name: "致谢",
-      href: "../sponsors/index.html",
+      href: "/pages/sponsors/index.html",
     }
 
   ],
