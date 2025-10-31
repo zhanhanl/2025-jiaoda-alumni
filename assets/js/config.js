@@ -26,47 +26,47 @@ const siteConfig = {
     },
     {
       name: "贺函",
-      href: "letters.html",
+      href: "../letters/index.html",
     },
     {
       name: "致辞",
-      href: "president.html",
+      href: "../president/index.html",
     },
     {
       name: "团队",
-      href: "team.html",
+      href: "../team/index.html",
     },
     {
       name: "2025年度奖项",
-      href: "awards.html",
+      href: "../awards/index.html",
     },
     {
       name: "年会安排",
-      href: "program.html",
+      href: "../program/index.html",
     },
     {
       name: "演出节目单",
-      href: "performers.html",
+      href: "../performers/index.html",
     },
     {
       name: "校友会活动",
-      href: "events/index.html",
+      href: "../events/index.html",
     },
     {
       name: "俱乐部活动",
-      href: "club-activity.html",
+      href: "../club-activity/index.html",
     },
     {
       name: "校友来稿",
-      href: "articles/index.html",
+      href: "../articles/index.html",
     },
     {
       name: "校友会历史",
-      href: "association-history.html",
+      href: "../history/index.html",
     },
     {
       name: "致谢",
-      href: "sponsors.html",
+      href: "../sponsors/index.html",
     }
 
   ],

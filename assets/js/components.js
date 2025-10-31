@@ -51,23 +51,15 @@
     const nav = document.getElementById('navbar-container');
     if (!nav) return;
 
-    // Determine current page and if we're in a subdirectory
+    // Determine current page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const isInPagesFolder = window.location.pathname.includes('/pages/');
-    const pathPrefix = isInPagesFolder ? '' : 'pages/';
 
     // Build navigation items
     const navItems = siteConfig.navigation.map(item => {
-      // Adjust href based on current location
-      let href = item.href;
-      if (item.name === 'Home') {
-        href = isInPagesFolder ? '../home.html' : 'home.html';
-      } else {
-        // Clean the href first (remove any ../ or pages/ prefix)
-        const cleanHref = item.href.replace('../', '').replace('pages/', '').replace('home.html', '');
-        // Then add the appropriate prefix
-        href = cleanHref ? pathPrefix + cleanHref : (isInPagesFolder ? '../home.html' : 'home.html');
-      }
+      // Use href as-is from config since all pages are now at the same level
+      // Config has paths like "../letters/index.html" which work from any subdirectory
+      const href = item.href;
 
       const isActive = item.href.includes(currentPage) ||
                       (currentPage === 'home.html' && item.name === 'Home');
@@ -139,7 +131,9 @@
     if (!siteConfig.sponsors || !siteConfig.sponsors.image) return '';
 
     const isInPagesFolder = window.location.pathname.includes('/pages/');
-    const pathPrefix = isInPagesFolder ? '../' : '';
+    // Since all pages are now in subdirectories (e.g., /pages/letters/index.html),
+    // we need to go up two levels to reach assets
+    const pathPrefix = isInPagesFolder ? '../../' : '';
 
     let html = '<div class="footer-sponsors">';
 
