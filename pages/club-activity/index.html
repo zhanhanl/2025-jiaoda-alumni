@@ -15,6 +15,88 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        .content p {
+            text-indent: 2em;
+        }
+
+        .club-section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 80px;
+        }
+
+        .club-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .club-images img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .club-preview-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .club-preview-card {
+            background: white;
+            border: 2px solid #113f67;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .club-preview-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(17, 63, 103, 0.2);
+            border-color: #34657f;
+        }
+
+        .club-preview-icon {
+            font-size: 2.5rem;
+            color: #113f67;
+            flex-shrink: 0;
+            width: 60px;
+            text-align: center;
+        }
+
+        .club-preview-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .club-preview-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #113f67;
+            margin-bottom: 0.25rem;
+        }
+
+        .club-preview-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
@@ -27,7 +109,6 @@
                 <h1 class="title is-2 has-text-white">
                     俱乐部活动
                 </h1>
-                <p class="subtitle is-5 has-text-white">Club Activity</p>
             </div>
         </div>
     </section>
@@ -37,21 +118,133 @@
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-10">
+                    <!-- Club Overview Section -->
+                    <div class="box mb-5">
+                        <div class="content has-text-centered">
+                            <p style="text-indent: 0;">交大校友会下设多个特色俱乐部，为校友们提供丰富多彩的活动和交流机会。</p>
+                        </div>
+                        <p class="is-10 mb-3 has-text-grey has-text-centered">点击下方卡片了解详情</p>
+
+                        <div class="club-preview-grid">
+                            <a href="#club1" class="club-preview-card">
+                                <div class="club-preview-icon">
+                                    💃
+                                </div>
+                                <div class="club-preview-content">
+                                    <div class="club-preview-title has-text-centered">舞蹈队</div>
+                                    <div class="club-preview-desc has-text-centered">舞动青春，展现活力风采</div>
+                                </div>
+                            </a>
+
+                            <a href="#club2" class="club-preview-card">
+                                <div class="club-preview-icon">
+                                    🏐
+                                </div>
+                                <div class="club-preview-content">
+                                    <div class="club-preview-title has-text-centered">排球队</div>
+                                    <div class="club-preview-desc has-text-centered">团队协作，挥洒激情汗水</div>
+                                </div>
+                            </a>
+
+                            <a href="#club3" class="club-preview-card">
+                                <div class="club-preview-icon">
+                                    ⛰️
+                                </div>
+                                <div class="club-preview-content">
+                                    <div class="club-preview-title has-text-centered">登山健行</div>
+                                    <div class="club-preview-desc has-text-centered">亲近自然，健康生活方式</div>
+                                </div>
+                            </a>
+
+                            <a href="#club4" class="club-preview-card">
+                                <div class="club-preview-icon">
+                                    🎵
+                                </div>
+                                <div class="club-preview-content">
+                                    <div class="club-preview-title has-text-centered">合唱团</div>
+                                    <div class="club-preview-desc has-text-centered">和声共鸣，传递音乐之美</div>
+                                </div>
+                            </a>
+
+                            <a href="#club5" class="club-preview-card">
+                                <div class="club-preview-icon">
+                                    🏸
+                                </div>
+                                <div class="club-preview-content">
+                                    <div class="club-preview-title has-text-centered">羽毛球队</div>
+                                    <div class="club-preview-desc has-text-centered">切磋球技，强健体魄身心</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Club Sections -->
                     <div class="box">
                         <div class="content">
-                            <h2 class="title is-3 has-text-primary">俱乐部活动介绍</h2>
 
-                            <p>在这里添加俱乐部活动的内容...</p>
+                            <!-- Club 1: 舞蹈队 -->
+                            <div class="club-section" id="club1">
+                                <h3 class="title is-4 has-text-primary">舞蹈队</h3>
+                                <p>
+                                    校友会舞蹈队汇聚了热爱舞蹈的校友们，定期组织舞蹈练习和表演活动。无论是传统民族舞还是现代流行舞，大家在音乐节奏中展现活力，增进友谊。舞蹈队经常参与校友会各类大型活动的表演，为校友们带来精彩的视觉享受。
+                                </p>
+                                <div class="club-images">
+                                    <img src="dance/image1.webp" alt="舞蹈队活动照片1">
+                                    <img src="dance/image2.webp" alt="舞蹈队活动照片2">
+                                    <img src="dance/image3.webp" alt="舞蹈队活动照片3">
+                                </div>
+                            </div>
 
-                            <h3 class="title is-4 has-text-primary mt-5">近期活动</h3>
-                            <ul>
-                                <li>活动项目 1</li>
-                                <li>活动项目 2</li>
-                                <li>活动项目 3</li>
-                            </ul>
+                            <!-- Club 2: 排球队 -->
+                            <div class="club-section" id="club2">
+                                <h3 class="title is-4 has-text-primary">排球队</h3>
+                                <p>
+                                    校友会排球队是一支充满活力的运动团队，定期组织训练和比赛活动。队员们通过排球运动强健体魄，培养团队协作精神。排球队积极参加各类校际友谊赛和社区比赛，展现交大校友的运动风采和拼搏精神。
+                                </p>
+                                <div class="club-images">
+                                    <img src="volleyball/image1.webp" alt="排球队活动照片1">
+                                    <img src="volleyball/image2.webp" alt="排球队活动照片2">
+                                </div>
+                            </div>
 
-                            <h3 class="title is-4 has-text-primary mt-5">活动日程</h3>
-                            <p>添加活动日程内容...</p>
+                            <!-- Club 3: 登山健行 -->
+                            <div class="club-section" id="club3">
+                                <h3 class="title is-4 has-text-primary">登山健行</h3>
+                                <p>
+                                    登山健行俱乐部倡导健康生活方式，组织校友们探索南加州优美的自然风光。从海边步道到山间小径，从周末短途到假日远足，大家在大自然中放松身心，享受户外运动的乐趣。俱乐部定期发布活动信息，欢迎各水平的徒步爱好者加入。
+                                </p>
+                                <div class="club-images">
+                                    <img src="hiking/image1.webp" alt="登山健行活动照片1">
+                                    <img src="hiking/image2.webp" alt="登山健行活动照片2">
+                                    <img src="hiking/image3.webp" alt="登山健行活动照片3">
+                                    <img src="hiking/image4.webp" alt="登山健行活动照片4">
+                                </div>
+                            </div>
+
+                            <!-- Club 4: 合唱团 -->
+                            <div class="club-section" id="club4">
+                                <h3 class="title is-4 has-text-primary">合唱团</h3>
+                                <p>
+                                    校友会合唱团由热爱歌唱的校友们组成，定期举行排练和演出活动。合唱团曲目丰富多样，既有经典中文歌曲，也有流行音乐作品。通过和声共鸣，成员们不仅提升音乐素养，更在歌声中增进彼此情谊，为校友会活动增添艺术气息。
+                                </p>
+                                <div class="club-images">
+                                    <img src="choir/image1.webp" alt="合唱团活动照片1">
+                                    <img src="choir/image2.webp" alt="合唱团活动照片2">
+                                    <img src="choir/image3.webp" alt="合唱团活动照片3">
+                                </div>
+                            </div>
+
+                            <!-- Club 5: 羽毛球队 -->
+                            <div class="club-section" id="club5">
+                                <h3 class="title is-4 has-text-primary">羽毛球队</h3>
+                                <p>
+                                    羽毛球队为喜爱羽毛球运动的校友提供了切磋球技的平台。队员们定期在固定场地进行训练和友谊赛，既锻炼身体又联络感情。无论是初学者还是资深爱好者，都能在轻松愉快的氛围中享受羽毛球运动的魅力。
+                                </p>
+                                <div class="club-images">
+                                    <img src="badminton/image1.webp" alt="羽毛球队活动照片1">
+                                    <img src="badminton/image2.webp" alt="羽毛球队活动照片2">
+                                </div>
+                            </div>
 
                         </div>
                     </div>

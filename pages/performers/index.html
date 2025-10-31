@@ -15,6 +15,65 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        /* Remove border from boxes */
+        .box {
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Grid layout for chorus member names */
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem 1rem;
+            margin-top: 0.5rem;
+            text-align: left;
+        }
+
+        .member-grid span {
+            padding: 0.25rem 0;
+        }
+
+        /* Responsive: 3 columns on mobile with smaller font and tighter spacing */
+        @media screen and (max-width: 768px) {
+            .member-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.3rem 0.5rem;
+            }
+
+            .member-grid span {
+                font-size: 0.85rem;
+                padding: 0.15rem 0;
+            }
+        }
+
+        /* For very small screens, 2 columns */
+        @media screen and (max-width: 400px) {
+            .member-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Two-column layout for program metadata */
+        .program-info {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-info .info-key {
+            font-weight: 600;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .program-info .info-value {
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
@@ -41,10 +100,36 @@
                     <div class="box mb-5">
                         <h3 class="title is-4 has-text-royal-blue">1. 开场舞《你是我的主打歌》</h3>
                         <div class="content">
-                            <p><strong>时长：</strong>4分钟</p>
-                            <p><strong>指导老师：</strong>王广成</p>
-                            <p><strong>背景制作：</strong>Sophie</p>
-                            <p><strong>队员名单：</strong>罗涛，陈明，萧强，李玲，蒲江川，徐静华，王薇，李一华，卢瑛，吴小静，李捷，许小玲，吴晓山，张东升</p>
+                            <div class="program-info">
+                                <div class="info-key">时长：</div>
+                                <div class="info-value">4分钟</div>
+
+                                <div class="info-key">指导老师：</div>
+                                <div class="info-value">王广成</div>
+
+                                <div class="info-key">背景制作：</div>
+                                <div class="info-value">Sophie</div>
+
+                                <div class="info-key">队员名单：</div>
+                                <div class="info-value">  </div>
+                            </div>
+
+                            <div class="member-grid">
+                                <span>罗涛</span>
+                                <span>陈明</span>
+                                <span>萧强</span>
+                                <span>李玲</span>
+                                <span>蒲江川</span>
+                                <span>徐静华</span>
+                                <span>王薇</span>
+                                <span>李一华</span>
+                                <span>卢瑛</span>
+                                <span>吴小静</span>
+                                <span>李捷</span>
+                                <span>许小玲</span>
+                                <span>吴晓山</span>
+                                <span>张东升</span>
+                            </div>
                         </div>
                     </div>
 
@@ -52,10 +137,54 @@
                     <div class="box mb-5">
                         <h3 class="title is-4 has-text-royal-blue">2. 合唱《山楂树》《世界赠予我的》</h3>
                         <div class="content">
-                            <p><strong>时长：</strong>《山楂树》4分钟，《世界赠予我的》4分钟</p>
-                            <p><strong>指挥：</strong>邵莹</p>
-                            <p><strong>钢琴伴奏：</strong>曾立佳</p>
-                            <p><strong>队员名单：</strong>翟冬青，陶镭，徐宁，杨柳，徐静华，李圣用，谢小庆，王薇，Jasmine Li，吴萍，Anna Luo，文玉，Carol Zhou，Kristy Hsu，盛银妹，Wendy Wang，Jack 贾，Linghui Li，Robin Zhang，李玲，吴晓山，Jenny Pu，张东升，李洁，Lisa 何，张爱东，萧强，陈明，丁言喻</p>
+                            <div class="program-info">
+                                <div class="info-key">时长：</div>
+                                <div class="info-value">《山楂树》4分钟<br>《世界赠予我的》4分钟</div>
+
+                                <div class="info-key">指挥：</div>
+                                <div class="info-value">邵莹</div>
+
+                                <div class="info-key">钢琴伴奏：</div>
+                                <div class="info-value">曾立佳</div>
+
+                                <div class="info-key">队员名单：</div>
+                                <div class="info-value">  </div>
+                            </div>
+
+                            <div class="member-grid">
+                                <span>翟冬青</span>
+                                <span>陶镭</span>
+                                <span>徐宁</span>
+                                <span>杨柳</span>
+                                <span>徐静华</span>
+                                <span>李圣用</span>
+                                <span>谢小庆</span>
+                                <span>王薇</span>
+                                <span>Jasmine Li</span>
+                                <span>吴萍</span>
+                                <span>Anna Luo</span>
+                                <span>文玉</span>
+                                <span>Carol Zhou</span>
+                                <span>Kristy Hsu</span>
+                                <span>盛银妹</span>
+                                <span>Wendy Wang</span>
+                                <span>Jack 贾</span>
+                                <span>Linghui Li</span>
+                                <span>Robin Zhang</span>
+                                <span>李玲</span>
+                                <span>吴晓山</span>
+                                <span>Jenny Pu</span>
+                                <span>张东升</span>
+                                <span>李洁</span>
+                                <span>Lisa 何</span>
+                                <span>张爱东</span>
+                                <span>萧强</span>
+                                <span>陈明</span>
+                                <span>丁言喻</span>
+                                <span>颜利平</span>
+                                <span>邱丽华</span>
+                                <span>Diana Yan</span>
+                            </div>
                         </div>
                     </div>
 
@@ -63,8 +192,13 @@
                     <div class="box mb-5">
                         <h3 class="title is-4 has-text-royal-blue">3. 上交节目：长笛独奏《爱的礼赞》</h3>
                         <div class="content">
-                            <p><strong>时长：</strong>3分50秒</p>
-                            <p><strong>表演者：</strong>孙科涵</p>
+                            <div class="program-info">
+                                <div class="info-key">时长：</div>
+                                <div class="info-value">3分50秒</div>
+
+                                <div class="info-key">表演者：</div>
+                                <div class="info-value">孙科涵</div>
+                            </div>
                         </div>
                     </div>
 
@@ -72,10 +206,26 @@
                     <div class="box mb-5">
                         <h3 class="title is-4 has-text-royal-blue">4. 西南节目：藏族舞《雪儿达娃》</h3>
                         <div class="content">
-                            <p><strong>时长：</strong>3分29秒</p>
-                            <p><strong>背景投影制作：</strong>吴雯</p>
-                            <p><strong>排练指导老师：</strong>文玉</p>
-                            <p><strong>表演者：</strong>文玉、Kristy Hsu、Carol Zhou、盛银妹</p>
+                            <div class="program-info">
+                                <div class="info-key">时长：</div>
+                                <div class="info-value">3分29秒</div>
+
+                                <div class="info-key">背景投影制作：</div>
+                                <div class="info-value">吴雯</div>
+
+                                <div class="info-key">排练指导老师：</div>
+                                <div class="info-value">文玉</div>
+
+                                <div class="info-key">表演者：</div>
+                                <div class="info-value">  </div>                               
+                            </div>
+
+                            <div class="member-grid">
+                                <span>文玉</span>
+                                <span>Kristy Hsu</span>
+                                <span>Carol Zhou</span>
+                                <span>盛银妹</span>
+                            </div>
                         </div>
                     </div>
 
@@ -83,26 +233,41 @@
                     <div class="box mb-5">
                         <h3 class="title is-4 has-text-royal-blue">5. 北交节目：歌曲《相思遥》</h3>
                         <div class="content">
-                            <p><strong>时长：</strong>3分15秒</p>
-                            <p><strong>演唱：</strong>陈明</p>
-                            <p><strong>伴舞：</strong>罗涛</p>
+                            <div class="program-info">
+                                <div class="info-key">时长：</div>
+                                <div class="info-value">3分15秒</div>
+
+                                <div class="info-key">演唱：</div>
+                                <div class="info-value">陈明</div>
+
+                                <div class="info-key">伴舞：</div>
+                                <div class="info-value">罗涛</div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Program 6 -->
                     <div class="box mb-5">
-                        <h3 class="title is-4 has-text-royal-blue">6. 西交节目：三句半</h3>
+                        <h3 class="title is-4 has-text-royal-blue">6. 西交节目：男高音独唱《乡音乡情》</h3>
                         <div class="content">
-                            <p class="has-text-grey-light is-italic">详细信息待补充</p>
+                            <div class="program-info">
+                                <div class="info-key">演唱：</div>
+                                <div class="info-value">刘东</div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Program 7 -->
                     <div class="box mb-5">
-                        <h3 class="title is-4 has-text-royal-blue">7. 新竹节目：歌曲《无言的结局》《昨夜星辰》</h3>
+                        <h3 class="title is-4 has-text-royal-blue">7. 阳明交大节目：歌曲《无言的结局》《昨夜星辰》</h3>
                         <div class="content">
-                            <p><strong>时长：</strong>5分钟</p>
-                            <p><strong>演唱者：</strong>张骥、郑美玲</p>
+                            <div class="program-info">
+                                <div class="info-key">时长：</div>
+                                <div class="info-value">5分钟</div>
+
+                                <div class="info-key">演唱者：</div>
+                                <div class="info-value">张骥、郑美玲</div>
+                            </div>
                         </div>
                     </div>
 
