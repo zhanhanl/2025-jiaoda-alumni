@@ -19,55 +19,55 @@ const siteConfig = {
   // To add a page: Add a new object to this array
   // To reorder: Rearrange the objects
   // To remove: Delete or comment out the object
-  // NOTE: All paths are absolute from the web root (starting with /)
+  // NOTE: Paths include repository name for GitHub Pages deployment
   navigation: [
     {
       name: "首页",
-      href: "/home.html",
+      href: "/2025-jiaoda-alumni/home.html",
     },
     {
       name: "贺函",
-      href: "/pages/letters/index.html",
+      href: "/2025-jiaoda-alumni/pages/letters/index.html",
     },
     {
       name: "致辞",
-      href: "/pages/president/index.html",
+      href: "/2025-jiaoda-alumni/pages/president/index.html",
     },
     {
       name: "团队",
-      href: "/pages/team/index.html",
+      href: "/2025-jiaoda-alumni/pages/team/index.html",
     },
     {
       name: "2025年度奖项",
-      href: "/pages/awards/index.html",
+      href: "/2025-jiaoda-alumni/pages/awards/index.html",
     },
     {
       name: "年会安排",
-      href: "/pages/program/index.html",
+      href: "/2025-jiaoda-alumni/pages/program/index.html",
     },
     {
       name: "演出节目单",
-      href: "/pages/performers/index.html",
+      href: "/2025-jiaoda-alumni/pages/performers/index.html",
     },
     {
       name: "校友会活动",
-      href: "/pages/events/index.html",
+      href: "/2025-jiaoda-alumni/pages/events/index.html",
     },
     {
       name: "俱乐部活动",
-      href: "/pages/club-activity/index.html",
+      href: "/2025-jiaoda-alumni/pages/club-activity/index.html",
     },
     {
       name: "校友来稿",
-      href: "/pages/articles/index.html",
+      href: "/2025-jiaoda-alumni/pages/articles/index.html",
     },
     {
       name: "校友会历史",
-      href: "/pages/history/index.html",
+      href: "/2025-jiaoda-alumni/pages/history/index.html",
     },
     {
       name: "致谢",
-      href: "/pages/sponsors/index.html",
+      href: "/2025-jiaoda-alumni/pages/sponsors/index.html",
     }
 
   ],
