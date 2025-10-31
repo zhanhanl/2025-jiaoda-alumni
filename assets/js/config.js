@@ -1,7 +1,22 @@
 // Site Configuration
 // Edit this file to update navigation, banner, and site-wide settings
 
+// Auto-detect base path for GitHub Pages vs local development
+const getBasePath = () => {
+  const hostname = window.location.hostname;
+  // If on GitHub Pages, use repository name; otherwise use empty string for local
+  if (hostname.includes('github.io')) {
+    return '/2025-jiaoda-alumni';
+  }
+  return '';
+};
+
+const basePath = getBasePath();
+
 const siteConfig = {
+  // Base path for URLs (auto-detected)
+  basePath: basePath,
+
   // Site Information
   siteName: "2025 交通大学南加州校友会年会",
   siteTitle: "2025 八十二周年年会",
@@ -19,55 +34,55 @@ const siteConfig = {
   // To add a page: Add a new object to this array
   // To reorder: Rearrange the objects
   // To remove: Delete or comment out the object
-  // NOTE: Paths include repository name for GitHub Pages deployment
+  // NOTE: Uses basePath which auto-detects GitHub Pages vs local
   navigation: [
     {
       name: "首页",
-      href: "/2025-jiaoda-alumni/home.html",
+      href: `${basePath}/home.html`,
     },
     {
       name: "贺函",
-      href: "/2025-jiaoda-alumni/pages/letters/index.html",
+      href: `${basePath}/pages/letters/index.html`,
     },
     {
       name: "致辞",
-      href: "/2025-jiaoda-alumni/pages/president/index.html",
+      href: `${basePath}/pages/president/index.html`,
     },
     {
       name: "团队",
-      href: "/2025-jiaoda-alumni/pages/team/index.html",
+      href: `${basePath}/pages/team/index.html`,
     },
     {
       name: "2025年度奖项",
-      href: "/2025-jiaoda-alumni/pages/awards/index.html",
+      href: `${basePath}/pages/awards/index.html`,
     },
     {
       name: "年会安排",
-      href: "/2025-jiaoda-alumni/pages/program/index.html",
+      href: `${basePath}/pages/program/index.html`,
     },
     {
       name: "演出节目单",
-      href: "/2025-jiaoda-alumni/pages/performers/index.html",
+      href: `${basePath}/pages/performers/index.html`,
     },
     {
       name: "校友会活动",
-      href: "/2025-jiaoda-alumni/pages/events/index.html",
+      href: `${basePath}/pages/events/index.html`,
     },
     {
       name: "俱乐部活动",
-      href: "/2025-jiaoda-alumni/pages/club-activity/index.html",
+      href: `${basePath}/pages/club-activity/index.html`,
     },
     {
       name: "校友来稿",
-      href: "/2025-jiaoda-alumni/pages/articles/index.html",
+      href: `${basePath}/pages/articles/index.html`,
     },
     {
       name: "校友会历史",
-      href: "/2025-jiaoda-alumni/pages/history/index.html",
+      href: `${basePath}/pages/history/index.html`,
     },
     {
       name: "致谢",
-      href: "/2025-jiaoda-alumni/pages/sponsors/index.html",
+      href: `${basePath}/pages/sponsors/index.html`,
     }
 
   ],

@@ -72,8 +72,8 @@
       `;
     }).join('');
 
-    // Logo always links to home (absolute path with repo name for GitHub Pages)
-    const logoHref = '/2025-jiaoda-alumni/home.html';
+    // Logo always links to home (uses basePath for local/GitHub Pages compatibility)
+    const logoHref = `${siteConfig.basePath}/home.html`;
 
     nav.innerHTML = `
       <nav class="navbar is-fixed-top is-royal-blue" role="navigation" aria-label="main navigation">
@@ -140,8 +140,8 @@
       html += `<div class="sponsor-thank-you">${siteConfig.sponsors.thankYouMessage}</div>`;
     }
 
-    // Add single sponsor image using absolute path from root (with repo name for GitHub Pages)
-    const imgPath = `/2025-jiaoda-alumni/assets/images/${siteConfig.sponsors.image}`;
+    // Add single sponsor image using basePath for local/GitHub Pages compatibility
+    const imgPath = `${siteConfig.basePath}/assets/images/${siteConfig.sponsors.image}`;
     html += `<div class="sponsor-image-container">`;
     html += `<img src="${imgPath}" alt="Sponsors" class="sponsor-image">`;
     html += `</div>`;

@@ -29,7 +29,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('/2025-jiaoda-alumni/assets/images/home_bg.jpg');
+            /* Background image set dynamically via JavaScript using basePath */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -237,67 +237,67 @@
             <h2 class="title is-2 has-text-centered has-text-royal-blue mb-5">年刊目录</h2>
             <div class="columns is-multiline">
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/letters/index.html" class="box section-index-card">
+                    <a href="pages/letters/index.html" data-path="/pages/letters/index.html" class="box section-index-card">
                         <p class="title is-4">贺函</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/president/index.html" class="box section-index-card">
+                    <a href="pages/president/index.html" data-path="/pages/president/index.html" class="box section-index-card">
                         <p class="title is-4">致辞</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/team/index.html" class="box section-index-card">
+                    <a href="pages/team/index.html" data-path="/pages/team/index.html" class="box section-index-card">
                         <p class="title is-4">团队</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/awards/index.html" class="box section-index-card">
+                    <a href="pages/awards/index.html" data-path="/pages/awards/index.html" class="box section-index-card">
                         <p class="title is-4">2025年度奖项</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/program/index.html" class="box section-index-card">
+                    <a href="pages/program/index.html" data-path="/pages/program/index.html" class="box section-index-card">
                         <p class="title is-4">年会安排</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/performers/index.html" class="box section-index-card">
+                    <a href="pages/performers/index.html" data-path="/pages/performers/index.html" class="box section-index-card">
                         <p class="title is-4">演出节目单</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/events/index.html" class="box section-index-card">
+                    <a href="pages/events/index.html" data-path="/pages/events/index.html" class="box section-index-card">
                         <p class="title is-4">校友会活动</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/club-activity/index.html" class="box section-index-card">
+                    <a href="pages/club-activity/index.html" data-path="/pages/club-activity/index.html" class="box section-index-card">
                         <p class="title is-4">俱乐部活动</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/articles/index.html" class="box section-index-card">
+                    <a href="pages/articles/index.html" data-path="/pages/articles/index.html" class="box section-index-card">
                         <p class="title is-4">校友来稿</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/history/index.html" class="box section-index-card">
+                    <a href="pages/history/index.html" data-path="/pages/history/index.html" class="box section-index-card">
                         <p class="title is-4">校友会历史</p>
                     </a>
                 </div>
 
                 <div class="column is-3">
-                    <a href="/2025-jiaoda-alumni/pages/sponsors/index.html" class="box section-index-card">
+                    <a href="pages/sponsors/index.html" data-path="/pages/sponsors/index.html" class="box section-index-card">
                         <p class="title is-4">致谢</p>
                     </a>
                 </div>
@@ -312,5 +312,24 @@
     <script src="assets/js/config.js"></script>
     <script src="assets/js/components.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Set background image and navigation links dynamically using basePath -->
+    <script>
+        (function() {
+            // Set background image
+            const bgImage = `${siteConfig.basePath}/assets/images/home_bg.jpg`;
+            const style = document.createElement('style');
+            style.textContent = `body::before { background-image: url('${bgImage}'); }`;
+            document.head.appendChild(style);
+
+            // Update navigation index links if on GitHub Pages
+            if (siteConfig.basePath) {
+                document.querySelectorAll('.section-index-card[data-path]').forEach(link => {
+                    const path = link.getAttribute('data-path');
+                    link.href = siteConfig.basePath + path;
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
