@@ -79,22 +79,21 @@
       <nav class="navbar is-fixed-top is-royal-blue" role="navigation" aria-label="main navigation">
         <div class="container">
           <div class="navbar-brand">
-            <a role="button" class="navbar-burger has-text-white" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu" >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
             </a>
+
             <a class="navbar-item" href="${logoHref}">
-              <strong class="has-text-white is-size-5">${siteConfig.siteName}</strong>
+              <strong class="has-text-white is-size-4">${siteConfig.siteName}</strong>
             </a>
+
           </div>
 
           <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
               ${navItems}
-              <div class="navbar-item sponsor-navbar-item">
-                <span class="sponsor-text">Scepter 冠名交通大学南加州校友会年会</span>
-              </div>
             </div>
           </div>
         </div>

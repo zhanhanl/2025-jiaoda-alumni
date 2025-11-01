@@ -230,6 +230,10 @@ body {
 
 /* Mobile navbar menu background */
 @media screen and (max-width: 1023px) {
+    .navbar-brand {
+        width: 100%;
+    }
+
     .navbar-menu {
         background-color: var(--royal-blue);
     }

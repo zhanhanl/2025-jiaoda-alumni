@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Association History - 2025 交大校友会">
-    <title>Association History - 2025 交大校友会</title>
+    <meta name="description" content="校友会历史 - 2025 交大校友会">
+    <title>校友会历史 - 2025 交大校友会</title>
 
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -15,6 +15,418 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        /* Intro Section */
+        .history-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--primary);
+        }
+
+        /* Timeline Start Point */
+        .timeline-start {
+            display: block;
+            padding: 2rem 1rem 3rem 1rem;
+            margin-bottom: 0;
+            position: relative;
+            padding-left: 120px;
+        }
+
+        /* Line connecting start to accordion */
+        .timeline-start::after {
+            content: '';
+            position: absolute;
+            left: 50px;
+            width: 4px;
+            height: calc(100% - 90px);
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            bottom: -40px;
+            z-index: 0;
+        }
+
+        .timeline-start-marker {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+            position: absolute;
+            left: 10px;
+            top: 2rem;
+            z-index: 10;
+        }
+
+        .timeline-start-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .timeline-start-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+            text-align: left;
+        }
+
+        /* Accordion Container */
+        .accordion-container {
+            display: block;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 0 20px;
+            position: relative;
+            overflow: visible;
+        }
+
+        /* Vertical timeline line through accordions */
+        .accordion-container::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            width: 4px;
+            height: calc(100% + 40px);
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            top: -40px;
+            z-index: 0;
+        }
+
+        .accordion-item {
+            display: block;
+            margin-bottom: 2.5rem;
+            margin-left: 120px;
+            border-radius: 12px;
+            overflow: visible;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.3s ease;
+            position: relative;
+            min-height: 80px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .accordion-header:hover {
+            background: var(--primary-dark);
+        }
+
+        .accordion-header:active {
+            background: var(--primary-dark);
+        }
+
+        .accordion-year {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: left;
+            flex: 1;
+        }
+
+        .accordion-year span {
+            display: block;
+        }
+
+        .accordion-year-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 4px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            left: -105px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .accordion-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            background: white;
+            transition: max-height 0.4s ease;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 5000px;
+        }
+
+        .accordion-body {
+            padding: 2rem;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .timeline-subtitle {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .timeline-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .timeline-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .timeline-images img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-images img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Timeline End Point (for 2025) */
+        .timeline-end {
+            display: block;
+            padding: 1rem 1rem 2rem 120px;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: visible;
+        }
+
+        .timeline-end-marker {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            left: 15px;
+            top: 1rem;
+            z-index: 10;
+        }
+
+        .timeline-end-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-align: left;
+        }
+
+        /* Final marker "待续" */
+        .timeline-final {
+            display: block;
+            padding: 0 0rem 4rem 100px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: visible;
+        }
+
+        .timeline-final-marker {
+            width: 90px;
+            height: 90px;
+            background: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 0.95rem;
+            line-height: 1.3;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            left: 5px;
+            top: 0;
+            z-index: 10;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 768px) {
+            .timeline-start {
+                padding-left: 100px;
+            }
+
+            .timeline-start::after {
+                left: 40px;
+                height: calc(100% - 10px);
+                bottom: -40px;
+            }
+
+            .timeline-start-marker {
+                left: 8px;
+                width: 70px;
+                height: 70px;
+                font-size: 1rem;
+            }
+
+            .timeline-start-title {
+                font-size: 1.3rem;
+            }
+
+            .timeline-start-text {
+                font-size: 0.95rem;
+            }
+
+            .accordion-container {
+                padding: 0 15px 0 0;
+            }
+
+            .accordion-container::before {
+                left: 40px;
+                height: calc(100% + 40px);
+                top: -40px;
+            }
+
+            .accordion-item {
+                margin-left: 100px;
+                margin-bottom: 2rem;
+            }
+
+            .accordion-header {
+                padding: 1.25rem 1rem;
+            }
+
+            .accordion-year {
+                font-size: 1.05rem;
+            }
+
+            .accordion-year-badge {
+                width: 60px;
+                height: 60px;
+                font-size: 0.9rem;
+                left: -90px;
+            }
+
+            .accordion-body {
+                padding: 1.5rem;
+            }
+
+            .timeline-title {
+                font-size: 1.3rem;
+            }
+
+            .timeline-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .timeline-text {
+                font-size: 0.95rem;
+            }
+
+            .timeline-images {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+                margin-top: 1rem;
+            }
+
+            .timeline-images img {
+                height: 200px;
+            }
+
+            .history-intro {
+                font-size: 1rem;
+                margin-bottom: 30px;
+                padding: 0 15px;
+            }
+
+            .timeline-end {
+                padding-left: 100px;
+                margin-bottom: 2rem;
+            }
+
+            .timeline-end-marker {
+                left: 10px;
+                width: 60px;
+                height: 60px;
+                font-size: 0.9rem;
+            }
+
+            .timeline-end-title {
+                font-size: 1.3rem;
+            }
+
+            .timeline-final {
+                padding-left: 100px;
+                padding-bottom: 3rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .timeline-final-marker {
+                left: 3px;
+                width: 80px;
+                height: 80px;
+                font-size: 0.85rem;
+                line-height: 1.3;
+                padding: 0.4rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
@@ -27,7 +439,7 @@
                 <h1 class="title is-2 has-text-white">
                     校友会历史
                 </h1>
-                <p class="subtitle is-5 has-text-white">Association History</p>
+                <p class="subtitle is-5 has-text-white">饮水思源 · 五校一家 · 薪火相传</p>
             </div>
         </div>
     </section>
@@ -35,29 +447,181 @@
     <!-- Content -->
     <section class="section">
         <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-10">
-                    <div class="box">
-                        <div class="content">
-                            <h2 class="title is-3 has-text-primary">校友会发展历程</h2>
 
-                            <p>在这里添加校友会的历史介绍...</p>
+            <!-- Timeline Start Point -->
+            <div class="timeline-start">
+                <div class="timeline-start-marker">1943</div>
+                <div class="timeline-start-title">校友会创立</div>
+                <div class="timeline-start-text">
+                    钱学森与胡声球、熊大纪三位前辈共同创立交通大学南加州校友会。今天，数以千计的南加州交大人汇聚，秉持"饮水思源，五校一家"之精神，联谊交流，团结互助。
+                </div>
+            </div>
 
-                            <h3 class="title is-4 has-text-primary mt-5">重要里程碑</h3>
-                            <ul>
-                                <li>历史事件 1</li>
-                                <li>历史事件 2</li>
-                                <li>历史事件 3</li>
-                            </ul>
-
-                            <h3 class="title is-4 has-text-primary mt-5">校友会使命</h3>
-                            <p>添加校友会使命与愿景...</p>
-
-                            <h3 class="title is-4 has-text-primary mt-5">发展历程</h3>
-                            <p>添加发展历程的详细内容...</p>
-
+            <!-- Accordion Timeline -->
+            <div class="accordion-container">
+                <!-- 2003 -->
+                <div class="accordion-item active">
+                    <div class="accordion-header">
+                        <div class="accordion-year">
+                            <div class="accordion-year-badge">2003</div>
+                            <span>60周年 胡声球日</span>
+                        </div>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="timeline-subtitle">胡声球日</div>
+                            <div class="timeline-text">
+                                60周年年会活动包括企业座谈会与盛大年会晚宴。校友会又将那天定为"胡声球日"，以纪念他首创南加校友会和对国家卓著的贡献。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会60/60周年——杰出校友.jpg" alt="60周年杰出校友">
+                                <img src="校友会60/60周年——杰出校友2.jpg" alt="60周年杰出校友2">
+                            </div>
+                            <div class="timeline-text">
+                                当时的校友会会长是张孚威学长，出席者包括来自新竹交大的前会长李、陈沅与王启明、以及校友会的骨干，如上海交大的何能和丁言瑜与来自西南交大的颜利平，以及来自各母校校区的校友和交大之友约300人。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会60/60周年——杰出校友3.jpg" alt="60周年杰出校友3">
+                                <img src="校友会60/60周年——杰出校友4.jpg" alt="60周年杰出校友4">
+                            </div>
+                            <div class="timeline-text">
+                                尽管胡声求老学长年事已高，白发苍苍，坐在轮椅上，但他的到来引起了每位校友对校友会历史的极大兴趣，激发了大家作为交大人高昂的豪迈之情！
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- 2015 - Conference -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-year">
+                            <div class="accordion-year-badge">2015</div>
+                            <span>72周年 交大校友联谊大会</span>
+                        </div>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="timeline-text">
+                                第十一届交大校友联谊大会, 同时也是第八届交通大学全球校友商界领袖峰会在美国"天使之城"洛杉矶隆重举办。来自五所交通大学的校长，以及500余名校友齐聚一堂，共同庆祝五年一次的联谊大会及两年一次的商界领袖峰会。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会72/联谊大会1.jpg" alt="联谊大会1">
+                            </div>
+                            <div class="timeline-text">
+                                本次活动由交通大学美洲校友总会主办，交通大学南加州校友会承办。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会72/联谊大会2.jpg" alt="联谊大会2">
+                                <img src="校友会72/联谊大会3.jpg" alt="联谊大会3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2015 - President Zhang -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-year">
+                            <!-- <div class="accordion-year-badge">同年</div> -->
+                            <span>欢送张懋中校长</span>
+                        </div>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="timeline-text">
+                                张懋中博士现任洛杉矶加州大学客座教授，曾担任UCLA电机工程学系系主任。2015年至2019年担任国立交通大学校长。此外，张懋中博士还曾经担任交通大学南加州校友会会长，对校友会的发展做出了很大的贡献。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会72/张校长_送行1.jpg" alt="张校长送行1">
+                                <img src="校友会72/张校长_送行2.jpg" alt="张校长送行2">
+                            </div>
+                            <div class="timeline-text">
+                                张懋中研究团队完成异质结构双极性高速晶体管（HBT）与其集成电路的研究与开发，手机必备发射器元件，其研发砷化镓功率放大器制成的手机信号发射器已超过100亿台，成为全球智能手机首选。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会72/张校长_送行3.png" alt="张校长送行3">
+                            </div>
+                            <div class="timeline-text">
+                                在任职交大校长期间，力推阳明与交大合校，为交大带来医学院与医工的强力资源，力畅同行致远。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会72/张校长回美国1.jpg" alt="张校长回美国1">
+                                <img src="校友会72/张校长回美国2.png" alt="张校长回美国2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2016 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-year">
+                            <div class="accordion-year-badge">2016</div>
+                            <span>73周年 出海扬帆活动</span>
+                        </div>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="timeline-images">
+                                <img src="校友会73/1.jpg" alt="出海扬帆1">
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会73/2.jpg" alt="出海扬帆2">
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会73/3.jpg" alt="出海扬帆3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2017 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-year">
+                            <div class="accordion-year-badge">2017</div>
+                            <span>74周年 首届思源杯沙滩排球赛</span>
+                        </div>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="timeline-subtitle">首届思源杯沙滩排球赛</div>
+                            <div class="timeline-text">
+                                由美国华人体育家协会和交通大学南加州校友会共同发起。两家协会别有深意地选择了沙滩排球这个项目来声援洛杉矶申办2024年夏季奥运会。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会74/1.jpg" alt="思源杯1">
+                            </div>
+                            <div class="timeline-text">
+                                此后，"思源杯"沙滩排球友谊赛成为交通大学南加州校友会的品牌活动。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会74/2.jpg" alt="思源杯2">
+                            </div>
+                            <div class="timeline-text">
+                                2024夏季奥运圣火在巴黎点燃，"思源杯"在洛杉矶薪火相传。
+                            </div>
+                            <div class="timeline-images">
+                                <img src="校友会74/3.jpg" alt="思源杯3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 - Second to last year -->
+                <div class="timeline-end">
+                    <div class="timeline-end-marker">2025</div>
+                    <div class="timeline-end-title mt-4">校友会82周年</div>
+                </div>
+
+                <!-- Final marker - 待续 -->
+                <div class="timeline-final">
+                    <div class="timeline-final-marker">展望未来</div>
                 </div>
             </div>
         </div>
@@ -70,5 +634,31 @@
     <script src="../../assets/js/config.js"></script>
     <script src="../../assets/js/components.js"></script>
     <script src="../../assets/js/main.js"></script>
+
+    <!-- Accordion Script for Mobile -->
+    <script>
+        (function() {
+            'use strict';
+
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const accordionItem = this.parentElement;
+                    const isActive = accordionItem.classList.contains('active');
+
+                    // Close all other accordion items (optional: remove these 3 lines to allow multiple open)
+                    document.querySelectorAll('.accordion-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+
+                    // Toggle current item
+                    if (!isActive) {
+                        accordionItem.classList.add('active');
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
