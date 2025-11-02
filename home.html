@@ -164,15 +164,39 @@
 
 
 
+    <!-- Hero Images Section -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 1rem;">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10 has-text-centered">
+                    <!-- Badges -->
+                    <figure class="image" style="margin: 0rem auto 2rem auto; max-width: 800px;">
+                        <img src="pages/home/badges.png" alt="五所交大校徽" id="badges-image">
+                    </figure>
+
+               <!-- CTUAA Logo -->
+                    <figure class="image" style="margin: 0 auto 2rem auto; width: 30%;">
+                        <img src="pages/home/ctuaa.png" alt="交大南加州校友会" id="ctuaa-image">
+                    </figure>
+                    <!-- Slogan -->
+                    <figure class="image" style="margin: 0 auto 2rem auto; width: 60%;">
+                        <img src="pages/home/slogan.png" alt="五交同心 传承创新 南加同行 共启新程" id="slogan-image">
+                    </figure>
+
+     
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Welcome Section -->
     <section class="section">
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-8 has-text-centered">
-                    <h2 class="title is-2 has-text-royal-blue mb-4">欢迎参加2025年会</h2>
-                    <p class="is-size-5 has-text-grey-dark">
-                        值此交通大学南加州校友会创立80周年之际，我们诚挚邀请您参加2025年度校友会盛会。
-                        让我们齐聚一堂，共同庆祝这一历史时刻，追忆往昔，展望未来，传承交大精神。
+                    <h2 class="title is-2 has-text-royal-blue mb-4">欢迎参加2025年年会</h2>
+                    <p class="is-size-4 has-text-grey-dark" style="text-indent: 2em;">
+                        交大南加州校友会已走过八十二个春秋，这份跨越山海的情谊在传承中不断创新，在同行中思源致远。 我们今天又一次相聚在这里，共同开启新的篇章。祝各位校友度过一个温馨难忘的夜晚！
                     </p>
                 </div>
             </div>
@@ -322,8 +346,17 @@
             style.textContent = `body::before { background-image: url('${bgImage}'); }`;
             document.head.appendChild(style);
 
-            // Update navigation index links if on GitHub Pages
+            // Update hero images if on GitHub Pages
             if (siteConfig.basePath) {
+                const badgesImg = document.getElementById('badges-image');
+                const sloganImg = document.getElementById('slogan-image');
+                const ctuaaImg = document.getElementById('ctuaa-image');
+
+                if (badgesImg) badgesImg.src = `${siteConfig.basePath}/pages/home/badges.png`;
+                if (sloganImg) sloganImg.src = `${siteConfig.basePath}/pages/home/slogan.png`;
+                if (ctuaaImg) ctuaaImg.src = `${siteConfig.basePath}/pages/home/ctuaa.png`;
+
+                // Update navigation index links
                 document.querySelectorAll('.section-index-card[data-path]').forEach(link => {
                     const path = link.getAttribute('data-path');
                     link.href = siteConfig.basePath + path;
