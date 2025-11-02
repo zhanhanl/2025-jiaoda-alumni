@@ -18,7 +18,7 @@ const siteConfig = {
   basePath: basePath,
 
   // Site Information
-  siteName: "2025 交通大学南加州校友会年会",
+  siteName: "交通大学南加州校友会年会",
   siteTitle: "2025 八十二周年年会",
 
   // Banner Configuration (set enabled to true to show banner on all pages)
@@ -45,11 +45,7 @@ const siteConfig = {
       href: `${basePath}/pages/letters/index.html`,
     },
     {
-      name: "致辞",
-      href: `${basePath}/pages/president/index.html`,
-    },
-    {
-      name: "团队",
+      name: "工作团队",
       href: `${basePath}/pages/team/index.html`,
     },
     {

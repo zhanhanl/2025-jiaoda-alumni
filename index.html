@@ -20,241 +20,95 @@
         /* Splash Page Specific Styles */
         body {
             padding-top: 0 !important;
+            margin: 0;
+            overflow: hidden;
         }
 
         .splash-container {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4169E1 100%);
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 27vh;
             position: relative;
             overflow: hidden;
         }
 
         .splash-container::before {
             content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-image:
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-            pointer-events: none;
+            background-image: url('pages/splash/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
         }
 
         .splash-content {
-            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
             position: relative;
             z-index: 1;
         }
 
-        .splash-header {
-            text-align: center;
-            color: white;
-            margin-bottom: 3rem;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .splash-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .splash-subtitle {
-            font-size: 1.5rem;
-            opacity: 0.95;
-            margin-bottom: 0.5rem;
-        }
-
-        .splash-year {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .donors-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 12px;
-            padding: 3rem;
-            max-width: 900px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        .donors-title {
-            text-align: center;
-            color: #4169E1;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            border-bottom: 3px solid #4169E1;
-            padding-bottom: 1rem;
-        }
-
-        .donor-tier {
-            margin-bottom: 2.5rem;
-        }
-
-        .tier-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .tier-icon {
-            font-size: 2rem;
-            margin-right: 0.75rem;
-        }
-
-        .tier-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .diamond-tier .tier-icon { color: #b9f2ff; }
-        .diamond-tier .tier-title { color: #4169E1; }
-
-        .platinum-tier .tier-icon { color: #c0c0c0; }
-        .platinum-tier .tier-title { color: #5a5a5a; }
-
-        .gold-tier .tier-icon { color: #ffd700; }
-        .gold-tier .tier-title { color: #b8860b; }
-
-        .donor-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .donor-item {
-            background: #f8f9fa;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            border: 2px solid #e9ecef;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .donor-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.2);
-            border-color: #4169E1;
-        }
-
-        .donor-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 0.25rem;
-        }
-
-        .donor-amount {
-            font-size: 0.9rem;
-            color: #4169E1;
-            font-weight: 500;
-        }
-
-        .donor-description {
-            font-size: 0.85rem;
-            color: #7f8c8d;
-            margin-top: 0.25rem;
-        }
-
-        .thanks-message {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 8px;
-            margin-top: 2rem;
-            font-size: 1.1rem;
-            font-weight: 500;
+        .splash-image {
+            max-width: 90%;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
         }
 
         .enter-button {
-            margin-top: 2rem;
-            animation: fadeInUp 1s ease-out 0.6s both;
+            text-align: center;
+            margin-top: 1rem;
         }
 
         .enter-button .button {
             font-size: 1.25rem;
-            padding: 1.5rem 3rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
-            background: white;
-            color: #4169E1;
-            border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             font-weight: 600;
         }
 
         .enter-button .button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            background: #4169E1;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .timer-text {
             color: white;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            opacity: 0.9;
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         @media screen and (max-width: 768px) {
-            .splash-title {
-                font-size: 2rem;
-            }
-
-            .splash-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .donors-section {
-                padding: 2rem 1.5rem;
-            }
-
-            .donors-title {
-                font-size: 1.5rem;
-            }
-
-            .tier-title {
-                font-size: 1.2rem;
+            .splash-image {
+                max-width: 95%;
+                max-height: 70vh;
             }
 
             .enter-button .button {
                 font-size: 1.1rem;
-                padding: 1.25rem 2.5rem;
+                padding: 0.875rem 2rem;
+            }
+
+            .timer-text {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -262,102 +116,23 @@
 <body>
     <div class="splash-container">
         <div class="splash-content">
-            <!-- Header -->
-            <div class="splash-header">
-                <h1 class="splash-title">2025 交大校友会</h1>
-                <h2 class="splash-subtitle">南加州校友会年会</h2>
-                <p class="splash-year">庆祝建会80周年 | 饮水思源 · 同行致远</p>
-            </div>
+            <!-- Splash Image -->
+            <img src="pages/splash/splash.png" alt="2025 交大校友会" class="splash-image">
 
-            <!-- Donors Section -->
-            <div class="donors-section">
-                <h2 class="donors-title">
-                    <i class="fas fa-heart"></i> 特别鸣谢
-                </h2>
-
-                <!-- Diamond Tier -->
-                <div class="donor-tier diamond-tier">
-                    <div class="tier-header">
-                        <i class="fas fa-gem tier-icon"></i>
-                        <h3 class="tier-title">钻石级赞助商</h3>
-                    </div>
-                    <div class="donor-list">
-                        <div class="donor-item">
-                            <div class="donor-name">XX科技集团</div>
-                            <div class="donor-amount">$10,000</div>
-                            <div class="donor-description">全球领先的科技公司</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Platinum Tier -->
-                <div class="donor-tier platinum-tier">
-                    <div class="tier-header">
-                        <i class="fas fa-award tier-icon"></i>
-                        <h3 class="tier-title">白金级赞助商</h3>
-                    </div>
-                    <div class="donor-list">
-                        <div class="donor-item">
-                            <div class="donor-name">XX金融投资公司</div>
-                            <div class="donor-amount">$5,000</div>
-                        </div>
-                        <div class="donor-item">
-                            <div class="donor-name">XX律师事务所</div>
-                            <div class="donor-amount">$5,000</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gold Tier -->
-                <div class="donor-tier gold-tier">
-                    <div class="tier-header">
-                        <i class="fas fa-star tier-icon"></i>
-                        <h3 class="tier-title">黄金级赞助商</h3>
-                    </div>
-                    <div class="donor-list">
-                        <div class="donor-item">
-                            <div class="donor-name">XX餐饮集团</div>
-                            <div class="donor-amount">$2,000</div>
-                        </div>
-                        <div class="donor-item">
-                            <div class="donor-name">XX房地产</div>
-                            <div class="donor-amount">$2,000</div>
-                        </div>
-                        <div class="donor-item">
-                            <div class="donor-name">XX医疗集团</div>
-                            <div class="donor-amount">$2,000</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thanks Message -->
-                <div class="thanks-message">
-                    <i class="fas fa-hands-helping"></i>
-                    感谢所有赞助商和个人捐赠者对交大校友会的大力支持！<br>
-                    您的慷慨使我们的活动得以顺利举办。
-                </div>
-            </div>
-
-            <!-- Skip button (fallback) -->
+            <!-- Enter button -->
             <div class="enter-button">
-                <a href="home.html" class="button is-large" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">
-                    <span>跳过 Skip</span>
-                    <span class="icon">
-                        <i class="fas fa-arrow-right"></i>
-                    </span>
+                <a href="home.html" class="button is-medium">
+                    <span>进入 >></span>
                 </a>
-                <p style="color: white; opacity: 0.7; font-size: 0.85rem; margin-top: 0.5rem;">
-                    <i class="fas fa-clock"></i> 4秒后自动跳转
-                </p>
             </div>
         </div>
     </div>
 
-    <script>
-        // Auto-redirect after 4 seconds
+    <!-- Auto-redirect disabled - user must click button to enter -->
+    <!-- <script>
         setTimeout(function() {
             window.location.href = 'home.html';
-        }, 4000); // 4000ms = 4 seconds
-    </script>
+        }, 5000);
+    </script> -->
 </body>
 </html>
