@@ -15,16 +15,68 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        /* Fixed sponsor banner at the top */
+        .sponsor-banner {
+            position: fixed;
+            top: 70px; /* Below the navbar */
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 80px;
+            background: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 3px solid #ffd700;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .sponsor-logo {
+            height: 70px;
+            width: auto;
+            display: inline-block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Page header with spacing for banner */
+        .hero.is-small {
+            margin-top: 100px; /* Space for fixed banner */
+        }
+
+        /* Mobile adjustments */
+        @media screen and (max-width: 768px) {
+            .sponsor-banner {
+                padding: 0.3rem 0;
+            }
+
+            .sponsor-logo {
+                height: 70px;
+            }
+
+            .hero.is-small {
+                margin-top: 70px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
     <div id="navbar-container"></div>
 
+    <!-- Sponsor Banner -->
+    <section class="sponsor-banner">
+        <div class="container">
+            <img src="sponsor/logo.png" alt="止观会馆" class="sponsor-logo">
+        </div>
+    </section>
+
     <!-- Page Header -->
-    <section class="hero is-royal-blue is-small">
+    <section class="hero is-small" style="background-color: white;">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title is-2 has-text-white">
+                <h1 class="title is-2 has-text-royal-blue">
                     校友文章
                 </h1>
             </div>
@@ -99,6 +151,61 @@
                     </a>
                 </div>
 
+                <!-- Article Card 4: 校友情深三十载 -->
+                <div class="column is-4-desktop is-6-tablet is-12-mobile">
+                    <a href="article-4.html" class="article-card-link">
+                        <div class="card article-card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="images/cover4.jpg" alt="校友情深三十载">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="title is-4 has-text-primary">校友情深三十载</h3>
+                                <p class="subtitle is-6 has-text-grey mt-2 mb-1">
+                                    <span class="icon-text">
+                                        <span class="icon"><i class="fas fa-user"></i></span>
+                                        <span>陈宏正</span>
+                                    </span>
+                                </p>
+                                <p class="has-text-grey-dark">新竹交通大学 自动控制系1979届</p>
+                                <p class="mt-3">服务校友会三十年的心路历程，从获奖荣耀到见证五校融合的珍贵回忆...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Introduction Section -->
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10-desktop is-12-tablet">
+                    <div class="box has-background-white" style="border-top: 4px solid #113F67; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h2 class="title is-3 has-text-centered has-text-primary mb-5">
+                            赞助商介绍 - 止观会馆
+                        </h2>
+
+                        <div class="content is-size-5-desktop is-size-6-mobile" style="line-height: 1.8;">
+
+                            <p style="text-indent: 2em;" class="mb-5">
+                                止观会馆是一个独特而豪华的场所，为您提供提供一系列高级定制服务，包括会议室、茶室，为您打造更加全面的奢华体验。
+                            </p>
+
+                            <p style="text-indent: 2em;" class="mb-5">
+                                止观会馆为客人提供一个空间，让他们可以尽情享受品茶。我们致力于提供卓越的服务，让每位宾客都能感受到舒适和愉悦。我们的热情员工将竭尽全力满足客人的需求，细心呵护每一个细节，以确保他们的体验无比美妙。
+                            </p>
+
+                            <p style="text-indent: 2em;">
+                                止观会馆是商务会友的理想场所。我们提供专业、舒适的会议室，配备先进的音视频设备和高速网络连接，满足商务会议、洽谈和商务活动的需求。无论是与合作伙伴商谈项目，还是与客户庆祝成果，我们提供优雅的环境和完善的服务，助力会员取得商业成功。
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

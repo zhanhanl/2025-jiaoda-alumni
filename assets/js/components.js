@@ -57,6 +57,50 @@
 
     // Build navigation items
     const navItems = siteConfig.navigation.map(item => {
+      // Handle separator items (non-clickable)
+      if (item.separator || !item.href) {
+        if (item.divider) {
+          // Check if name is empty or just dashes/whitespace
+          const isEmpty = !item.name || item.name.trim() === '' || /^[—\-_\s]+$/.test(item.name);
+
+          if (isEmpty) {
+            // Just show the golden line without text
+            return `
+              <div class="navbar-item" style="cursor: default; pointer-events: none; padding: 0.5rem 1rem;">
+                <div style="
+                  border-top: 2px solid rgba(255, 215, 0, 0.5);
+                  width: 100%;
+                "></div>
+              </div>
+            `;
+          } else {
+            // Divider style with horizontal line and text
+            return `
+              <div class="navbar-item" style="cursor: default; pointer-events: none; padding: 0.5rem 1rem;">
+                <div style="
+                  border-top: 2px solid rgba(255, 215, 0, 0.5);
+                  padding-top: 0.5rem;
+                  color: #ffd700;
+                  font-size: 0.85rem;
+                  font-weight: 600;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                ">
+                  ${item.name}
+                </div>
+              </div>
+            `;
+          }
+        } else {
+          // Simple text separator
+          return `
+            <div class="navbar-item has-text-white" style="cursor: default; pointer-events: none; opacity: 0.7;">
+              <span>${item.name}</span>
+            </div>
+          `;
+        }
+      }
+
       // Use href directly from config (absolute paths work from anywhere)
       const href = item.href;
 
@@ -64,10 +108,11 @@
                       (currentPage === 'home.html' && item.name === 'Home');
       const activeClass = isActive ? 'is-active' : '';
 
+      // Preserve whitespace in the name
       return `
         <a class="navbar-item has-text-white ${activeClass}" href="${href}">
           ${item.icon ? `<span class="icon"><i class="fas ${item.icon}"></i></span>` : ''}
-          <span>${item.name}</span>
+          <span style="white-space: pre;">${item.name}</span>
         </a>
       `;
     }).join('');

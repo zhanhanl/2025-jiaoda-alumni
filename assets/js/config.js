@@ -49,37 +49,69 @@ const siteConfig = {
       href: `${basePath}/pages/team/index.html`,
     },
     {
-      name: "2025年度奖项",
+      name: "优秀校友",
       href: `${basePath}/pages/awards/index.html`,
     },
     {
-      name: "年会安排",
+      name: "年会安排      (SCEPTRE赞助）",
       href: `${basePath}/pages/program/index.html`,
     },
     {
-      name: "演出节目单",
+      name: "演出节目单   (Longfri赞助)",
       href: `${basePath}/pages/performers/index.html`,
     },
     {
-      name: "校友会活动",
+      name: "校友会活动   (Zoooom赞助)",
       href: `${basePath}/pages/events/index.html`,
     },
     {
-      name: "俱乐部活动",
+      name: "俱乐部活动   (硅谷净洁室设计院赞助)",
       href: `${basePath}/pages/club-activity/index.html`,
     },
     {
-      name: "校友来稿",
+      name: "校友来稿      (止观会馆赞助)",
       href: `${basePath}/pages/articles/index.html`,
     },
     {
-      name: "校友会历史",
+      name: "校友会历史   (Bytemelodies赞助)",
       href: `${basePath}/pages/history/index.html`,
+    },
+    {
+      name: "GMCC万通贷款 赞助页",
+      href: `${basePath}/pages/sponsor-ad-gmcc/index.html`,
     },
     {
       name: "致谢",
       href: `${basePath}/pages/sponsors/index.html`,
-    }
+    },
+    // {
+    //   name: "",
+    //   href: null,
+    //   separator: true,
+    //   divider: true  // Visual divider style
+    // },
+
+    {
+      name: "AQX Engineering",
+      href: `${basePath}/pages/sponsor-ad-aqx/index.html`,
+    },
+    {
+      name: "GCW舞蹈工作室",
+      href: `${basePath}/pages/sponsor-ad-gcw/index.html`,
+    },
+    {
+      name: "ResAI",
+      href: `${basePath}/pages/sponsor-ad-resai/index.html`,
+    },
+    {
+      name: "GSM 群星传媒",
+      href: `${basePath}/pages/sponsor-ad-gsm/index.html`,
+    },
+    {
+      name: "秋金川味小炒",
+      href: `${basePath}/pages/sponsor-ad-qjkitchen/index.html`,
+    },
+
 
   ],
 

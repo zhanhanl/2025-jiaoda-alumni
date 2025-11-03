@@ -17,6 +17,49 @@
     <link rel="stylesheet" href="../../assets/css/footer.css">
 
     <style>
+        /* Fixed sponsor banner at the top */
+        .sponsor-banner {
+            position: fixed;
+            top: 70px; /* Below the navbar */
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 80px;
+            background: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 3px solid #ffd700;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .sponsor-logo {
+            height: 70px;
+            width: auto;
+            display: inline-block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Page header with spacing for banner */
+        .hero.is-small {
+            margin-top: 100px; /* Space for fixed banner */
+        }
+
+        /* Mobile adjustments */
+        @media screen and (max-width: 768px) {
+            .sponsor-banner {
+                padding: 0.3rem 0;
+            }
+
+            .sponsor-logo {
+                height: 70px;
+            }
+
+            .hero.is-small {
+                margin-top: 70px;
+            }
+        }
+
         /* Intro Section */
         .history-intro {
             text-align: center;
@@ -432,14 +475,21 @@
     <!-- Navigation (injected by components.js) -->
     <div id="navbar-container"></div>
 
+    <!-- Sponsor Banner -->
+    <section class="sponsor-banner">
+        <div class="container">
+            <img src="sponsor/logo.png" alt="ByteMelodies" class="sponsor-logo">
+        </div>
+    </section>
+
     <!-- Page Header -->
-    <section class="hero is-royal-blue is-small">
+    <section class="hero is-small" style="background-color: white;">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title is-2 has-text-white">
+                <h1 class="title is-2 has-text-royal-blue">
                     校友会历史
                 </h1>
-                <p class="subtitle is-5 has-text-white">饮水思源 · 五校一家 · 薪火相传</p>
+                <p class="subtitle is-5 has-text-royal-blue">饮水思源 · 五校一家 · 薪火相传</p>
             </div>
         </div>
     </section>
@@ -622,6 +672,71 @@
                 <!-- Final marker - 待续 -->
                 <div class="timeline-final">
                     <div class="timeline-final-marker">展望未来</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Introduction Section -->
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10-desktop is-12-tablet">
+                    <div class="box has-background-white" style="border-top: 4px solid #113F67; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h2 class="title is-3 has-text-centered has-text-primary mb-5">
+                            赞助商介绍 - ByteMelodies Inc.
+                        </h2>
+
+                        <div class="content is-size-5-desktop is-size-6-mobile" style="line-height: 1.8;">
+
+                            <h4 class="title is-5 has-text-primary mb-3">公司定位</h4>
+                            <p style="text-indent: 2em;" class="mb-4">
+                                ByteMelodies Inc. 是一家位於美國洛杉磯的人工智能顧問與技術開發公司，專注於為物流、建築材料、跨境電商與供應鏈產業提供 AI 智能解決方案。
+                            </p>
+                            <p style="text-indent: 2em;" class="mb-5">
+                                <strong>使命：</strong>讓企業以最實際的方式導入人工智能，提升效率、降低成本、強化競爭力。
+                            </p>
+
+                            <h4 class="title is-5 has-text-primary mb-3">核心服務</h4>
+
+                            <p style="text-indent: 0;" class="mb-3"><strong>1️⃣ AI 智能體開發（AI Agent System）</strong></p>
+                            <p style="text-indent: 2em;" class="mb-3">
+                                為企業量身設計專屬智能體：小關（AI 報關與合規助理）、小威（AI 銷售報價助理）、小輝（AI 卡車運輸派送助理）、BlueLink（明哲：AI 品牌形象與企業顧問）、AI Sophia（物流與倉儲 AI 助手）。功能亮點：自動化報關、即時稅率分析、AI 客服、智能銷售與客戶數據學習。
+                            </p>
+
+                            <p style="text-indent: 0;" class="mb-3"><strong>2️⃣ AI 顧問與系統整合服務</strong></p>
+                            <p style="text-indent: 2em;" class="mb-3">
+                                AI 導入規劃與數據清洗、CRM / ERP / WMS 整合、AI 智能體訓練與維護、企業內部 AI 培訓。
+                            </p>
+
+                            <p style="text-indent: 0;" class="mb-3"><strong>3️⃣ AI 銷售與品牌推廣方案</strong></p>
+                            <p style="text-indent: 2em;" class="mb-5">
+                                AI 銷售助理自動生成中英文行銷內容、AI 網站與客戶互動介面、市場數據分析與自動行銷追蹤、CRM 整合提升轉化率。
+                            </p>
+
+                            <h4 class="title is-5 has-text-primary mb-3">商業模式</h4>
+                            <p style="text-indent: 2em;" class="mb-5">
+                                專案顧問制：根據企業需求設計 AI 系統，收取顧問費與開發費。訂閱制服務：每月訂閱 AI 模組（CRM、報關、銷售系統）。策略聯合開發：與行業龍頭共建 AI 解決方案並共享收益。
+                            </p>
+
+                            <h4 class="title is-5 has-text-primary mb-3">行業應用</h4>
+                            <p style="text-indent: 2em;" class="mb-5">
+                                物流業：報關、派送、報價自動化（小關、小輝、小威）。建材業：關稅查詢、銷售推廣（小關、AI 銷售助理）。電商業：客服、訂單、會員管理（AI Sophia）電子郵件自動處理。顧問與金融：文件審核、決策分析（BlueLink、AI DataBot）。
+                            </p>
+
+                            <h4 class="title is-5 has-text-primary mb-3">🌐 公司願景</h4>
+                            <p style="text-indent: 2em;" class="mb-5">
+                                ByteMelodies 不只是 AI 技術公司，更是企業的智能轉型夥伴。我們讓 AI 成為企業的第二大腦，幫助中美企業實現智能化、全球化與永續成長。
+                            </p>
+
+                            <p style="text-indent: 0;" class="has-text-centered">
+                                <strong>公司網站：</strong>www.bytemelodies.com<br>
+                                <strong>聯絡信箱：</strong>info@bytemelodies.com<br>
+                                <strong>總部地址：</strong>Los Angeles, California, USA
+                            </p>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

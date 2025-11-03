@@ -17,6 +17,49 @@
     <link rel="stylesheet" href="../../assets/css/footer.css">
 
     <style>
+        /* Fixed sponsor banner at the top */
+        .sponsor-banner {
+            position: fixed;
+            top: 70px; /* Below the navbar */
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 80px;
+            background: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 3px solid #ffd700;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .sponsor-logo {
+            height: 70px;
+            width: auto;
+            display: inline-block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Page header with spacing for banner */
+        .hero.is-small {
+            margin-top: 100px; /* Space for fixed banner */
+        }
+
+        /* Mobile adjustments */
+        @media screen and (max-width: 768px) {
+            .sponsor-banner {
+                padding: 0.3rem 0;
+            }
+
+            .sponsor-logo {
+                height: 70px;
+            }
+
+            .hero.is-small {
+                margin-top: 70px;
+            }
+        }
+
         /* Remove border from boxes */
         .box {
             border: none !important;
@@ -79,14 +122,21 @@
     <!-- Navigation (injected by components.js) -->
     <div id="navbar-container"></div>
 
+    <!-- Sponsor Banner -->
+    <section class="sponsor-banner">
+        <div class="container">
+            <img src="longfri.png" alt="Longfri" class="sponsor-logo">
+        </div>
+    </section>
+
     <!-- Page Header -->
-    <section class="hero is-royal-blue is-small">
+    <section class="hero is-small" style="background-color: white;">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title is-2 has-text-white">
+                <h1 class="title is-2 has-text-royal-blue">
                     节目与表演者
                 </h1>
-                <p class="subtitle is-5 has-text-white">精彩表演，才艺荟萃</p>
+                <p class="subtitle is-5 has-text-royal-blue">精彩表演，才艺荟萃</p>
             </div>
         </div>
     </section>
@@ -283,6 +333,67 @@
                     <!-- Closing Message -->
                     <div class="notification is-light has-text-centered mt-5">
                         <p class="is-size-5 has-text-grey">感谢所有参与演出的校友们！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Introduction Section -->
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10-desktop is-12-tablet">
+                    <div class="box has-background-white" style="border-top: 4px solid #113F67; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h2 class="title is-3 has-text-centered has-text-primary mb-5">
+                            赞助商介绍 - Longfri
+                        </h2>
+
+                        <div class="content is-size-5-desktop is-size-6-mobile" style="line-height: 1.8;">
+
+                            <!-- First Section with Image -->
+                            <div class="columns is-vcentered mb-5">
+                                <div class="column is-8">
+                                    <p style="text-indent: 2em;">
+                                        Longfri科技有限公司坐落于加利福尼亚州南部，由两位朋友于2011年共同创立。两位创始人洞察到全球对防护产品日益增长的需求，以及聚乙烯纤维作为防弹装甲基础材料的卓越性能。朗弗科技由此成立，专注于制造防弹装甲，产品涵盖军用及执法级别和非政府个人安全级别。公司所使用的聚乙烯纤维，由其创始人之一的关联公司生产。
+                                    </p>
+                                </div>
+                                <div class="column is-4">
+                                    <figure class="image">
+                                        <img src="img1.png" alt="Longfri" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <!-- Second Section with Image -->
+                            <div class="columns is-vcentered mb-5">
+                                <div class="column is-4">
+                                    <figure class="image">
+                                        <img src="img2.png" alt="Longfri" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    </figure>
+                                </div>
+                                <div class="column is-8">
+                                    <p style="text-indent: 2em;">
+                                        公司命名为"Longfri"（寓意"长久为友，永无止境"），不仅寄托了两位创始人希望友谊随时间流逝而愈发牢固的愿望，也表达了公司与客户建立持久业务关系的期望。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Third Section with Image -->
+                            <div class="columns is-vcentered">
+                                <div class="column is-8">
+                                    <p style="text-indent: 2em;">
+                                        在Longfri科技，我们提供广泛的军警用及非政府安全防护产品，包括但不限于PE防弹板、防弹衣、防弹头盔和防弹盾牌。Longfri科技致力于以更低的成本提供最优质的产品和最佳的客户服务。无论客户在产品信息、尺寸选择还是特殊订单方面需要任何帮助，我们随时为您提供支持。
+                                    </p>
+                                </div>
+                                <div class="column is-4">
+                                    <figure class="image">
+                                        <img src="img3.png" alt="Longfri" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    </figure>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

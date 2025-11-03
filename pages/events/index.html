@@ -17,6 +17,49 @@
     <link rel="stylesheet" href="../../assets/css/footer.css">
 
     <style>
+        /* Fixed sponsor banner at the top */
+        .sponsor-banner {
+            position: fixed;
+            top: 70px; /* Below the navbar */
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 80px;
+            background: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 3px solid #ffd700;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .sponsor-logo {
+            height: 70px;
+            width: auto;
+            display: inline-block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Page header with spacing for banner */
+        .hero.is-small {
+            margin-top: 100px; /* Space for fixed banner */
+        }
+
+        /* Mobile adjustments */
+        @media screen and (max-width: 768px) {
+            .sponsor-banner {
+                padding: 0.3rem 0;
+            }
+
+            .sponsor-logo {
+                height: 70px;
+            }
+
+            .hero.is-small {
+                margin-top: 70px;
+            }
+        }
+
         .event-card {
             cursor: pointer;
             transition: all 0.3s ease;
@@ -58,14 +101,21 @@
     <!-- Navigation (injected by components.js) -->
     <div id="navbar-container"></div>
 
+    <!-- Sponsor Banner -->
+    <section class="sponsor-banner">
+        <div class="container">
+            <img src="sponsor/logo.png" alt="Zoooom" class="sponsor-logo">
+        </div>
+    </section>
+
     <!-- Page Header -->
-    <section class="hero is-royal-blue is-small">
+    <section class="hero is-small" style="background-color: white;">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title is-2 has-text-white">
+                <h1 class="title is-2 has-text-royal-blue">
                     校友会活动回顾
                 </h1>
-                
+
             </div>
         </div>
     </section>
@@ -155,6 +205,58 @@
                     </a>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Introduction Section -->
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10-desktop is-12-tablet">
+                    <div class="box has-background-white" style="border-top: 4px solid #113F67; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h2 class="title is-3 has-text-centered has-text-primary mb-5">
+                            赞助商介绍 - Zoooom
+                        </h2>
+
+                        <div class="content is-size-5-desktop is-size-6-mobile" style="line-height: 1.8;">
+
+                            <!-- First Section with Image -->
+                            <div class="columns is-vcentered mb-5">
+                                <div class="column is-8">
+                                    <p style="text-indent: 2em;">
+                                        Zoooom是一款革命性的数字平台，正重塑着人们的汽车拥有体验。我们始终秉持消费者至上的理念，为车辆管理、购买和出售提供无可比拟的全链条解决方案。用户可在私人数字车库中安全存储所有保养维修记录，通过可信赖的交易市场进行个人间买卖，并享受业内最全面的集成金融方案服务。
+                                    </p>
+                                </div>
+                                <div class="column is-4">
+                                    <figure class="image">
+                                        <img src="sponsor/img1.webp" alt="Zoooom" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <!-- Second Section - Full Width Text -->
+                            <p style="text-indent: 2em;" class="mb-5">
+                                Zoooom通过提供超越传统车辆历史报告的端到端P2P综合平台，从根本上重新定义了汽车拥有体验。与传统平台依赖不完整或付费数据不同，Zoooom将包括数字车库在内的完整服务套件完全免费向用户开放，让车主获得对爱车历史的空前掌控力。这一革新的核心，正是Zoooom创新的数字车库。
+                            </p>
+
+                            <!-- Third Section with Image -->
+                            <div class="columns is-vcentered">
+                                <div class="column is-4">
+                                    <figure class="image">
+                                        <img src="sponsor/img2.webp" alt="Zoooom" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    </figure>
+                                </div>
+                                <div class="column is-8">
+                                    <p style="text-indent: 2em;" class="mb-3">
+                                        首发版本的数字车库包含以下功能：创建管理数字车库，轻松添加车辆并集中管理所有记录；完整保养历史，在同一空间上传、存储及查阅所有维保记录，特别支持上传带照片凭证的重要DIY记录——此项功能是Carfax、AutoCheck等传统服务无法企及的；召回追踪，获取针对您爱车型号的自动召回提醒，保障行车安全更省心。
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

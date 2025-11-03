@@ -80,6 +80,20 @@
     --radius-round: 50px;
 }
 
+/* Global Chinese Font */
+body {
+    font-family:
+        "PingFang SC",           /* macOS/iOS - Modern, clean */
+        "Microsoft YaHei",       /* Windows - Widely used */
+        "微软雅黑",               /* Windows (Chinese name) */
+        "Source Han Sans SC",    /* Adobe font */
+        "Noto Sans SC",          /* Google font fallback */
+        "Hiragino Sans GB",      /* Older macOS */
+        "STHeiti",               /* Legacy Mac */
+        "SimHei",                /* Legacy Windows */
+        sans-serif;              /* Generic fallback */
+}
+
 /* Override Bulma primary color with royal blue */
 .is-royal-blue {
     background-color: var(--royal-blue) !important;
@@ -201,6 +215,7 @@ body {
 .navbar {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     min-height: 70px;
+    z-index: 1000; /* Above sponsor banner (999) */
 }
 
 .navbar-brand {
@@ -224,7 +239,7 @@ body {
 
 .navbar-burger {
     color: white;
-    margin-left: 0.75rem !important;
+    margin-left: 0.0rem !important;
     width: 4.5rem;
     height: 70px;
 }
@@ -233,6 +248,7 @@ body {
     height: 3px;
     width: 26px;
     left: calc(50% - 13px);
+    transition: all 0.3s ease;
 }
 
 .navbar-burger span:nth-child(1) {
@@ -249,6 +265,19 @@ body {
 
 .navbar-burger:hover {
     background-color: var(--royal-blue-dark) !important;
+}
+
+/* Hamburger active state - X shape */
+.navbar-burger.is-active span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.navbar-burger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-burger.is-active span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
 }
 
 /* Left align hamburger and site title */
@@ -279,6 +308,14 @@ body {
 
     .navbar-menu {
         background-color: var(--royal-blue);
+        position: fixed; /* Make it fixed position */
+        top: 70px; /* Below the navbar */
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1001; /* Above navbar and sponsor banner */
+        max-height: calc(100vh - 70px); /* Don't exceed viewport */
+        overflow-y: auto; /* Scroll if too many items */
     }
 
     .navbar-menu.is-active {
@@ -529,8 +566,10 @@ body {
 .timeline-section {
     position: relative;
     padding-left: 60px;
+    padding-right: 0; /* Extend to right edge */
     margin: 1.5rem 0;
     padding-bottom: 0rem;
+    width: 100%; /* Full width from timeline to right edge */
 }
 
 /* Continue the line through section headers */
@@ -630,6 +669,8 @@ body {
 
     .timeline-section {
         padding-left: 30px;
+        padding-right: 0;
+        width: 100%;
     }
 
     .timeline-item::before {

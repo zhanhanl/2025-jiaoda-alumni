@@ -15,10 +15,177 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        /* Fixed sponsor banner at the top */
+        .sponsor-banner {
+            position: fixed;
+            top: 70px; /* Below the navbar */
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 3px solid #ffd700;
+            z-index: 20; /* Keep well below navbar and its mobile menu */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .sponsor-logo {
+            max-height: 80px;
+            width: auto;
+            display: inline-block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Video section - Fixed position, gets buried by scrolling content */
+        .video-section {
+            position: fixed;
+            top: 130px; /* Below the fixed sponsor banner (70px navbar + 60px banner content) */
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: #000;
+            z-index: 1; /* Very low - content will scroll over it */
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .sponsor-video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            opacity: 0.95; /* Slight transparency for aesthetic */
+        }
+
+        /* Page header and content have higher z-index to bury the video */
+        .hero.is-royal-blue.is-small {
+            position: relative;
+            z-index: 10; /* Higher than video - will cover it when scrolling */
+            background: linear-gradient(135deg, #113F67 0%, #34699A 100%);
+            /* Calculate spacing: navbar (70px) + banner padding + logo (~110px) + video height (56.25vw) */
+            margin-top: calc(130px + 40vw);
+            transition: transform 0.3s ease;
+        }
+
+        .section {
+            position: relative;
+            z-index: 10;
+            background: white; /* Solid background to cover video */
+        }
+
+        /* Smooth scroll behavior for the bury effect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Add a subtle shadow to the hero when it starts covering the video */
+        .hero.is-royal-blue.is-small::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+            pointer-events: none;
+        }
+
+        /* Mobile adjustments */
+        @media screen and (max-width: 768px) {
+            .sponsor-banner {
+                padding: 1rem 0;
+            }
+
+            .sponsor-logo {
+                max-height: 60px;
+            }
+
+            .video-section {
+                top: 110px; /* Adjust for smaller mobile banner (70px navbar + 40px banner) */
+            }
+
+            .hero.is-royal-blue.is-small {
+                margin-top: calc(110px + 40vw);
+            }
+        }
+
+        /* Optional: Add a fade effect as content covers video */
+        @media (prefers-reduced-motion: no-preference) {
+            .video-section {
+                transition: opacity 0.5s ease;
+            }
+        }
+
+        /* Images overlaid on the right side - separate layer above text */
+        .parallax-image-wrapper {
+            position: absolute;
+            right: 0;
+            width: 250px;
+            z-index: 5; /* Above timeline content */
+            background: transparent;
+            pointer-events: none; /* Allow clicking through to content below */
+        }
+
+        .parallax-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            display: block;
+            background: transparent;
+        }
+
+        /* Make timeline container the positioning context */
+        .timeline-container {
+            position: relative;
+        }
+
+        /* Mobile and tablet adjustments */
+        @media screen and (max-width: 1200px) {
+            .parallax-image-wrapper {
+                width: 200px;
+                right: -20px; /* Slightly extend beyond container */
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .parallax-image-wrapper {
+                width: 150px;
+                right: -10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .parallax-image-wrapper {
+                width: 120px;
+                right: -10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
     <div id="navbar-container"></div>
+
+    <!-- Sponsor Banner -->
+    <section class="sponsor-banner">
+        <div class="container">
+            <img src="sp1_logo.png" alt="赞助商" class="sponsor-logo">
+        </div>
+    </section>
+
+    <!-- Sponsor Video -->
+    <section class="video-section">
+        <video autoplay muted loop playsinline class="sponsor-video">
+            <source src="sp1_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
 
     <!-- Page Header -->
     <section class="hero is-royal-blue is-small">
@@ -37,6 +204,17 @@
             <div class="columns is-centered">
                 <div class="column is-10-desktop is-12-tablet">
                     <div class="timeline-container">
+
+                        <!-- First Parallax Image - Adjust 'top' value to change vertical position -->
+                        <div class="parallax-image-wrapper parallax-1" id="parallax-img-1" style="top: 40rem;">
+                            <img src="sp1_img1.png" alt="赞助商" class="parallax-image">
+                        </div>
+
+                        <!-- Second Parallax Image - Adjust 'top' value to change vertical position -->
+                        <div class="parallax-image-wrapper parallax-2" id="parallax-img-2" style="top: 85rem;">
+                            <img src="sp1_img3.png.webp" alt="赞助商" class="parallax-image">
+                        </div>
+
 
                         <!-- 下午场标题 -->
                         <div class="timeline-section">
@@ -151,6 +329,8 @@
                             </div>
                         </div>
 
+
+
                         <!-- 赵美心致辞 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
@@ -174,6 +354,8 @@
                                 <div class="timeline-description">理事长见证</div>
                             </div>
                         </div>
+
+
 
                         <!-- 会长演讲 -->
                         <div class="timeline-item">
@@ -219,6 +401,8 @@
                                 <div class="timeline-title">王广成现场互动</div>
                             </div>
                         </div>
+
+
 
                         <!-- 第二幕标题 -->
                         <div class="timeline-section">
@@ -365,6 +549,79 @@
         </div>
     </section>
 
+    <!-- Sponsor Introduction Section -->
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10-desktop is-12-tablet">
+                    <!-- Section Header -->
+                    <div class="box has-background-white" style="border-top: 4px solid #113F67; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h2 class="title is-3 has-text-centered has-text-primary mb-5">
+                            赞助商介绍 - Sceptre
+                        </h2>
+
+                        <!-- Content Grid -->
+                        <div class="content is-size-5-desktop is-size-6-mobile" style="line-height: 1.8;">
+
+                            <!-- First Section with Image -->
+                            <div class="columns is-vcentered mb-5">
+                                <div class="column is-8">
+                                    <p style="text-indent: 2em;">
+                                        近四十年来，Sceptre 始终是 LCD/HDTV 行业的先驱力量, 一直致力于技术的创新与进步。
+                                    </p>
+                                </div>
+                                <div class="column is-4">
+                                    <figure class="image">
+                                        <img src="sp1_img2.png" alt="Sceptre" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <!-- Second Section -->
+                            <p style="text-indent: 2em;" class="mb-5">
+                                在过去的四十年里（1984-2024），Sceptre 对进步坚定不移的承诺，为其构建尖端显示技术帝国奠定了坚实的基础。从 1984 年开创性地推出 CRT 技术开始，Sceptre 的研发实验室经历了一段变革之旅，最终引领了 LCD 技术的进步。早于 1993 年，Sceptre 的研发实验室就推出了其第一代 LCD 显示器，为后续的 LED 和 3D 显示等技术突破奠定了基础。
+                            </p>
+
+                            <!-- Third Section with Image -->
+                            <div class="columns is-vcentered mb-5">
+                                <div class="column is-4">
+                                    <figure class="image">
+                                        <img src="sp1_img4.png" alt="Sceptre Technology" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    </figure>
+                                </div>
+                                <div class="column is-8">
+                                    <p style="text-indent: 2em;">
+                                        这一战略转变使 Sceptre 的研发实验室始终处于创新前沿，不仅在 LCD 显示领域，而且在 LED HDTV 和 3D 技术领域也是如此。Sceptre 已在 LCD/LED 显示行业赢得了开拓者的声誉。然而，Sceptre 成功的关键远不止于制造世界级的产品，更在于其能够理解并满足合作伙伴与渠道的独特需求，并在此过程中赢得他们的信任。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Fourth Section -->
+                            <p style="text-indent: 2em;" class="mb-5">
+                                Sceptre 的总体目标是与各类合作伙伴建立互惠互利的关系，包括大众零售商、电子商务公司、财富 500 强企业、政府实体以及全国各地的中小企业。公司通过致力于研发、利用尖端技术同时提供顶级服务来实现这一目标。
+                            </p>
+
+                            <!-- Fifth Section with Image -->
+                            <div class="columns is-vcentered">
+                                <div class="column is-8">
+                                    <p style="text-indent: 2em;">
+                                        正如我们深厚的研发历史所证明的那样，Sceptre 始终坚持通过不断推进 LCD、LED 和 HDTV 技术来保持其领导地位。Sceptre 卓越的产品质量，加上行业领先的规格参数，使我们的研发实验室在竞争中脱颖而出。这得益于我们对研究和复杂开发坚定不移的投入，使 Sceptre 能够出色地为合作伙伴提供定制化解决方案。
+                                    </p>
+                                </div>
+                                <div class="column is-4">
+                                    <figure class="image">
+                                        <img src="sp1_img5.png" alt="Sceptre Innovation" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    </figure>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer (injected by components.js) -->
     <div id="footer-container"></div>
 
@@ -372,5 +629,6 @@
     <script src="../../assets/js/config.js"></script>
     <script src="../../assets/js/components.js"></script>
     <script src="../../assets/js/main.js"></script>
+
 </body>
 </html>
