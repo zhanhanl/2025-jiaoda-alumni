@@ -12,6 +12,7 @@
   }
 
   function initComponents() {
+    injectThemeVariables();  // MUST BE FIRST - injects CSS variables from config
     injectBanner();
     injectNavigation();
     injectSponsorBanner();
@@ -126,6 +127,28 @@
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const isInPagesFolder = window.location.pathname.includes('/pages/');
 
+    // Derive a stable page key for active-state detection
+    const pathParts = window.location.pathname.split('/');
+    let pageKey = '';
+    if (isInPagesFolder) {
+      const pagesIndex = pathParts.indexOf('pages');
+      if (pagesIndex !== -1 && pagesIndex + 1 < pathParts.length) {
+        pageKey = pathParts[pagesIndex + 1] || '';
+      }
+    }
+    if (!pageKey) {
+      pageKey = (currentPage || 'home.html').replace('.html', '') || 'home';
+    }
+    if (pageKey === '' || pageKey === 'index') {
+      // If we're at .../pages/<section>/index.html, use the folder name
+      const pagesIndex = pathParts.indexOf('pages');
+      if (pagesIndex !== -1 && pagesIndex + 1 < pathParts.length) {
+        pageKey = pathParts[pagesIndex + 1] || 'home';
+      } else {
+        pageKey = 'home';
+      }
+    }
+
     // Build navigation items
     const navItems = siteConfig.navigation.map(item => {
       // Handle separator items (non-clickable)
@@ -175,8 +198,11 @@
       // Use href directly from config (absolute paths work from anywhere)
       const href = item.href;
 
-      const isActive = item.href.includes(currentPage) ||
-                      (currentPage === 'home.html' && item.name === 'Home');
+      // Compute item key comparable to pageKey (strip folders/extensions)
+      let itemHref = item.href.replace('../', '').replace('pages/', '');
+      if (!itemHref) itemHref = 'home.html';
+      const itemKey = itemHref.replace('/index.html', '').replace('.html', '') || 'home';
+      const isActive = (itemKey === pageKey) || (pageKey === 'home' && item.name === 'Home');
       const activeClass = isActive ? 'is-active' : '';
 
       // Preserve whitespace in the name
@@ -296,5 +322,85 @@
       });
     });
   }
+
+  // Inject CSS Custom Properties from config.js theme
+  function injectThemeVariables() {
+    if (!siteConfig.theme) return;
+
+    const root = document.documentElement;
+    const theme = siteConfig.theme;
+
+    // Primary colors
+    root.style.setProperty('--primary', theme.primary || '#113F67');
+    root.style.setProperty('--primary-dark', theme.primaryDark || '#0a2a45');
+    root.style.setProperty('--primary-light', theme.primaryLight || '#34699A');
+
+    // Aliases for backwards compatibility
+    root.style.setProperty('--royal-blue', theme.primary || '#113F67');
+    root.style.setProperty('--royal-blue-dark', theme.primaryDark || '#0a2a45');
+    root.style.setProperty('--royal-blue-light', theme.primaryLight || '#34699A');
+
+    // Secondary colors
+    root.style.setProperty('--secondary', theme.secondary || '#58A0C8');
+    root.style.setProperty('--secondary-dark', theme.secondaryDark || '#4088b0');
+    root.style.setProperty('--secondary-light', theme.secondaryLight || '#7ab8d9');
+
+    // Accent colors
+    root.style.setProperty('--accent', theme.accent || '#FDF5AA');
+    root.style.setProperty('--gold', theme.gold || '#FFD700');
+
+    // Text colors
+    root.style.setProperty('--text-dark', theme.textDark || '#2c3e50');
+    root.style.setProperty('--text-medium', theme.textMedium || '#5a5a5a');
+    root.style.setProperty('--text-light', theme.textLight || '#7f8c8d');
+    root.style.setProperty('--text-lighter', theme.textLighter || '#95a5a6');
+
+    // Background colors
+    root.style.setProperty('--bg-white', theme.bgWhite || '#ffffff');
+    root.style.setProperty('--bg-light', theme.bgLight || '#f9fafb');
+    root.style.setProperty('--bg-lighter', theme.bgLighter || '#f8f9fa');
+    root.style.setProperty('--bg-gray', theme.bgGray || '#e9ecef');
+
+    // Border colors
+    root.style.setProperty('--border', theme.border || '#e0e0e0');
+    root.style.setProperty('--border-light', theme.borderLight || '#f0f0f0');
+
+    // Status colors
+    root.style.setProperty('--success', theme.success || '#50C878');
+    root.style.setProperty('--warning', theme.warning || '#FFA500');
+    root.style.setProperty('--danger', theme.danger || '#FF6B6B');
+    root.style.setProperty('--info', theme.info || '#20B2AA');
+
+    // Sponsor tier colors
+    root.style.setProperty('--tier-diamond', theme.tierDiamond || '#b9f2ff');
+    root.style.setProperty('--tier-platinum', theme.tierPlatinum || '#E5E4E2');
+    root.style.setProperty('--tier-gold', theme.tierGold || '#FFD700');
+    root.style.setProperty('--tier-silver', theme.tierSilver || '#C0C0C0');
+
+    // Layout
+    root.style.setProperty('--navbar-height', theme.navbarHeight || '60px');
+    root.style.setProperty('--sponsor-banner-height', theme.sponsorBannerHeight || '80px');
+
+    // Typography
+    if (theme.fontFamily) {
+      root.style.setProperty('--font-family', theme.fontFamily);
+    }
+    if (theme.fontSizeBase) {
+      root.style.setProperty('--font-size-base', theme.fontSizeBase);
+    }
+
+    // Shadows
+    if (theme.shadowSmall) root.style.setProperty('--shadow-sm', theme.shadowSmall);
+    if (theme.shadowMedium) root.style.setProperty('--shadow-md', theme.shadowMedium);
+    if (theme.shadowLarge) root.style.setProperty('--shadow-lg', theme.shadowLarge);
+
+    // Border radius
+    if (theme.radiusSmall) root.style.setProperty('--radius-sm', theme.radiusSmall);
+    if (theme.radiusMedium) root.style.setProperty('--radius-md', theme.radiusMedium);
+    if (theme.radiusLarge) root.style.setProperty('--radius-lg', theme.radiusLarge);
+
+    console.log('✅ Theme variables injected from config.js:', Object.keys(theme).length + ' properties');
+  }
+
 
 })();

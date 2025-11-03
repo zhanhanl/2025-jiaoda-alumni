@@ -182,14 +182,81 @@ const siteConfig = {
     }
   },
 
-  // Color Theme
+  // Color Theme - Complete Design System
+  // ======================================
+  // These colors are injected as CSS variables via components.js
+  // Change here to update the entire site theme
+  // ======================================
   theme: {
-    primaryColor: "#0d44bc",      // Deep Navy
-    primaryColorDark: "#0a2a45",  // Darker Navy
-    primaryColorLight: "#34699A", // Medium Blue
-    secondaryColor: "#58A0C8",    // Light Blue
-    accentColor: "#FDF5AA"        // Cream Yellow
+    // Primary Brand Colors (updated to user's palette)
+    // Dark → Light: #03254c, #1167b1, #187bcd, #2a9df4, #d0efff
+    primary: "#1167b1",           // Main brand blue
+    primaryDark: "#03254c",       // Darker shade for hover states
+    primaryLight: "#187bcd",      // Lighter shade for accents
+
+    // Secondary/Supporting Colors
+    secondary: "#2a9df4",         // Bright supporting blue
+    secondaryDark: "#187bcd",     // Slightly darker for contrast
+    secondaryLight: "#d0efff",    // Very light tint
+
+    // Accent Colors
+    accent: "#d0efff",            // Light accent from palette
+    gold: "#FFD700",              // Gold accent
+
+    // Text Colors
+    textDark: "#2c3e50",          // Primary text
+    textMedium: "#5a5a5a",        // Secondary text
+    textLight: "#7f8c8d",         // Tertiary text
+    textLighter: "#95a5a6",       // Disabled/placeholder
+
+    // Background Colors
+    bgWhite: "#ffffff",           // Pure white
+    bgLight: "#f9fafb",           // Light gray
+    bgLighter: "#f8f9fa",         // Lighter gray
+    bgGray: "#e9ecef",            // Medium gray
+
+    // Border Colors
+    border: "#e0e0e0",            // Default border
+    borderLight: "#f0f0f0",       // Light border
+
+    // Status Colors
+    success: "#50C878",           // Success green
+    warning: "#FFA500",           // Warning orange
+    danger: "#FF6B6B",            // Error red
+    info: "#20B2AA",              // Info blue
+
+    // Sponsor Tier Colors
+    tierDiamond: "#b9f2ff",
+    tierPlatinum: "#E5E4E2",
+    tierGold: "#FFD700",
+    tierSilver: "#C0C0C0",
+
+    // Layout & Spacing
+    navbarHeight: "60px",
+    sponsorBannerHeight: "80px",
+
+    // Typography
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    fontSizeBase: "16px",
+
+    // Shadows
+    shadowSmall: "0 2px 4px rgba(0, 0, 0, 0.08)",
+    shadowMedium: "0 4px 12px rgba(17, 63, 103, 0.15)",
+    shadowLarge: "0 8px 24px rgba(17, 63, 103, 0.2)",
+
+    // Border Radius
+    radiusSmall: "4px",
+    radiusMedium: "8px",
+    radiusLarge: "12px",
+
+    // Legacy keys for backward compatibility (used by main.js)
+    primaryColor: "#1167b1",
+    primaryColorDark: "#03254c",
+    primaryColorLight: "#187bcd",
+    secondaryColor: "#2a9df4",
+    accentColor: "#d0efff"
   }
+  
 };
 
 // Export for use in other files

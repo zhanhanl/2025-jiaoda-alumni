@@ -33,26 +33,25 @@
         .parent-tab-button {
             flex: 1;
             padding: 1.25rem 2rem;
-            background: #e8e8e8;
+            background: white;
             border: none;
             border-bottom: 4px solid transparent;
             cursor: pointer;
             font-size: 1.3rem;
             font-weight: 700;
-            color: #4a4a4a;
+            color: var(--text-medium);
             transition: all 0.3s ease;
             text-align: center;
         }
 
         .parent-tab-button:hover {
-            color: var(--primary);
-            background: #f0f0f0;
+            background: var(--tertiary);
         }
 
         .parent-tab-button.is-active {
             color: var(--primary);
             border-bottom-color: var(--primary);
-            background: white;
+            background: var(--accent-light);
         }
 
         .parent-tab-content {
@@ -83,7 +82,7 @@
             cursor: pointer;
             font-size: 1.1rem;
             font-weight: 600;
-            color: #4a4a4a;
+            color: var(--text-medium);
             transition: all 0.3s ease;
             text-align: center;
         }
@@ -139,7 +138,7 @@
         .alumni-name {
             text-align: center;
             font-size: 1rem;
-            color: #333;
+            color: var(--text-dark);
         }
 
         .leadership-table {
@@ -156,13 +155,13 @@
 
         .leadership-table .role {
             font-weight: 600;
-            color: var(--primary);
+            color: black;
             width: 70px;
             white-space: nowrap;
         }
 
         .leadership-table .name {
-            color: #333;
+            color: var(--text-dark);
             font-size: 1.1rem;
         }
 
@@ -178,14 +177,14 @@
         .club-table .club-name {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--primary);
+            color: black;
             white-space: nowrap;
             width: 130px;
         }
 
         .club-table .club-members {
             font-size: 1rem;
-            color: #333;
+            color: var(--text-dark);
         }
 
         .advisors-grid {
@@ -240,6 +239,12 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0.5rem 0.3rem;
             }
+        }
+
+        /* Team tab - black titles and subtitles */
+        #team .title,
+        #team .subtitle {
+            color: black !important;
         }
     </style>
 </head>

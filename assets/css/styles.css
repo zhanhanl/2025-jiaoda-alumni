@@ -2,21 +2,21 @@
 
 :root {
     /* Primary Color Palette - Custom Theme */
-    --primary: #113F67;           /* Deep Navy - Main brand color */
-    --primary-dark: #0a2a45;      /* Darker navy for hover states */
+    --primary: #1167b1;           /* Deep Navy - Main brand color */
+    --primary-dark: #03254c;      /* Darker navy for hover states */
     --primary-light: #1a5280;     /* Lighter navy for accents */
 
     --secondary: #34699A;         /* Medium Blue */
     --secondary-dark: #26527a;    /* Darker medium blue */
     --secondary-light: #4d84b3;   /* Lighter medium blue */
 
-    --tertiary: #58A0C8;          /* Light Blue */
+    --tertiary: #d0efff;          /* Light Blue */
     --tertiary-dark: #4088b0;     /* Darker light blue */
     --tertiary-light: #7ab8d9;    /* Lighter light blue */
 
     --accent: #FDF5AA;            /* Cream Yellow - Accent color */
     --accent-dark: #f5e777;       /* Darker yellow */
-    --accent-light: #fffbcc;      /* Lighter yellow */
+    --accent-light: #d0efff;      /* Lighter yellow */
 
     /* Legacy royal-blue variables (mapped to new colors for compatibility) */
     --royal-blue: #113F67;
@@ -110,7 +110,7 @@ body {
 .button.is-royal-blue {
     background-color: var(--royal-blue);
     border-color: transparent;
-    color: #fff;
+    color: var(--bg-white);
 }
 
 .button.is-royal-blue:hover {
@@ -123,9 +123,34 @@ body {
     color: var(--royal-blue);
 }
 
+/* Navbar width options */
+/* Default Bulma container is full-width fluid on mobile and centered with max-widths on desktop. 
+   Constrain navbar content width to improve readability on large screens. */
+@media screen and (min-width: 1024px) {
+  /* Option A: Use 80% of the viewport width */
+  .navbar > .container {
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Option B (opt-in): Fit to content width with right padding.
+   To enable, add class `navbar--fit` to the <nav> element (can be set in components.js)
+   This remains responsive; on smaller screens Bulma collapses to full-width mobile menu. */
+@media screen and (min-width: 1024px) {
+  .navbar.navbar--fit > .container {
+    width: max-content;
+    max-width: 100%;
+    padding-right: 2rem; /* extra right padding */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .button.is-royal-blue.is-outlined:hover {
     background-color: var(--royal-blue);
-    color: #fff;
+    color: var(--bg-white);
 }
 
 /* Color Utility Classes */
@@ -308,14 +333,14 @@ body {
 
     .navbar-menu {
         background-color: var(--royal-blue);
-        position: fixed; /* Make it fixed position */
+        position: fixed; /* Overlay-style mobile menu */
         top: 60px; /* Below the navbar */
         left: 0;
-        right: 0;
-        width: 100%;
+        width: 80vw; /* Constrain width on mobile */
         z-index: 1001; /* Above navbar and sponsor banner */
         max-height: calc(100vh - 60px); /* Don't exceed viewport */
         overflow-y: auto; /* Scroll if too many items */
+        border-bottom-right-radius: var(--radius-lg);
     }
 
     .navbar-menu.is-active {
@@ -510,7 +535,7 @@ body {
 }
 
 .date {
-    color: #7a7a7a;
+    color: var(--text-light);
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
 }
@@ -766,7 +791,7 @@ body {
     background: white;
     padding: 1.5rem 0;
     text-align: center;
-    border-bottom: 3px solid #ffd700;
+    border-bottom: 3px solid var(--gold);
     z-index: 20;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -840,12 +865,12 @@ body {
 
 /* Utility classes */
 .has-background-light {
-    background-color: #f9fafb !important;
+    background-color: var(--bg-light) !important;
 }
 
 /* Blockquote styling */
 blockquote {
-    background-color: #f9fafb;
+    background-color: var(--bg-light);
     border-left: 4px solid var(--royal-blue);
     padding: 1.5rem;
     margin: 1rem 0;
