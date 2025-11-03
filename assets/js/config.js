@@ -53,43 +53,43 @@ const siteConfig = {
       href: `${basePath}/pages/awards/index.html`,
     },
     {
-      name: "年会安排      (SCEPTRE赞助）",
+      name: "年会安排      (SCEPTRE 赞助）",
       href: `${basePath}/pages/program/index.html`,
     },
     {
-      name: "演出节目单   (Longfri赞助)",
+      name: "演出节目单   (Longfri 赞助)",
       href: `${basePath}/pages/performers/index.html`,
     },
     {
-      name: "校友会活动   (Zoooom赞助)",
+      name: "校友会活动   (Zoooom 赞助)",
       href: `${basePath}/pages/events/index.html`,
     },
     {
-      name: "俱乐部活动   (硅谷净洁室设计院赞助)",
+      name: "俱乐部活动   (硅谷净洁室设计院 赞助)",
       href: `${basePath}/pages/club-activity/index.html`,
     },
     {
-      name: "校友来稿      (止观会馆赞助)",
+      name: "校友来稿      (止观会馆 赞助)",
       href: `${basePath}/pages/articles/index.html`,
     },
     {
-      name: "校友会历史   (Bytemelodies赞助)",
+      name: "校友会历史   (Bytemelodies 赞助)",
       href: `${basePath}/pages/history/index.html`,
     },
+    // {
+    //   name: "GMCC万通贷款 赞助页",
+    //   href: `${basePath}/pages/sponsor-ad-gmcc/index.html`,
+    // },
     {
-      name: "GMCC万通贷款 赞助页",
-      href: `${basePath}/pages/sponsor-ad-gmcc/index.html`,
-    },
-    {
-      name: "致谢",
+      name: "致谢            (GMCC 赞助)",
       href: `${basePath}/pages/sponsors/index.html`,
     },
-    // {
-    //   name: "",
-    //   href: null,
-    //   separator: true,
-    //   divider: true  // Visual divider style
-    // },
+    {
+      name: "",
+      href: null,
+      separator: true,
+      divider: true  // Visual divider style
+    },
 
     {
       name: "AQX Engineering",

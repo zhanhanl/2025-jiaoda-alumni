@@ -208,18 +208,18 @@ html {
 
 /* Add padding to body to account for fixed navbar */
 body {
-    padding-top: 70px;
+    padding-top: 60px;
 }
 
 /* Navigation styling */
 .navbar {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    min-height: 70px;
+    min-height: 60px;
     z-index: 1000; /* Above sponsor banner (999) */
 }
 
 .navbar-brand {
-    min-height: 70px;
+    min-height: 60px;
 }
 
 .navbar-item {
@@ -230,7 +230,7 @@ body {
 }
 
 .navbar-end .navbar-item {
-    height: 70px;
+    height: 60px;
 }
 
 .navbar-item:hover {
@@ -241,7 +241,7 @@ body {
     color: white;
     margin-left: 0.0rem !important;
     width: 4.5rem;
-    height: 70px;
+    height: 60px;
 }
 
 .navbar-burger span {
@@ -303,18 +303,18 @@ body {
 @media screen and (max-width: 1023px) {
     .navbar-brand {
         width: 100%;
-        min-height: 70px;
+        min-height: 60px;
     }
 
     .navbar-menu {
         background-color: var(--royal-blue);
         position: fixed; /* Make it fixed position */
-        top: 70px; /* Below the navbar */
+        top: 60px; /* Below the navbar */
         left: 0;
         right: 0;
         width: 100%;
         z-index: 1001; /* Above navbar and sponsor banner */
-        max-height: calc(100vh - 70px); /* Don't exceed viewport */
+        max-height: calc(100vh - 60px); /* Don't exceed viewport */
         overflow-y: auto; /* Scroll if too many items */
     }
 
@@ -324,7 +324,7 @@ body {
 
     .navbar-burger {
         width: 4.5rem;
-        height: 70px;
+        height: 60px;
     }
 
     /* Reduce spacing between mobile menu items */
@@ -758,7 +758,7 @@ body {
 /* Sticky Back Button */
 .article-back-button {
     position: sticky;
-    top: 70px;
+    top: 60px;
     z-index: 50;
     margin-bottom: 1rem;
     background-color: white;

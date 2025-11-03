@@ -15,32 +15,251 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        body {
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .content-section {
+            padding: 3rem 1rem;
+        }
+
+        /* Logo styling */
+        .sponsor-logo-img {
+            max-width: 500px;
+            width: 80%;
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Text styling */
+        .gsm-content {
+            max-width: 900px;
+            margin: 0 auto;
+            color: #2d3436;
+            text-align: center;
+        }
+
+        .gsm-title {
+            font-size: 2.0rem !important;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 0.5rem;
+        }
+
+        .gsm-subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #636e72;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .gsm-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .gsm-divisions {
+            margin: 2rem 0;
+            text-align: left;
+            padding-left: 3rem;
+        }
+
+        .gsm-division-item {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #2d3436;
+            margin: 0.5rem 0;
+        }
+
+        .gsm-mission {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2d3436;
+        }
+
+        .gsm-contact {
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            color: #2d3436;
+        }
+
+        .gsm-contact a {
+            color: #113F67;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .gsm-contact a:hover {
+            color: #34699A;
+            text-decoration: underline;
+        }
+
+        .gsm-youtube-button {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .gsm-youtube-button a {
+            display: inline-block;
+            background: #FF0000;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+        }
+
+        .gsm-youtube-button a:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 0, 0, 0.4);
+        }
+
+        .gsm-youtube-button i {
+            margin-right: 0.5rem;
+        }
+
+        .gsm-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: nowrap;
+        }
+
+        .gsm-stat {
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .gsm-stat:hover {
+            border-color: #113F67;
+            box-shadow: 0 4px 12px rgba(17, 63, 103, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .gsm-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #113F67;
+        }
+
+        .gsm-stat-label {
+            font-size: 0.9rem;
+            color: #636e72;
+            margin-top: 0.5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .gsm-title {
+                font-size: 2rem;
+            }
+
+            .gsm-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .gsm-section-title {
+                font-size: 1.5rem;
+            }
+
+            .sponsor-logo-img {
+                width: 90%;
+            }
+
+            .gsm-stats {
+                gap: 0.5rem;
+            }
+
+            .gsm-stat {
+                flex: 1;
+                min-width: 0;
+                padding: 0.8rem 0.5rem;
+            }
+
+            .gsm-stat-number {
+                font-size: 1.5rem;
+            }
+
+            .gsm-stat-label {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
     <div id="navbar-container"></div>
 
-    <!-- Page Header -->
-    <section class="hero is-royal-blue is-small">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title is-2 has-text-white">
-                    赞助商广告
-                </h1>
-            </div>
-        </div>
-    </section>
-
     <!-- Content Section -->
-    <section class="section">
+    <section class="content-section">
         <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-10">
-                    <!-- Add sponsor advertisement content here -->
-                    <div class="box has-text-centered">
-                        <p class="is-size-5 has-text-grey">广告内容待添加</p>
-                    </div>
+            <!-- Logo -->
+            <img src="gsm.png" alt="GSM Group Star Media" class="sponsor-logo-img">
+
+            <!-- Content -->
+            <div class="gsm-content">
+                <p class="gsm-subtitle">
+                    一个立足美国、面向全球的华人综合传媒集团，以新闻、艺术、音乐、影视和科技为核心连接世界。
+                </p>
+
+                <!-- Ten Divisions -->
+                <h2 class="gsm-section-title">📌 GSM 十大板块</h2>
+                <div class="gsm-divisions">
+                    <div class="gsm-division-item">1. 新闻 / News</div>
+                    <div class="gsm-division-item">2. 出版 / Publishing</div>
+                    <div class="gsm-division-item">3. 音乐 / Music</div>
+                    <div class="gsm-division-item">4. 影视 / Movie</div>
+                    <div class="gsm-division-item">5. 艺术 / Art</div>
+                    <div class="gsm-division-item">6. 动漫 / Animation</div>
+                    <div class="gsm-division-item">7. 制作中心 / Producer Center</div>
+                    <div class="gsm-division-item">8. 人工智能 / Artificial Intelligence</div>
+                    <div class="gsm-division-item">9. 教育 / Academy</div>
+                    <div class="gsm-division-item">10. 数字传播 / Global Digital Communication</div>
                 </div>
+
+                <!-- Mission -->
+                <h2 class="gsm-section-title">❤️ 我们的使命</h2>
+                <div class="gsm-mission">
+                       致力于成为科技与人文结合的国际传媒平台，传播艺术、智慧与跨文化交流的力量。
+                </div>
+
+
+
+                <!-- Contact -->
+                <h2 class="gsm-section-title">联系方式</h2>
+                <div class="gsm-contact">
+                    <p>✉️ Email: <a href="mailto:gsmproducer@gmail.com">gsmproducer@gmail.com</a></p>
+                    <p>🌐 Website: <a href="https://groupstarmedia.com" target="_blank">https://groupstarmedia.com</a></p>
+                    <p>📺 YouTube: <a href="https://www.youtube.com/@GSMproducer" target="_blank">@GSMproducer</a></p>
+                </div>
+
+                <!-- YouTube Button -->
+                <div class="gsm-youtube-button">
+                    <a href="https://www.youtube.com/@GSMproducer" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                        Visit Our YouTube Channel
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>

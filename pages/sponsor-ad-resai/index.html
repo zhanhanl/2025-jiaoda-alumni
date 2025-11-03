@@ -15,32 +15,186 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+
+    <style>
+        /* Static background using ::before pseudo-element (works on iOS Safari) */
+        body {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;  /* Fixed position - stays in place while scrolling */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;  /* Behind all content */
+            /* This method works on iOS Safari unlike background-attachment: fixed */
+        }
+
+        /* Make content sections have transparent background so bg shows through */
+        .hero.is-royal-blue {
+            background: rgba(17, 63, 103, 0.9) !important;
+        }
+
+        .content-section {
+            background: transparent;
+            padding: 2rem 0;
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        /* Logo styling - centered */
+        .sponsor-logo-img {
+            width: 40vw;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Text section - editable */
+        .sponsor-text {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.8;
+        }
+
+        .sponsor-text .title-line {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .sponsor-text .subtitle-line {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .sponsor-text .category-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .sponsor-text .category-item {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0.3rem 0;
+        }
+
+        .sponsor-text .team-info {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .sponsor-text .website-link {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #FFD700;
+            text-decoration: none;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .sponsor-text .website-link:hover {
+            color: #FFA500;
+            text-decoration: underline;
+        }
+
+        /* WeChat image styling */
+        .wechat-img {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Mobile adjustments */
+        @media screen and (max-width: 768px) {
+            .sponsor-text {
+                font-size: 1.2rem;
+                padding: 1.5rem 1rem;
+            }
+
+            .sponsor-text .subtitle-line {
+                font-size: 1.5rem;
+            }
+
+            .wechat-img {
+                max-width: 90%;
+            }
+        }
+
+        /* Footer with semi-transparent background */
+        .footer {
+            background: rgba(255, 255, 255, 0.95) !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation (injected by components.js) -->
     <div id="navbar-container"></div>
 
-    <!-- Page Header -->
-    <section class="hero is-royal-blue is-small">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title is-2 has-text-white">
-                    赞助商广告
-                </h1>
-            </div>
-        </div>
-    </section>
-
     <!-- Content Section -->
-    <section class="section">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-10">
-                    <!-- Add sponsor advertisement content here -->
-                    <div class="box has-text-centered">
-                        <p class="is-size-5 has-text-grey">广告内容待添加</p>
-                    </div>
+    <section class="content-section">
+        <div class="container" style="max-width: 100%; padding: 0;">
+            <!-- Logo - Full screen width -->
+            <div>
+                <img src="logo.png" alt="Resai Logo" class="sponsor-logo-img">
+            </div>
+
+            <!-- Text Section - Editable color and size -->
+            <div class="sponsor-text">
+                <div class="title-line">科研辅导 背景提升</div>
+                <div class="subtitle-line">Empower the Future through Research & AI</div>
+
+                <div style="margin: 2rem 0;">
+                    <div class="category-title">Machine Learning</div>
+                    <div class="category-title">Computer Science</div>
+                    <div class="category-title">Astronomy & Physics</div>
+                    <div class="category-title">Space Science</div>
+                    <div class="category-title">Digital Humanity</div>
+                    <div class="category-title">Social Sciences</div>
                 </div>
+
+                <div style="margin: 2rem 0;">
+                    <div class="category-item">机器学习，人工智能</div>
+                    <div class="category-item">天文物理，</div>
+                    <div class="category-item">空间探索</div>
+                    <div class="category-item">数字人文，社会科学</div>
+                </div>
+
+                <div class="team-info">
+                    导师团队成果著作 来自 UCLA, Caltech, Harvard
+                </div>
+
+                <a href="https://resai.us" target="_blank" class="website-link">https://resai.us</a>
+            </div>
+
+            <!-- WeChat Image -->
+            <div style="padding: 2rem 1rem;">
+                <img src="wechat.jpg" alt="WeChat QR Code" class="wechat-img">
             </div>
         </div>
     </section>
