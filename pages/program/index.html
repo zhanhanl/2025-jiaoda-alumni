@@ -17,33 +17,10 @@
     <link rel="stylesheet" href="../../assets/css/footer.css">
 
     <style>
-        /* Fixed sponsor banner at the top */
-        .sponsor-banner {
-            position: fixed;
-            top: 70px; /* Below the navbar */
-            left: 0;
-            right: 0;
-            width: 100%;
-            background: white;
-            padding: 1.5rem 0;
-            text-align: center;
-            border-bottom: 3px solid #ffd700;
-            z-index: 20; /* Keep well below navbar and its mobile menu */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .sponsor-logo {
-            max-height: 80px;
-            width: auto;
-            display: inline-block;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-        }
-
         /* Video section - Fixed position, gets buried by scrolling content */
         .video-section {
             position: fixed;
-            top: 130px; /* Below the fixed sponsor banner (70px navbar + 60px banner content) */
+            top: 140px; /* Below sponsor banner (60px navbar + 80px banner) */
             left: 0;
             right: 0;
             width: 100%;
@@ -67,8 +44,8 @@
             position: relative;
             z-index: 10; /* Higher than video - will cover it when scrolling */
             background: linear-gradient(135deg, #113F67 0%, #34699A 100%);
-            /* Calculate spacing: navbar (70px) + banner padding + logo (~110px) + video height (56.25vw) */
-            margin-top: calc(130px + 40vw);
+            /* Calculate spacing: navbar (60px) + banner (80px) + video height (56.25vw) */
+            margin-top: calc(140px + 56.25vw) !important;
             transition: transform 0.3s ease;
         }
 
@@ -97,20 +74,12 @@
 
         /* Mobile adjustments */
         @media screen and (max-width: 768px) {
-            .sponsor-banner {
-                padding: 1rem 0;
-            }
-
-            .sponsor-logo {
-                max-height: 60px;
-            }
-
             .video-section {
-                top: 110px; /* Adjust for smaller mobile banner (70px navbar + 40px banner) */
+                top: 120px; /* Adjust for mobile banner (60px navbar + 60px banner) */
             }
 
             .hero.is-royal-blue.is-small {
-                margin-top: calc(110px + 40vw);
+                margin-top: calc(60px + 56.25vw) !important;
             }
         }
 
@@ -172,12 +141,7 @@
     <!-- Navigation (injected by components.js) -->
     <div id="navbar-container"></div>
 
-    <!-- Sponsor Banner -->
-    <section class="sponsor-banner">
-        <div class="container">
-            <img src="sp1_logo.png" alt="赞助商" class="sponsor-logo">
-        </div>
-    </section>
+    <!-- Sponsor Banner (injected by components.js) -->
 
     <!-- Sponsor Video -->
     <section class="video-section">

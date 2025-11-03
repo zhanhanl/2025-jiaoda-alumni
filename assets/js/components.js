@@ -14,6 +14,7 @@
   function initComponents() {
     injectBanner();
     injectNavigation();
+    injectSponsorBanner();
     injectFooter();
     initMobileMenu();
   }
@@ -44,6 +45,76 @@
     }
 
     document.body.insertBefore(banner, document.body.firstChild);
+  }
+
+  // Inject Sponsor Banner (for article pages)
+  function injectSponsorBanner() {
+    if (!siteConfig.sponsorBanner || !siteConfig.sponsorBanner.enabled) return;
+
+    // Get current page filename and path
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname;
+    const showOnPages = siteConfig.sponsorBanner.showOnPages || [];
+
+    // Check if current page matches any pattern
+    const shouldShow = showOnPages.some(pattern => {
+      if (pattern === 'all') return true;
+      // Check if pattern includes path (has /)
+      if (pattern.includes('/')) {
+        return currentPath.includes(pattern);
+      }
+      // Convert glob pattern to regex (simple version) for filename matching
+      const regex = new RegExp('^' + pattern.replace('*', '.*') + '$');
+      return regex.test(currentPage);
+    });
+
+    if (!shouldShow) return;
+
+    // Check for page-specific overrides
+    const overrides = siteConfig.sponsorBanner.pageOverrides || {};
+    let pageConfig = { ...siteConfig.sponsorBanner };
+
+    // Find matching override
+    for (const [path, override] of Object.entries(overrides)) {
+      if (currentPath.includes(path)) {
+        pageConfig = { ...pageConfig, ...override };
+        break;
+      }
+    }
+
+    // Find navbar container to insert after it
+    const navContainer = document.getElementById('navbar-container');
+    if (!navContainer) return;
+
+    // Create sponsor banner section
+    const sponsorBanner = document.createElement('section');
+    sponsorBanner.className = 'sponsor-banner';
+
+    // Create inner HTML based on whether link is provided
+    if (pageConfig.linkTo) {
+      sponsorBanner.innerHTML = `
+        <div class="container">
+          <a href="${pageConfig.linkTo}">
+            <img src="${pageConfig.logo}" alt="${pageConfig.altText}" class="sponsor-logo">
+          </a>
+        </div>
+      `;
+    } else {
+      sponsorBanner.innerHTML = `
+        <div class="container">
+          <img src="${pageConfig.logo}" alt="${pageConfig.altText}" class="sponsor-logo">
+        </div>
+      `;
+    }
+
+    // Insert after navbar
+    navContainer.parentNode.insertBefore(sponsorBanner, navContainer.nextSibling);
+
+    // Add margin to hero section if it exists
+    const heroSection = document.querySelector('.hero.is-small');
+    if (heroSection) {
+      heroSection.style.marginTop = '80px';
+    }
   }
 
   // Inject Navigation

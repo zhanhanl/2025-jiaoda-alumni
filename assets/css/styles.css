@@ -755,13 +755,39 @@ body {
     text-indent: 0;
 }
 
+/* Sponsor Banner - Fixed banner below navbar */
+.sponsor-banner {
+    position: fixed;
+    top: 60px; /* Below the navbar */
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    background: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-bottom: 3px solid #ffd700;
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sponsor-logo {
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.05);
+}
+
 /* Sticky Back Button */
 .article-back-button {
     position: sticky;
-    top: 60px;
-    z-index: 50;
+    top: 150px;
+    z-index: 10;
     margin-bottom: 1rem;
-    background-color: white;
+    background-color: transparent;
     padding: 0.5rem 0;
 }
 
@@ -783,6 +809,18 @@ body {
 
     .section {
         padding: 2rem 1rem;
+    }
+
+    .article-back-button {
+        top: 130px; /* Adjusted for smaller sponsor banner on mobile */
+    }
+
+    .sponsor-banner {
+        padding: 0.3rem 0;
+    }
+
+    .sponsor-logo {
+        height: 70px;
     }
 
     /* Stack cards on mobile */

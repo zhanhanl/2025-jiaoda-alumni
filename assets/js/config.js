@@ -112,6 +112,12 @@ const siteConfig = {
       href: `${basePath}/pages/sponsor-ad-qjkitchen/index.html`,
     },
 
+    {
+      name: "Powered by Bytemelodies",
+      href: null,
+      separator: false,
+      divider: false  // Visual divider style
+    },
 
   ],
 
@@ -140,9 +146,45 @@ const siteConfig = {
     image: "sponsor.png"
   },
 
+  // Sponsor Banner Configuration (for article pages)
+  // =====================================
+  // Floating banner that appears below navbar on specific pages
+  // =====================================
+  sponsorBanner: {
+    // Enable/disable sponsor banner on article detail pages
+    enabled: true,
+
+    // Logo image (relative to page location) - can be overridden per page
+    logo: "sponsor/logo.png",
+
+    // Link when clicking the logo (optional, set to null for no link)
+    linkTo: "../sponsor-ad-gsm/index.html",
+
+    // Alt text for logo
+    altText: "Sponsor",
+
+    // Position settings
+    height: "80px",           // Desktop height
+    heightMobile: "60px",     // Mobile height
+    logoHeight: "50px",       // Desktop logo height
+    logoHeightMobile: "70px", // Mobile logo height
+
+    // Pages where banner should appear (can be 'all' or array of page patterns)
+    showOnPages: ['article-*.html', 'program/index.html'],
+
+    // Page-specific overrides (optional)
+    pageOverrides: {
+      'program/index.html': {
+        logo: 'sp1_logo.png',
+        linkTo: null,  // No link for program page
+        altText: '赞助商'
+      }
+    }
+  },
+
   // Color Theme
   theme: {
-    primaryColor: "#113F67",      // Deep Navy
+    primaryColor: "#0d44bc",      // Deep Navy
     primaryColorDark: "#0a2a45",  // Darker Navy
     primaryColorLight: "#34699A", // Medium Blue
     secondaryColor: "#58A0C8",    // Light Blue
