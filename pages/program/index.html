@@ -14,6 +14,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/timeline.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
 
     <style>
@@ -43,7 +44,7 @@
         .hero.is-royal-blue.is-small {
             position: relative;
             z-index: 10; /* Higher than video - will cover it when scrolling */
-            background: linear-gradient(135deg, #113F67 0%, #34699A 100%);
+            background: var(--primary);
             /* Calculate spacing: navbar (60px) + banner (80px) + video height (56.25vw) */
             margin-top: calc(140px + 56.25vw) !important;
             transition: transform 0.3s ease;
@@ -182,7 +183,7 @@
 
                         <!-- 下午场标题 -->
                         <div class="timeline-section">
-                            <h3 class="title is-4 has-text-primary">下午场：人工智能论坛</h3>
+                            <h3 class="title is-4 text-dark">下午场：人工智能论坛</h3>
                         </div>
 
                         <!-- 人工智能论坛 -->
@@ -209,7 +210,7 @@
 
                         <!-- 第一幕标题 -->
                         <div class="timeline-section">
-                            <h3 class="title is-4 has-text-primary">第一幕：开场舞、开场仪式及抽奖</h3>
+                            <h3 class="title is-4 text-dark">第一幕：开场舞、开场仪式及抽奖</h3>
                         </div>
 
                         <!-- 晚会开始 -->
@@ -277,7 +278,7 @@
                             </div>
                             <div class="timeline-content">
                                 <div class="timeline-title">交大总会会长致辞</div>
-                                <div class="timeline-description">会长谢东致辞</div>
+                                <div class="timeline-description">谢东会长致辞</div>
                             </div>
                         </div>
 
@@ -315,7 +316,6 @@
                             </div>
                             <div class="timeline-content">
                                 <div class="timeline-title">交接校友会会旗</div>
-                                <div class="timeline-description">理事长见证</div>
                             </div>
                         </div>
 
@@ -344,25 +344,26 @@
                             </div>
                         </div>
 
-                        <!-- 抽奖#1 -->
+                        <!-- 抽奖1 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
                                 6:48 PM
                                 <span class="timeline-duration">7分钟</span>
                             </div>
                             <div class="timeline-content">
-                                <div class="timeline-title">抽奖 #1</div>
+                                <div class="timeline-title">抽奖1</div>
+                                <div class="timeline-description">五等奖， 幸运奖</div>
                             </div>
                         </div>
 
-                        <!-- 王广成现场互动 -->
+                        <!-- 王广成老师现场互动 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
                                 6:55 PM
                                 <span class="timeline-duration">5分钟</span>
                             </div>
                             <div class="timeline-content">
-                                <div class="timeline-title">王广成现场互动</div>
+                                <div class="timeline-title">王广成老师现场互动</div>
                             </div>
                         </div>
 
@@ -370,7 +371,7 @@
 
                         <!-- 第二幕标题 -->
                         <div class="timeline-section">
-                            <h3 class="title is-4 has-text-primary">第二幕：晚宴、文艺演出、校友联欢及抽奖</h3>
+                            <h3 class="title is-4 text-dark">第二幕：晚宴</h3>
                         </div>
 
                         <!-- 晚餐 -->
@@ -385,48 +386,68 @@
                             </div>
                         </div>
 
-                        <!-- 抽奖#2 -->
+                        <!-- 抽奖2 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
                                 7:40 PM
                                 <span class="timeline-duration">10分钟</span>
                             </div>
                             <div class="timeline-content">
-                                <div class="timeline-title">抽奖 #2</div>
+                                <div class="timeline-title">抽奖2</div>
+                                <div class="timeline-description">三等奖， 四等奖</div>
                             </div>
                         </div>
 
-                        <!-- 长笛独奏 -->
+                        <!-- 第三幕标题 -->
+                        <div class="timeline-section">
+                            <h3 class="title is-4 text-dark">第三幕：文艺演出、校友联欢</h3>
+                        </div>
+
+                        <!-- 藏族舞 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
                                 7:50 PM
                                 <span class="timeline-duration">5分钟</span>
                             </div>
                             <div class="timeline-content">
-                                <div class="timeline-title">长笛独奏《爱的礼赞》</div>
+                                <div class="timeline-title">藏族舞《雪儿達娃》</div>
+                                <div class="timeline-description">西南交大节目</div>
                             </div>
                         </div>
 
-                        <!-- 交大合唱团 -->
+                        <!-- 歌曲演唱 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
                                 7:55 PM
-                                <span class="timeline-duration">10分钟</span>
+                                <span class="timeline-duration">5分钟</span>
                             </div>
                             <div class="timeline-content">
-                                <div class="timeline-title">交大合唱团</div>
-                                <div class="timeline-description">山楂树，世界赠予我的</div>
+                                <div class="timeline-title">歌曲《相思遥》</div>
+                                <div class="timeline-description">北交大节目</div>
                             </div>
                         </div>
 
-                        <!-- 抽奖#3 -->
+                        <!-- 长笛独奏 -->
+                        <div class="timeline-item">
+                            <div class="timeline-time">
+                                8:00 PM
+                                <span class="timeline-duration">5分钟</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">长笛独奏《爱的礼赞》</div>
+                                <div class="timeline-description">上交大节目</div>
+                            </div>
+                        </div>
+
+                        <!-- 抽奖3 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
                                 8:05 PM
                                 <span class="timeline-duration">10分钟</span>
                             </div>
                             <div class="timeline-content">
-                                <div class="timeline-title">抽奖 #3</div>
+                                <div class="timeline-title">抽奖3</div>
+                                <div class="timeline-description">二等奖</div>
                             </div>
                         </div>
 
@@ -434,61 +455,44 @@
                         <div class="timeline-item">
                             <div class="timeline-time">
                                 8:15 PM
-                                <span class="timeline-duration">5分钟</span>
+                                <span class="timeline-duration">6分钟</span>
                             </div>
                             <div class="timeline-content">
                                 <div class="timeline-title">歌曲《無言的結局》、《昨夜星辰》</div>
-                            </div>
-                        </div>
-
-                        <!-- 藏族舞 -->
-                        <div class="timeline-item">
-                            <div class="timeline-time">
-                                8:20 PM
-                                <span class="timeline-duration">5分钟</span>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-title">藏族舞《雪儿達娃》</div>
-                            </div>
-                        </div>
-
-                        <!-- 歌曲演唱 -->
-                        <div class="timeline-item">
-                            <div class="timeline-time">
-                                8:25 PM
-                                <span class="timeline-duration">5分钟</span>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-title">歌曲《相思遥》</div>
+                                <div class="timeline-description">阳明交大节目</div>
                             </div>
                         </div>
 
                         <!-- 男高音独唱 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
-                                8:30 PM
+                                8:21 PM
                                 <span class="timeline-duration">5分钟</span>
                             </div>
                             <div class="timeline-content">
                                 <div class="timeline-title">男高音独唱《乡音乡情》</div>
+                                <div class="timeline-description">西交大节目</div>
                             </div>
                         </div>
 
-                        <!-- 抽奖#4 -->
+                        <!-- 交大合唱队 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
-                                8:35 PM
+                                8:26 PM
                                 <span class="timeline-duration">10分钟</span>
                             </div>
                             <div class="timeline-content">
-                                <div class="timeline-title">抽奖 #4</div>
+                                <div class="timeline-title">合唱《山楂树》、《世界赠予我的》</div>
+                                <div class="timeline-description">交大合唱队</div>
                             </div>
                         </div>
+
+
 
                         <!-- 全体大合唱 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
-                                8:45 PM
+                                8:36 PM
                                 <span class="timeline-duration">5分钟</span>
                             </div>
                             <div class="timeline-content">
@@ -499,11 +503,23 @@
                         <!-- 集体大合影 -->
                         <div class="timeline-item">
                             <div class="timeline-time">
-                                8:50 PM
+                                8:41 PM
                                 <span class="timeline-duration">10分钟</span>
                             </div>
                             <div class="timeline-content">
                                 <div class="timeline-title">集体大合影</div>
+                            </div>
+                        </div>
+
+                        <!-- 抽奖4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-time">
+                                8:51 PM
+                                <span class="timeline-duration">10分钟</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">抽奖4</div>
+                                <div class="timeline-description">特等奖， 一等奖</div>
                             </div>
                         </div>
 
@@ -520,9 +536,15 @@
                 <div class="column is-10-desktop is-12-tablet">
                     <!-- Section Header -->
                     <div class="box has-background-white" style="border-top: 4px solid #113F67; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                        <h2 class="title is-3 has-text-centered has-text-primary mb-5">
-                            赞助商介绍 - Sceptre
+                        <h2 class="title is-3 has-text-centered mb-5" style="color: #af0003;">
+                            Sceptre
                         </h2>
+
+                        <div class="has-text-centered mb-5">
+                            <a href="https://www.sceptre.com/" target="_blank" rel="noopener noreferrer" class="button is-medium" style="background-color: #af0003; color: white; border-color: #af0003;">
+                                了解更多
+                            </a>
+                        </div>
 
                         <!-- Content Grid -->
                         <div class="content is-size-5-desktop is-size-6-mobile" style="line-height: 1.8;">

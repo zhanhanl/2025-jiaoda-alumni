@@ -56,12 +56,17 @@ const siteConfig = {
       name: "年会安排      (SCEPTRE 赞助）",
       href: `${basePath}/pages/program/index.html`,
     },
+
+    {
+      name: "科技论坛      (Zoooom 赞助)",
+      href: `${basePath}/pages/forum/index.html`,
+    },
     {
       name: "演出节目单   (Longfri 赞助)",
       href: `${basePath}/pages/performers/index.html`,
     },
     {
-      name: "校友会活动   (Zoooom 赞助)",
+      name: "校友会活动   (GMCC 赞助)",
       href: `${basePath}/pages/events/index.html`,
     },
     {
@@ -76,12 +81,13 @@ const siteConfig = {
       name: "校友会历史   (Bytemelodies 赞助)",
       href: `${basePath}/pages/history/index.html`,
     },
+
     // {
     //   name: "GMCC万通贷款 赞助页",
     //   href: `${basePath}/pages/sponsor-ad-gmcc/index.html`,
     // },
     {
-      name: "致谢            (GMCC 赞助)",
+      name: "致谢",
       href: `${basePath}/pages/sponsors/index.html`,
     },
     {
