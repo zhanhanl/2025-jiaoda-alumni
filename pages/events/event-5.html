@@ -55,11 +55,17 @@
 
         .event-back-button {
             position: sticky;
-            top: 52px;
-            z-index: 50;
+            top: 150px;
+            z-index: 10;
             margin-bottom: 1rem;
-            background-color: white;
+            background-color: transparent;
             padding: 0.5rem 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .event-back-button {
+                top: 130px; /* Adjusted for smaller sponsor banner on mobile */
+            }
         }
 
         .content p {
@@ -70,6 +76,8 @@
 <body>
     <!-- Navigation (injected by components.js) -->
     <div id="navbar-container"></div>
+
+    <!-- Sponsor Banner (injected by components.js) -->
 
     <!-- Page Header -->
     <section class="hero is-royal-blue is-small">
@@ -225,6 +233,57 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Introduction Section -->
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10-desktop is-12-tablet">
+                    <div class="box has-background-white" style="border-top: 4px solid #113F67; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h2 class="title is-3 has-text-centered mb-5" style="color: #7b221f;">
+                            GMCC 万通贷款
+                        </h2>
+                        <p class="subtitle is-5 has-text-centered mb-5" style="color: #7b221f;">
+                            全美最大亚裔贷款机构之一
+                        </p>
+
+                        <div class="has-text-centered mb-5">
+                            <a href="https://amazing.gmccloan.com/" target="_blank" rel="noopener noreferrer" class="button is-medium" style="background-color: #7b221f; color: white; border-color: #7b221f;">
+                                了解更多
+                            </a>
+                        </div>
+
+                        <div class="content is-size-5-desktop is-size-6-mobile" style="line-height: 1.8;">
+
+                            <!-- Content Sections -->
+                            <h3 class="title is-5 mb-3" style="color: #7b221f;">公司概况与全国布局</h3>
+                            <p style="text-indent: 2em;" class="mb-5">
+                                GMCC（万通贷款）成立于2005年，是一家总部位于加州的持牌直接贷款机构，在全美49州获批执照。拥有30+分支机构和600+名持牌贷款专员，服务网络遍布全国。
+                            </p>
+
+                            <!-- Image Section -->
+                            <div class="has-text-centered mb-5">
+                                <figure class="image">
+                                    <img src="sponsor/img1.png" alt="GMCC" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-width: 400px; margin: 0 auto;">
+                                </figure>
+                            </div>
+
+                            <h3 class="title is-5 mb-3" style="color: #7b221f;">多样化贷款产品体系</h3>
+                            <p style="text-indent: 2em;" class="mb-5">
+                                提供FHA、VA、常规、Prime Jumbo等贷款，并覆盖不查报税收入、可以不提供税单，无工作等Non-QM产品，适用于自住房、投资房及外国人贷款。同时提供高达$10,000的赠款与多类特色计划。
+                            </p>
+
+                            <h3 class="title is-5 mb-3" style="color: #7b221f;">高效审批与科技驱动</h3>
+                            <p style="text-indent: 2em;">
+                                GMCC可以内部审批和直接放款，贷款额度高达$400万，特批至$1000万。并结合AI工具提升审批效率，确保贷款过程快速、透明且低成本。 特别提供无工作收入亦可申请自住房贷款，低利率，甚至外国人无信用亦可申请低利率贷款。
+                            </p>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

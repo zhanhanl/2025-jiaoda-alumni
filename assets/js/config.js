@@ -176,7 +176,7 @@ const siteConfig = {
     logoHeightMobile: "70px", // Mobile logo height
 
     // Pages where banner should appear (can be 'all' or array of page patterns)
-    showOnPages: ['article-*.html', 'program/index.html'],
+    showOnPages: ['article-*.html', 'event-*.html', 'program/index.html'],
 
     // Page-specific overrides (optional)
     pageOverrides: {
