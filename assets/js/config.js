@@ -58,11 +58,11 @@ const siteConfig = {
     },
 
     {
-      name: "科技论坛      (Zoooom 赞助)",
+      name: "科技论坛      (Bytemelodies 赞助)",
       href: `${basePath}/pages/forum/index.html`,
     },
     {
-      name: "演出节目单   (Longfri 赞助)",
+      name: "演出节目单   (硅谷净洁室设计院 赞助)",
       href: `${basePath}/pages/performers/index.html`,
     },
     {
@@ -70,7 +70,7 @@ const siteConfig = {
       href: `${basePath}/pages/events/index.html`,
     },
     {
-      name: "俱乐部活动   (硅谷净洁室设计院 赞助)",
+      name: "俱乐部活动   (Zoooom 赞助)",
       href: `${basePath}/pages/club-activity/index.html`,
     },
     {
@@ -78,7 +78,7 @@ const siteConfig = {
       href: `${basePath}/pages/articles/index.html`,
     },
     {
-      name: "校友会历史   (Bytemelodies 赞助)",
+      name: "校友会历史   (Longfri 赞助)",
       href: `${basePath}/pages/history/index.html`,
     },
 
