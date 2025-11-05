@@ -17,60 +17,142 @@
     <link rel="stylesheet" href="../../assets/css/footer.css">
 
     <style>
-        /* Sponsor Grid Styles */
+        /* Sponsor Card Styles */
         .sponsor-tier {
             margin-bottom: 3rem;
         }
 
-        .sponsor-logo-container {
+        .sponsor-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .sponsor-card-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: white;
+            min-height: 40px;
+        }
+
+        .sponsor-card-logo img {
+            max-width: 100%;
+            max-height: 140px;
+            object-fit: contain;
+        }
+
+        /* Featured sponsor (full width) */
+        .sponsor-card-featured .sponsor-card-logo {
+            min-height: 250px;
+        }
+
+        .sponsor-card-featured .sponsor-card-logo img {
+            max-height: 400px;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .sponsor-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sponsor-card-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .sponsor-card-tagline {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.6;
+            text-align: justify;
+            text-indent: 2em;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .sponsor-card-button {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sponsor-card-button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Simple sponsors (logo only) */
+        .simple-sponsor {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
-            transition: transform 0.3s ease;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 150px;
         }
 
-        .sponsor-logo-container:hover {
-            transform: scale(1.05);
+        .simple-sponsor:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
 
-        .sponsor-logo {
+        .simple-sponsor img {
             max-width: 100%;
-            height: auto;
+            max-height: 100px;
             object-fit: contain;
         }
 
-        /* Tier 1 - Largest */
-        .tier-1 .sponsor-logo {
-            max-height: 200px;
-        }
-
-        /* Tier 2 - Large */
-        .tier-2 .sponsor-logo {
-            max-height: 120px;
-        }
-
-        /* Tier 3 - Medium (with text names) */
-        .tier-3 .sponsor-logo {
-            max-height: 100px;
-        }
-
-        .tier-3 .sponsor-name {
+        /* Modal Styles */
+        .modal-card-title {
+            color: var(--primary);
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--primary);
+        }
+
+        .modal-card-body {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Tier headers */
+        .tier-header {
             text-align: center;
-            padding: 2rem;
-        }
-
-        /* Tier 4 - Standard */
-        .tier-4 .sponsor-logo {
-            max-height: 80px;
-        }
-
-        /* Tier 5 - Smallest */
-        .tier-5 .sponsor-logo {
-            max-height: 60px;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -79,11 +161,11 @@
     <div id="navbar-container"></div>
 
     <!-- Page Header -->
-    <section class="hero is-royal-blue is-small">
+    <section class="hero is-royal-blue is-small" style="margin-top: 0; padding-top: 0;">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title is-2 has-text-white">
-                    赞助商鸣谢
+                    衷心感谢
                 </h1>
                 <p class="subtitle is-5 has-text-white">衷心感谢以下单位和个人的大力支持</p>
             </div>
@@ -93,145 +175,380 @@
     <!-- Sponsors Content -->
     <section class="section">
         <div class="container">
-            <div class="notification is-light has-text-centered mb-6">
-                <p class="is-size-5">衷心感谢以下单位和个人对交大校友会2025年活动的大力支持！</p>
+
+
+
+            <!-- Featured Sponsors with Full Info Cards -->
+            <div class="sponsor-tier">
+                <div class="columns is-multiline">
+                    <div class="column is-6-tablet is-3-desktop">
+                        <div class="sponsor-card">
+                            <div class="sponsor-card-content">
+                            <div class="sponsor-card-logo">
+                                <img src="./ctuaaa.jpeg" style="max-height: 130px;">
+                            </div>
+                                <img src="./ctuaaa2.png" >
+
+                                                      <a href="https://ctuaaa.org/" target="_blank" class="sponsor-card-button mt-4">
+                                    交大美洲校友会官网
+                                </a>
+                            </div>
+
+ 
+
+                        </div>
+                    </div>
+
+                    <div class="column is-12">
+                        <div class="sponsor-card sponsor-card-featured">
+                                <img src="./tonyding2.png" alt="天地保险">
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <!-- TriFortune -->
+                    <div class="column is-6-tablet is-3-desktop">
+                        <div class="sponsor-card">
+                            <div class="sponsor-card-content">
+                            <div class="sponsor-card-logo">
+                                <img src="./trifortune.jpg" alt="TriFortune">
+                            </div>
+                                <p class="sponsor-card-tagline">TriFortune专注于企业及个人投融资与创业服务，合伙人均具有多年投资、投行经验，有多家上市投资成功案例，通过与美国本土金融机构的战略合作，通过组织创业及投融资交流活动，致力于打造一个融合资源、链接中美、助力企业与个人成长的专业投融资平台。</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Shareton -->
+                    <div class="column is-6-tablet is-3-desktop">
+                        <div class="sponsor-card">
+                            <div class="sponsor-card-content">
+<h3 class="sponsor-card-name">喜来登 San Gabriel</h3>
+
+                                <img src="./shareton.webp" alt="Shareton">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- DMB -->
+                    <div class="column is-6-tablet is-3-desktop">
+                        <div class="sponsor-card">
+                            <div class="sponsor-card-content">
+                            <div class="sponsor-card-logo">
+                                <img src="./dmb.png" alt="DMB Fire Protection" style="max-height: 80px;">
+                            </div>
+                            <h5 class="sponsor-card-name" style="color: #c30026;">您值得信赖的消防安全合作伙伴</h5>
+                            <p class="sponsor-card-tagline">
+                                DMG消防设备公司是综合消防服务的领先供应商，致力于保障住宅、商业及工业财产的消防安全。公司始终秉持精益求精的承诺，专注于火灾报警系统、喷淋系统和灭火系统的设计、安装、维护与检测服务。
+
+DMG深刻认识到消防安全不仅关乎合规性，更承载着守护生命与财产的重任。因此，公司采取前瞻性消防策略，提供全面风险评估和定制化消防方案，服务范围涵盖从初期咨询、系统设计到持续维护及应急响应的全流程。
+                            </p>
+
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666;">
+                                <p style="margin: 0.3rem 0;"><strong>地址：</strong>2049 S Hellman Ave Ste L, Ontario CA 91709</p>
+                                <p style="margin: 0.3rem 0;"><strong>电话：</strong>(626) 548-8663</p>
+                                <p style="margin: 0.3rem 0;"><strong>执照号：</strong>C-10/16 #1062041</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Weee -->
+                    <div class="column is-6-tablet is-3-desktop">
+                        <div class="sponsor-card">
+                            <div class="sponsor-card-content">
+                            <div class="sponsor-card-logo">
+                                <img src="./Weee!_logo.svg.png" alt="Weee" style="max-height: 50px;">
+                            </div>
+                                <img src="./weee.png" alt="weee">
+
+                            </div>
+<a href="https://www.sayweee.com/" target="_blank" class="sponsor-card-button">
+                                    访问Weee!
+                                </a>
+
+                        </div>
+                    </div>
+
+
+                    <!-- BURTRAN -->
+                    <div class="column is-6-tablet is-3-desktop">
+                        <div class="sponsor-card">
+
+                            <div class="sponsor-card-content">
+                                                            <div class="sponsor-card-logo">
+                                <img src="./burtran.avif" alt="BURTRAN">
+                            </div>
+                                <p class="sponsor-card-tagline">BURTRAN成立于加利福尼亚州千橡市,是一个致力于设计提升日常生活品质的智能家居解决方案的新生代品牌。我们专注于高端空气净化器和睡眠健康设备,将先进工程技术与贴心设计相结合。我们的旗舰技术——如纳米氧气过滤系统和智能助眠功能——旨在解决真实生活需求,从过敏缓解、室内空气质量改善,到放松身心和安稳睡眠。每一款BURTRAN产品都是深入研究、严格测试和追求卓越的成果。我们自豪地提供有效、优雅且易于使用的解决方案——凭借卓越性能、可靠品质和安心保障,赢得全国家庭的信赖。</p>
+                                <a href="https://www.burtran.com" target="_blank" class="sponsor-card-button">
+                                    访问网站
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 彼岸文化 -->
+                    <div class="column is-6-tablet is-3-desktop">
+                        <div class="sponsor-card">
+   
+                            <div class="sponsor-card-content">
+                                <h3 class="sponsor-card-name">彼岸文化 Be An Culture</h3>
+                         <div class="sponsor-card-logo">
+                                <img src="./beanculture.jpg" alt="彼岸文化">
+                            </div>
+
+                                <p class="sponsor-card-tagline">彼岸文化创立于2020年，致力于为全球华人社群打造高品质、多领域的原创文化内容平台。彼岸文化隶属于何振岱文化研究（美国）基金会与H艺术基金会，讲述海外华人自己的故事。</p>
+<a href="www.youtube.com/@BeAn.Culture_Official" target="_blank" class="sponsor-card-button">
+                                    访问Youtube Official
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Blossom Café -->
+                    <div class="column is-6-tablet is-3-desktop">
+                        <div class="sponsor-card">
+                                <div class="sponsor-card-content">
+                                <h3 class="sponsor-card-name">Blossom Café</h3>
+                                <img src="./blossom2.png" alt="Blossom Café">
+                                <p class="sponsor-card-tagline">Blossom Café 位于康涅狄格州，距离耶鲁大学40分钟车程！我们的菜单将传统经典与创新风味完美融合，精选本地新鲜食材。从舒芙蕾松饼到招牌牛油果吐司，我们满足多样化的口味需求。温馨而现代的空间，为您提供一个悠闲惬意的早晨。我们致力于卓越的服务与品质，Blossom Café 为您带来难忘的早午餐体验，让您一次次流连忘返。</p>
+                                <a href="https://blossom-cafe.com" target="_blank" class="sponsor-card-button">
+                                    访问网站
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <!-- Tier 1: 1 Sponsor (Largest, Full Width) -->
-            <div class="sponsor-tier tier-1">
-                <div class="columns is-centered">
-                    <div class="column is-8">
-                        <div class="sponsor-logo-container">
-                            <img src="../../../assets/images/sponsors/aqx.png" alt="Sponsor" class="sponsor-logo">
+
+            <!-- Sponsor Tier List -->
+            <div class="box mb-6" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border: 2px solid var(--primary);">
+                <h2 class="title is-3 has-text-centered mb-5" style="color: var(--primary);">赞助商名单</h2>
+
+                <div class="columns is-multiline">
+                    <!-- 冠名赞助 -->
+                    <div class="column is-12 has-text-centered" >
+                        <div class="box" style="background: white; ">
+                            <h3 class="title is-4" style="color: var(--primary); margin-bottom: 1rem;">👑 冠名赞助</h3>
+                            <p class="is-size-5" style="color: #333; font-weight: 600;">Sceptre 赛普特集团</p>
+                        </div>
+                    </div>
+
+                    <!-- 黄金赞助 -->
+                    <div class="column is-6  has-text-centered">
+                        <div class="box" style="background: white; ">
+                            <h3 class="title is-5" style="color: var(--primary); margin-bottom: 1rem;">🥇 黄金赞助</h3>
+                            <ul style="color: #333; line-height: 2;">
+                                <li>止观会馆</li>
+                                <li>Zoooom</li>
+                                <li>硅谷净洁室设计院</li>
+                                <li>Bytemelodies</li>
+                                <li>Longfri</li>
+                                <li>GMCC 万通贷款</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 白银赞助 -->
+                    <div class="column is-6  has-text-centered">
+                        <div class="box" style="background: white;">
+                            <h3 class="title is-5" style="color: var(--primary); margin-bottom: 1rem;">🥈 白银赞助</h3>
+                            <ul style="color: #333; line-height: 2;">
+                                <li>AQX 工程设计有限公司</li>
+                                <li>GCW舞蹈工作室介绍</li>
+                                <li>交通大学美洲校友会</li>
+                                <li>浦江川 北京交大</li>
+                                <li>何桂萍 西安交大</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 青铜和友情赞助 -->
+                    <div class="column is-12  has-text-centered">
+                        <div class="box" style="background: white; ">
+                            <h3 class="title is-5" style="color: var(--primary); margin-bottom: 1rem;">🥉 青铜以及友情赞助</h3>
+                            <div class="columns is-multiline">
+                                <div class="column is-3">
+                                    <ul style="color: #333; line-height: 2;">
+                                        <li>Res AI</li>
+                                        <li>GSM群星传媒(Annie Xiao)</li>
+                                        <li>QJ Kitchen 秋金川味小炒</li>
+                                    </ul>
+                                </div>
+                                <div class="column is-3">
+                                    <ul style="color: #333; line-height: 2;">
+                                        <li>喜来登圣盖博</li>
+                                        <li>天地保险</li>
+                                        <li>TriFortune</li>
+                             <li>DMB Fire Protection</li>
+                                                                <li>Weee!</li>
+                                    </ul>
+                                </div>
+                                <div class="column is-3">
+                                    <ul style="color: #333; line-height: 2;">
+
+                                        <li>BURTRAN</li>
+                                        <li>彼岸文化</li>
+                                                         <li>Blossom Cafe</li>
+     
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <hr class="my-5">
 
-            <!-- Tier 2: 5 Sponsors (Large) -->
-            <div class="sponsor-tier tier-2">
-                <div class="columns is-multiline is-centered">
-                    <div class="column is-4">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/atclean.png" alt="Sponsor" class="sponsor-logo">
+            <!-- Gift Sponsor List -->
+            <div class="box mb-6" style="background: white; border: 2px solid #e0e0e0;">
+                <h2 class="title is-4 has-text-centered mb-5" style="color: var(--primary);">年会奖项奖品清单</h2>
+
+                <div class="columns is-multiline">
+                    <!-- 赛普特集团 -->
+                    <div class="column is-6">
+                        <div class="box" style="background: #f8f9fa; border-left: 4px solid var(--primary);">
+                            <h4 class="title is-6" style="color: var(--primary); margin-bottom: 1rem;">🎁 赛普特集团</h4>
+                            <ul style="line-height: 2; color: #333;">
+                                <li>SCEPTRE 50"4K 超清电视机 <span style="color: #666;">(1份)</span> <span class="tag is-primary is-light">特等奖</span></li>
+                                <li>SCEPTRE 34"曲面高速显示器 <span style="color: #666;">(1份)</span> <span class="tag is-primary is-light">特等奖</span></li>
+                                <li>SCEPTRE智慧电视柜 <span style="color: #666;">(5份)</span> <span class="tag is-info is-light">一等奖</span></li>
+                                <li>SCEPTRE玻璃电视架 <span style="color: #666;">(5份)</span> <span class="tag is-success is-light">二等奖</span></li>
+                                <li>SCEPTRE 15.6英寸全高清便携式显示屏 <span style="color: #666;">(3份)</span> <span class="tag is-warning is-light">三等奖</span></li>
+                                <li>蜥蜴（Lizard）毛绒玩具 <span style="color: #666;">(人人有份)</span> <span class="tag is-link is-light">参会伴手礼</span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="column is-4">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/blossom.png" alt="Sponsor" class="sponsor-logo">
+
+                    <!-- 陈宏正（新竹交大） -->
+                    <div class="column is-6">
+                        <div class="box" style="background: #f8f9fa; border-left: 4px solid var(--primary);">
+                            <h4 class="title is-6" style="color: var(--primary); margin-bottom: 1rem;">🎁 陈宏正（新竹交大）</h4>
+                            <ul style="line-height: 2; color: #333;">
+                                <li>清代宫廷艺术家郎世宁款书法 <span style="color: #666;">(1份)</span> <span class="tag is-primary is-light">特等奖</span></li>
+                                <li>AI导航静音扫地机器人 <span style="color: #666;">(2份)</span> <span class="tag is-success is-light">二等奖</span></li>
+                                <li>高清镜头便携折叠无人机 <span style="color: #666;">(4台)</span> <span class="tag is-light">四等奖</span></li>
+                                <li>智能电动牙刷 <span style="color: #666;">(5份)</span> <span class="tag is-light">五等奖</span></li>
+                                <li>自动循环过滤宠物智慧饮水机 <span style="color: #666;">(30份)</span> <span class="tag is-light">幸运奖</span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="column is-4">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/bm.jpg" alt="Sponsor" class="sponsor-logo">
+
+                    <!-- 万荣根（西安交大） -->
+                    <div class="column is-6">
+                        <div class="box" style="background: #f8f9fa; border-left: 4px solid var(--primary);">
+                            <h4 class="title is-6" style="color: var(--primary); margin-bottom: 1rem;">🎁 万荣根（西安交大）</h4>
+                            <ul style="line-height: 2; color: #333;">
+                                <li>防弹书包 <span style="color: #666;">(10份)</span> <span class="tag is-light">四等奖</span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="column is-4">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/burtran.avif" alt="Sponsor" class="sponsor-logo">
+
+                    <!-- 圣盖博喜来登酒店 -->
+                    <div class="column is-6">
+                        <div class="box" style="background: #f8f9fa; border-left: 4px solid var(--primary);">
+                            <h4 class="title is-6" style="color: var(--primary); margin-bottom: 1rem;">🎁 圣盖博喜来登酒店</h4>
+                            <ul style="line-height: 2; color: #333;">
+                                <li>洛杉矶市E-Central与圣盖博喜来登酒店免费客房一晚 <span style="color: #666;">(2份)</span> <span class="tag is-success is-light">二等奖</span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="column is-4">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/ctuaaa.jpeg" alt="Sponsor" class="sponsor-logo">
+
+                    <!-- 彼岸文化 -->
+                    <div class="column is-6">
+                        <div class="box" style="background: #f8f9fa; border-left: 4px solid var(--primary);">
+                            <h4 class="title is-6" style="color: var(--primary); margin-bottom: 1rem;">🎁 彼岸文化</h4>
+                            <ul style="line-height: 2; color: #333;">
+                                <li>湘溪.金箔娟画 <span style="color: #666;">(1份)</span> <span class="tag is-success is-light">二等奖</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 张斌（上海交大） -->
+                    <div class="column is-6">
+                        <div class="box" style="background: #f8f9fa; border-left: 4px solid var(--primary);">
+                            <h4 class="title is-6" style="color: var(--primary); margin-bottom: 1rem;">🎁 张斌（上海交大）</h4>
+                            <ul style="line-height: 2; color: #333;">
+                                <li>BURTRAN高端空气净化器 <span style="color: #666;">(1份)</span> <span class="tag is-success is-light">二等奖</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 李玲（西南交大） -->
+                    <div class="column is-6">
+                        <div class="box" style="background: #f8f9fa; border-left: 4px solid var(--primary);">
+                            <h4 class="title is-6" style="color: var(--primary); margin-bottom: 1rem;">🎁 李玲（西南交大）</h4>
+                            <ul style="line-height: 2; color: #333;">
+                                <li>BUBLUE高级除湿机 <span style="color: #666;">(1份)</span> <span class="tag is-success is-light">二等奖</span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <hr class="my-5">
 
-            <!-- Tier 3: 3 Sponsors (1 logo + 2 text names) -->
-            <div class="sponsor-tier tier-3">
-                <div class="columns is-multiline is-centered">
-                    <div class="column is-4">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/dmb.png" alt="Sponsor" class="sponsor-logo">
-                        </div>
-                    </div>
-                    <div class="column is-4">
-                        <div class="sponsor-name">赞助商名称一</div>
-                    </div>
-                    <div class="column is-4">
-                        <div class="sponsor-name">赞助商名称二</div>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="my-5">
-
-            <!-- Tier 4: 3 Sponsors (Medium) -->
-            <div class="sponsor-tier tier-4">
-                <div class="columns is-multiline is-centered">
-                    <div class="column is-4">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/gsm.png" alt="Sponsor" class="sponsor-logo">
-                        </div>
-                    </div>
-                    <div class="column is-4">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/longfri.png" alt="Sponsor" class="sponsor-logo">
-                        </div>
-                    </div>
-                    <div class="column is-4">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/qjkitchen.avif" alt="Sponsor" class="sponsor-logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="my-5">
-
-            <!-- Tier 5: 4 Sponsors (Smallest) -->
-            <div class="sponsor-tier tier-5">
-                <div class="columns is-multiline is-centered">
-                    <div class="column is-3">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/scepter.png" alt="Sponsor" class="sponsor-logo">
-                        </div>
-                    </div>
-                    <div class="column is-3">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/trifortune.png" alt="Sponsor" class="sponsor-logo">
-                        </div>
-                    </div>
-                    <div class="column is-3">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/zhiguan.png" alt="Sponsor" class="sponsor-logo">
-                        </div>
-                    </div>
-                    <div class="column is-3">
-                        <div class="sponsor-logo-container">
-                            <img src="../../assets/images/sponsors/zoooom.jpg" alt="Sponsor" class="sponsor-logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Contact Information -->
-            <div class="box has-background-royal-blue has-text-white mt-6">
-                <div class="content has-text-centered">
-                    <p class="title is-4 has-text-white">
+            <div class="box has-background-white mt-6" style="border: 2px solid #e0e0e0;">
+                <div class="content">
+                    <p class="title is-4 has-text-centered mb-5" style="color: var(--primary);">
                         <span class="icon-text">
-                            <span class="icon">
-                                <i class="fas fa-handshake"></i>
-                            </span>
                             <span>如果您有兴趣成为校友会的赞助商</span>
                         </span>
                     </p>
-                    <p class="is-size-5 mt-4">
-                        请联系我们：<br>
-                        <strong>邮箱：</strong> <a href="mailto:sponsor@alumni-sjtu.org" class="has-text-white">sponsor@alumni-sjtu.org</a><br>
-                        <strong>电话：</strong> (123) 456-7890
-                    </p>
-                    <p class="mt-4 is-italic">您的支持将帮助我们举办更多精彩活动！</p>
+
+                    <div class="columns is-variable is-8 mb-4">
+                           <div class="column is-6">
+                            <div class="box" style="background: #f8f9fa; ">
+                                <h4 class="title is-4" style="color: var(--primary); margin-bottom: 1rem;">联系人</h4>
+                                <div class="is-size-6 has-text-black">
+                                    <p class="mb-2"><strong>理事长：</strong>万荣根</p>
+                                    <p class="mb-3"><strong>电话：</strong>(626) 802-0316</p>
+                                    <p class="mb-2"><strong>会长：</strong>何桂萍</p>
+                                    <p class="mb-2"><strong>电话：</strong>(626) 818-7089</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 is-italic has-text-centered has-text-black">您的支持将帮助我们举办更多精彩活动！</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Sponsor Details Modal -->
+    <div id="sponsor-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" id="sponsor-modal-title"></p>
+                <button class="delete" aria-label="close" id="close-modal"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content">
+                    <p id="sponsor-modal-description"></p>
+                    <p id="sponsor-modal-website" style="display: none;">
+                        <strong>网站：</strong> <a id="sponsor-website-link" href="#" target="_blank"></a>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
 
     <!-- Footer (injected by components.js) -->
     <div id="footer-container"></div>
@@ -240,5 +557,59 @@
     <script src="../../assets/js/config.js"></script>
     <script src="../../assets/js/components.js"></script>
     <script src="../../assets/js/main.js"></script>
+
+    <!-- Sponsor Modal JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('sponsor-modal');
+            const modalTitle = document.getElementById('sponsor-modal-title');
+            const modalDescription = document.getElementById('sponsor-modal-description');
+            const modalWebsite = document.getElementById('sponsor-modal-website');
+            const websiteLink = document.getElementById('sponsor-website-link');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modalBackground = document.querySelector('.modal-background');
+
+            // Add click event to all "Learn More" buttons
+            const learnMoreButtons = document.querySelectorAll('.sponsor-learn-more');
+            learnMoreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const name = this.getAttribute('data-sponsor-name');
+                    const description = this.getAttribute('data-sponsor-description');
+                    const website = this.getAttribute('data-sponsor-website');
+
+                    // Set modal content
+                    modalTitle.textContent = name;
+                    modalDescription.textContent = description;
+
+                    // Show website if available
+                    if (website) {
+                        modalWebsite.style.display = 'block';
+                        websiteLink.href = 'https://' + website;
+                        websiteLink.textContent = website;
+                    } else {
+                        modalWebsite.style.display = 'none';
+                    }
+
+                    // Show modal
+                    modal.classList.add('is-active');
+                });
+            });
+
+            // Close modal handlers
+            function closeModal() {
+                modal.classList.remove('is-active');
+            }
+
+            closeModalBtn.addEventListener('click', closeModal);
+            modalBackground.addEventListener('click', closeModal);
+
+            // Close modal on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

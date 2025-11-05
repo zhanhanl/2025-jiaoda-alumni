@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="../../assets/css/footer.css">
 
     <style>
+        body {
+            background-color: #d0efff;
+        }
+
         .forum-card {
             cursor: pointer;
             transition: all 0.3s ease;
@@ -35,6 +39,16 @@
             display: block;
             height: 100%;
         }
+
+        .author-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body>
@@ -49,7 +63,7 @@
     </section>
 
     <!-- Page Header -->
-    <section class="hero is-small hero-padded" style="background-color: white;">
+    <section class="hero is-small hero-padded" style="background-color: #d0efff;">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title is-2 has-text-royal-blue">
@@ -73,6 +87,69 @@
         </div>
     </section>
 
+    <!-- 讲座速览 Section -->
+    <section class="section" style="padding-top: 1rem;">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered has-text-royal-blue mb-3">
+                讲座速览
+            </h2>
+            <p class="has-text-centered mb-5" style="font-size: 1.1rem; color: #666;">Hollywood Conference Room</p>
+            <div class="columns is-centered">
+                <div class="column is-10-desktop is-12-tablet">
+                   <h3 class="title is-4 has-text-royal-blue mb-4">
+                        2:30 PM (25分钟)
+                    </h3>
+                    <figure class="image mb-4">
+                        <img src="pre1.png" alt="讲座速览 1" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </figure>
+
+                      <h3 class="title is-4 has-text-royal-blue mb-4">
+                        2:55 PM (25分钟)
+                    </h3>
+                    <figure class="image mb-4">
+                        <img src="pre2.png" alt="讲座速览 2" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </figure>
+
+
+
+                    <h3 class="title is-4 has-text-royal-blue mb-4">
+                        3:20 PM (25分钟)
+                    </h3>
+                    <figure class="image mb-4">
+                        <img src="pre3.png" alt="讲座速览 3" style="border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </figure>
+
+                    <!-- Break Separator -->
+                    <div class="mb-5 mt-5" style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px dashed #1167b1; border-radius: 8px;">
+                        <span class="icon" style="color: #1167b1;">
+                            <i class="fas fa-coffee fa-lg"></i>
+                        </span>
+                        <span class="has-text-royal-blue" style="font-weight: 600; margin-left: 0.5rem;">3:45~4:00 PM 茶歇时间 (15分钟)</span>
+                    </div>
+                <h3 class="title is-4 has-text-royal-blue mb-4">
+                        4:00 PM (25分钟)
+                    </h3>
+                    <figure class="image mb-4">
+                        <img src="pre4.png" alt="讲座速览 4" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </figure>
+
+                    <h3 class="title is-4 has-text-royal-blue mb-4">
+                        4:25 PM - 5:00 PM (35分钟)
+                    </h3>
+                    <div class="box" style="background-color: #f8f9fa; border-left: 4px solid #1167b1; padding: 1.0rem;">
+                        <h4 class="title is-5 has-text-royal-blue mb-7" style="line-height: 1.3;">
+                            专题研讨会:
+                            <strong>AI新生态：技术、商业与人</strong>
+                        </h4>
+                        <p class="subtitle is-6" style="color: #666;">
+                            <strong>4位演讲嘉宾</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Speakers Section -->
     <section class="section">
         <div class="container">
@@ -83,9 +160,9 @@
             <div class="columns is-multiline">
                 <!-- Speaker 1: 董悦 -->
                 <div class="column is-12-tablet is-6-desktop">
-                    <div class="box" style="height: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #1167b1;">
+                    <div class="box" style="height: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         <figure class="image mb-4">
-                            <img src="author1.png" alt="董悦" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+                            <img src="au1.jpg" alt="董悦" class="author-avatar" style="width: 60%; height: auto; aspect-ratio: 1 / 1;">
                         </figure>
                         <h3 class="title is-4 has-text-royal-blue mb-3 has-text-centered">董悦</h3>
                         <p class="content" style="line-height: 1.8; text-align: justify; text-indent: 2em;">
@@ -96,9 +173,9 @@
 
                 <!-- Speaker 2: 王圣容 -->
                 <div class="column is-12-tablet is-6-desktop">
-                    <div class="box" style="height: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #1167b1;">
+                    <div class="box" style="height: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         <figure class="image mb-4">
-                            <img src="author2.png" alt="王圣容" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+                            <img src="au2.png" alt="王圣容" class="author-avatar" style="width: 60%; height: auto; aspect-ratio: 1 / 1;">
                         </figure>
                         <h3 class="title is-4 has-text-royal-blue mb-3 has-text-centered">王圣容 (Sheng Wang)</h3>
                         <p class="content" style="line-height: 1.8; text-align: justify; text-indent: 2em;">
@@ -109,9 +186,9 @@
 
                 <!-- Speaker 3: 蔡继军 -->
                 <div class="column is-12-tablet is-6-desktop">
-                    <div class="box" style="height: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #1167b1;">
+                    <div class="box" style="height: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         <figure class="image mb-4">
-                            <img src="author3.png" alt="蔡继军" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+                            <img src="au3.jpg" alt="蔡继军" class="author-avatar" style="width: 60%; height: auto; aspect-ratio: 1 / 1;">
                         </figure>
                         <h3 class="title is-4 has-text-royal-blue mb-3 has-text-centered">蔡继军</h3>
                         <p class="content" style="line-height: 1.8; text-align: justify; text-indent: 2em;">
@@ -122,9 +199,9 @@
 
                 <!-- Speaker 4: 刘怡乐 -->
                 <div class="column is-12-tablet is-6-desktop">
-                    <div class="box" style="height: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #1167b1;">
+                    <div class="box" style="height: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         <figure class="image mb-4">
-                            <img src="author4.png" alt="刘怡乐" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+                            <img src="au4.jpg" alt="刘怡乐" class="author-avatar" style="width: 60%; height: auto; aspect-ratio: 1 / 1;">
                         </figure>
                         <h3 class="title is-4 has-text-royal-blue mb-3 has-text-centered">刘怡乐 (Elaine Liu)</h3>
                         <p class="content" style="line-height: 1.8; text-align: justify; text-indent: 2em;">
@@ -137,7 +214,7 @@
     </section>
 
     <!-- Sponsor Introduction Section -->
-    <section class="section has-background-light">
+    <section class="section" style="background-color: #d0efff;">
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-10-desktop is-12-tablet">

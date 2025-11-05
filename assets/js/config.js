@@ -118,12 +118,20 @@ const siteConfig = {
       href: `${basePath}/pages/sponsor-ad-qjkitchen/index.html`,
     },
 
-    {
+        {
       name: "Powered by Bytemelodies",
       href: null,
       separator: false,
       divider: false  // Visual divider style
     },
+
+        {
+      name: "",
+      href: null,
+      separator: true,
+      divider: true  // Visual divider style
+    },
+
 
   ],
 
