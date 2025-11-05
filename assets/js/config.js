@@ -74,7 +74,7 @@ const siteConfig = {
       href: `${basePath}/pages/club-activity/index.html`,
     },
     {
-      name: "校友来稿      (止观会馆 赞助)",
+      name: "校友文章      (止观会馆 赞助)",
       href: `${basePath}/pages/articles/index.html`,
     },
     {
