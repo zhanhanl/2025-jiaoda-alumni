@@ -58,7 +58,7 @@ const siteConfig = {
     },
 
     {
-      name: "科技论坛      (Bytemelodies 赞助)",
+      name: "科技论坛      (Zoooom 赞助)",
       href: `${basePath}/pages/forum/index.html`,
     },
     {
@@ -70,7 +70,7 @@ const siteConfig = {
       href: `${basePath}/pages/events/index.html`,
     },
     {
-      name: "俱乐部活动   (Zoooom 赞助)",
+      name: "俱乐部活动   (Bytemelodies 赞助)",
       href: `${basePath}/pages/club-activity/index.html`,
     },
     {
